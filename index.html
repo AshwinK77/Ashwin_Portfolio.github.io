@@ -14,70 +14,61 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
   
   <style>
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+    body {
+      font-family: Arial, sans-serif;
+    }
 
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-  }
+    .top-photo {
+      display: flex;
+     justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding-top: 40px;
+  position: relative;
+  z-index: 2;
+    }
 
-  .top-photo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f4f4f4;
-    padding-top: 40px;
-    position: relative;
-    z-index: 2;
-  }
+    .top-photo img {
+      width: 430px;
+  height: 430px;
+  object-fit: cover;
+  object-position: center 19%;
+  border-radius: 70%;
+  border: 5px solid #969292;
+  background-color: #f4f4f4;
+  margin-bottom: -70px;  /* Smaller overlap */
+  position: relative;
+  z-index: 2;
+    }
+	#intro {
+      text-align: center;
+  padding-top: 90px;     /* Reduced padding */
+  padding-bottom: 40px;
+  background-color: #1b1f23;
+  color: white;
+  position: relative;
+  z-index: 1;
+    }
 
-  .top-photo img {
-    width: 430px;
-    height: 430px;
-    object-fit: cover;
-    object-position: center 19%;
-    border-radius: 70%;
-    border: 5px solid #969292;
-    background-color: #f4f4f4;
-    position: relative;
-    z-index: 2;
-    margin-bottom: -110px; /* This overlaps into #intro */
-  }
+    .intro h1 {
+	  padding: 0;
+      font-size: 30px;
+	  text-align: center;
+    }
 
-  #intro {
-    text-align: center;
-    padding: 160px 20px 40px 20px; /* Account for image overlap */
-    background-color: #1b1f23;
-    color: white;
-    position: relative;
-    z-index: 1;
-  }
+    #intro h2 {
+      margin: 10px;
+      font-size: 25px;
+      font-weight: normal;
+	  text-align: center;
+    }
 
-  #intro h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
-    font-weight: 800;
-    letter-spacing: 2px;
-  }
-
-  #intro h2 {
-    font-size: 20px;
-    margin: 10px 0;
-    font-weight: 600;
-  }
-
-  #intro p {
-    font-size: 18px;
-    font-style: italic;
-    margin-top: 15px;
-    color: #ddd;
-  }
-</style>
-
+    #intro p {
+      font-size: 21px;
+      margin: 10px;
+	  text-align: center;
+	}
+  </style>
 </head>
 
 
