@@ -25,10 +25,12 @@
 
     .top-photo {
       display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 0 0 0;
-    background-color: #f4f4f4;
+      justify-content: center;
+      align-items: center;
+      background-color: #f4f4f4;
+      padding-top: 40px;
+      position: relative;
+      z-index: 2;
     }
 
     .top-photo img {
@@ -41,9 +43,11 @@
     }
 	#intro {
       text-align: center;
-      padding: 50px 20px 40px 20px;
-      background-color: #1b1f23; /* assuming your dark section starts here */
+      padding: 140px 20px 40px 20px; /* Top padding accounts for image overlap */
+      background-color: #1b1f23;
       color: white;
+      position: relative;
+      z-index: 1;
     }
 
     .intro h1 {
