@@ -21,18 +21,21 @@
     .top-photo {
       text-align: center;
       background-color: #f4f4f4;
+	  padding-top: 20px;
 	  margin-top: 15px;
-	  margin-bottom: -175px;
+	  margin-bottom: -100px;
     }
 
     .top-photo img {
-      width: 430px;
-      height: 430px;
+      width: 100%;
+      max-width: 350px;
+	  aspect-ratio: 1 / 1;
       object-fit: cover;
-	  object-position: center 19%;
-      border-radius: 70%;
-	  margin-bottom: 30px;
+	  object-position: center top;
+      border-radius: 50%;
+	  margin: 30px auto;
       border: 5px solid #969292;
+	  display: block;
     }
 	#intro {
       text-align: center;
@@ -42,8 +45,8 @@
 
     .intro h1 {
 	  padding: 0;
-      font-size: 25px;
-	  text-align: center;
+      font-size: 23px;
+	  text-align: center justified;
 	  font-family: 'Arial Nova', Arial, sans-serif;    }
 
     #intro h2 {
@@ -54,10 +57,44 @@
     }
 
     #intro p {
-      font-size: 21px;
+      font-size: 20px;
       margin: 10px;
 	  text-align: center;
 	}
+	html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  img, video, iframe {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .hero-name {
+  font-size: 3.5rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  margin-bottom: 10px;
+}
   </style>
 </head>
 
@@ -75,7 +112,7 @@
 				<!-- Intro -->
 					<div id="intro">
 
-						<h1> Ashwin Kumar Rangarajan </h1>
+						<h1 class="hero-name"> Ashwin Kumar Rangarajan </h1>
 						<h2> <a href ="https://www.linkedin.com/company/ford-motor-company/posts/?feedView=all" target="_blank"> Chassis Controls Engineer Intern @ Ford Motor Company </a> | 
 							<a href="https://www.linkedin.com/school/cuicar/posts/?feedView=all" target="_blank"> Ex-Deep Orange Orange 16 Intern | </a> <br/> 
 							<a href = "https://www.linkedin.com/company/royal-enfield/posts/?feedView=all" target="_blank"> Ex-Royal Enfield Assistant Manager - Chassis Testing & Validation | </a>
