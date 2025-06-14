@@ -15,7 +15,7 @@
   
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family:  'Times New Roman', Times, serif;
     }
 
     .top-photo {
@@ -42,8 +42,9 @@
 
     .intro h1 {
 	  padding: 0;
-      font-size: 30px;
+      font-size: 25px;
 	  text-align: center;
+	  font-family:  'Times New Roman', Times, serif;
     }
 
     #intro h2 {
@@ -80,6 +81,48 @@
 							<a href="https://www.linkedin.com/school/cuicar/posts/?feedView=all" target="_blank"> Ex-Deep Orange Orange 16 Intern | </a> <br/> 
 							<a href = "https://www.linkedin.com/company/royal-enfield/posts/?feedView=all" target="_blank"> Ex-Royal Enfield Assistant Manager - Chassis Testing & Validation | </a>
 							Automobile Enthusiast</h2>
+
+							<!-- <a href="https://github.com/AshwinK77/Ashwin_Portfolio.github.io/blob/main/Resume%20Ashwin%20Kumar%20Rangarajan.pdf" download>View My Resume</a> -->
+							<!-- <a href="https://raw.githubusercontent.com/AshwinK77/Ashwin_Portfolio.github.io/main/Resume%20Ashwin%20Kumar%20Rangarajan.pdf" download="Ashwin_Kumar_Resume.pdf">
+   							📄 Download My Resume
+							</a> -->
+
+							<a id="resume-link" 
+							href="https://raw.githubusercontent.com/AshwinK77/Ashwin_Portfolio.github.io/main/Resume%20Ashwin%20Kumar%20Rangarajan.pdf" 
+							download="Ashwin_Kumar_Resume.pdf"
+							style="
+								display: inline-block;
+								padding: 5px 12px;
+								background-color: #525355;
+								color: white !important;
+								border-radius: 4px;
+								text-decoration: none;
+								font-family: 'Times New Roman', Times, serif;
+								font-size: 13.5px;
+								transition: background-color 0.5s ease, color 0.5s ease;">
+							📄 Download Resume
+							</a>
+
+							<!-- <script>
+							const link = document.currentScript.previousElementSibling;
+							link.addEventListener("mouseover", () => link.style.backgroundColor = "#a9abaf");
+							link.addEventListener("mouseout", () => link.style.backgroundColor = "#525355");
+							</script> -->
+
+							<script>
+							const link = document.getElementById("resume-link");
+							link.addEventListener("mouseover", () => {
+								link.style.backgroundColor = "#e0e0e0"; // light background
+								link.style.color = "black";
+								link.style.textDecoration = "none";            // black text
+							});
+							link.addEventListener("mouseout", () => {
+								link.style.backgroundColor = "#525355"; // original blue
+								link.style.color = "white"; 
+								link.style.textDecoration = "none";           // original white text
+							});
+							</script>
+							
 						<p>An enthusiastic engineer passionate about automobiles, driven to contribute 
 							to society through innovation and technology.
 
@@ -94,26 +137,28 @@
 					</header>
 			
 				<!-- Nav -->
-				 <!--
+				 
 					<nav id="nav">
+
 						<ul class="links">
 							<li class="active"><a href="index.html"> Projects </a></li>
-							<li><a href="generic.html">Generic Page</a></li>
+							<li><a href="generic.html"> Skills</a></li>
 							<li><a href="elements.html">Elements Reference</a></li>
 						</ul>
 
 						<ul class="icons">
-							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.facebook.com/rangarajan.ashwinkumar" target="_blank" class="icon brands alt fa-facebook-f"> <span class="label"> Facebook </span> </a> </li>
+							<li><a href="https://github.com/AshwinK77?tab=repositories" class="icon brands alt fa-github" target="_blank"> <span class="label"> GitHub </span> </a> </li>
+							<li> <a href="https://www.linkedin.com/in/ashwin-kumar-rangarajan" class="icon brands alt fa-linkedin" target="_blank">
+							<span class="label">LinkedIn</span></a>
 						</ul>
+
 					</nav>
-				-->
+				
 
 				<!-- Main -->
 					<div id="main">
-						<h2 style="margin-bottom: 0;"> Professional Projects </h2>
+						<h2 style="margin-top: -25px; margin-bottom: 0;"> Professional Projects </h2>
 
 						<!-- Featured Post -->
 
@@ -134,6 +179,12 @@
 									</p>
 								</header>
 
+								<footer style="margin-top: 5px;  text-align: left">
+  								<span style="font-size: 20px;"><strong>Tools used:</strong></span>
+								<img src="images/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB" style="height: 40px; margin-left: 10px;">
+  								<img src="images/Simulink.jpg" alt="Simulink" title="Simulink" style="height: 40px; margin-left: 10px;">
+								</footer>
+
 							</article>
 
 						<article class="post featured" style="margin-top: -50px;  padding-top: 0; margin-bottom: 20px; padding-bottom: 0;">
@@ -141,7 +192,7 @@
 								<header class="major" style="margin-top: 0; padding-top: 0; margin-bottom: 0;">
 									<span class="date" style="font-size: 20px;"> <strong> August to December 2023 </strong></span>
 									<h2 style="margin-top: -50px; font-size: 30px;"><a href="#"> Numerical modeling and simulation of tractor-trailer system </a></h2>
-									<p style="font-size: 20px; text-align: justify;"> ➤ Applied first-principles modeling to derive equations of motion for a tractor-trailer system.
+									<p style="margin-bottom: 5px; font-size: 20px; text-align: justify; "> ➤ Applied first-principles modeling to derive equations of motion for a tractor-trailer system.
 
 									<br /> ➤ Developed a state-space representation using linear systems theory and the transport theorem.
 
@@ -153,6 +204,12 @@
 									</p>
 								</header>
 
+								<footer style="margin-top: 5px;  text-align: left">
+  								<span style="font-size: 20px;"><strong>Tools used:</strong></span>
+								<img src="images/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB" style="height: 40px; margin-left: 10px;">
+  								<img src="images/Simulink.jpg" alt="Simulink" title="Simulink" style="height: 40px; margin-left: 10px;">
+								</footer>
+
 							</article>
 							
 
@@ -161,11 +218,15 @@
 								<header class="major">
 									<span class="date" style="font-size: 20px;"> <strong> August to December 2023 </strong></span>
 									<h2 style="margin-top: -50px; font-size: 30px;"><a href="#"> Adaptive Cruise Control and Autonomous Lane Keeping of a RC car </a></h2>
-									<p style="font-size: 20px; text-align: justify; margin-bottom: 5px;">Designed and implemented an autonomous lane-keeping and adaptive cruise control system using Arduino programming. The control 
-										algorithm leveraged ultrasonic sensors for obstacle detection and employed a <strong>PID control strategy</strong> to maintain lane position and
-										regulate speed. To enhance sensor accuracy, <strong>Kalman filter-based sensor fusion technique</strong> was developed. Extensive PID tuning
-										was performed to ensure smooth and responsive behavior. The system was successfully tested on a variety of track conditions,
-										showcasing its reliability and adaptability through a data-driven development approach.
+									<p style="font-size: 20px; text-align: justify; margin-bottom: 5px;">➤ Designed and implemented an autonomous lane-keeping and adaptive cruise control system using Arduino.
+
+									<br /> ➤ Employed ultrasonic sensors and PID control to maintain lane position and regulate vehicle speed.
+
+									<br /> ➤ Developed a Kalman filter-based sensor fusion technique to improve sensor accuracy.
+
+									<br /> ➤ Conducted extensive PID tuning for smooth and responsive control behavior.
+
+									<br /> ➤ Validated the system across diverse track conditions using a data-driven development approach.
 									</p>
 								</header>
 
@@ -214,10 +275,6 @@
 								</footer>
 
 								<h2 style="margin-top: 30px; font-size: 30px;">HMI Screen HiL Testing</h2>
-
- 									 <!-- <video width="960" height="540" controls>
-   								     <source src="videos/MoTeC_Display.MP4" type="video/mp4">
-  									 </video> -->
 									
 									 <div class="video-container">
 										<iframe width="1080" height="720"
@@ -362,7 +419,7 @@
 								<ul class="icons alt" style="justify-content: center;">
 									<h3 style= " font-size: 25px;">Social Media</h3>
 									<li><a href="https://www.facebook.com/rangarajan.ashwinkumar" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://github.com/AshwinK77?tab=repositories" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
 									<li> <a href="https://www.linkedin.com/in/ashwin-kumar-rangarajan" class="icon brands alt fa-linkedin">
 										<span class="label">LinkedIn</span></a>
 									</li>
