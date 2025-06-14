@@ -19,35 +19,25 @@
     }
 
     .top-photo {
-      display: flex;
-     justify-content: center;
-  align-items: center;
-  background-color: #f4f4f4;
-  padding-top: 40px;
-  position: relative;
-  z-index: 2;
+      text-align: center;
+      background-color: #f4f4f4;
+	  margin-top: 15px;
+	  margin-bottom: -210px;
     }
 
     .top-photo img {
       width: 430px;
-  height: 430px;
-  object-fit: cover;
-  object-position: center 19%;
-  border-radius: 70%;
-  border: 5px solid #969292;
-  background-color: #f4f4f4;
-  margin-bottom: -70px;  /* Smaller overlap */
-  position: relative;
-  z-index: 2;
+      height: 430px;
+      object-fit: cover;
+	  object-position: center 19%;
+      border-radius: 70%;
+	  margin: 30px;
+      border: 5px solid #969292;
     }
 	#intro {
       text-align: center;
-  padding-top: 90px;     /* Reduced padding */
-  padding-bottom: 40px;
-  background-color: #1b1f23;
-  color: white;
-  position: relative;
-  z-index: 1;
+      margin-top: -210px;
+	  padding-top: 2px;
     }
 
     .intro h1 {
@@ -131,36 +121,46 @@
 
 								<header class="major" style="margin-top: 0; padding-top: 0; margin-bottom: 0;">
 									<span class="date" style="font-size: 20px;"> <strong> January to May 2024 </strong></span>
-									<h2 style="margin-top: 0; padding-top: 0; margin-bottom: 15px; font-size: 30px;"> <a href="#"> Vehicle stability control using optimal torque allocation in four-wheel independent hub motor vehicle </a></h2>
-									<p style="margin-top: 5px; font-size: 20px; text-align: justify;">Designed a hierarchical model-based control system using a Direct Yaw Moment Control (DYC) strategy to enhance yaw stability 
-										in a 4-wheel independent motor-driven vehicle. Implemented individual torque vectoring and braking algorithms to actively manage vehicle dynamics. Successfully simulated
-										 and validated the controller through maneuvers such as double lane change, J-turn, and sine with dwell under both normal and split-μ surface conditions, with and without 
-										 vehicle stability control, demonstrating significant improvements in vehicle stability.
+									<h2 style="margin-top: -50px; font-size: 30px;"> <a href="#"> Vehicle stability control using optimal torque allocation in four-wheel independent hub motor vehicle </a></h2>
+									<p style="margin-top: 5px; font-size: 20px; text-align: justify;"> ➤ Designed a hierarchical model-based control system using Direct Yaw Moment Control (DYC) to enhance yaw stability.
+
+									<br /> ➤ Implemented individual wheel torque vectoring and braking algorithms for active vehicle dynamics control.
+ 
+									<br /> ➤ Simulated and validated controller performance in double lane change, J-turn, and sine-with-dwell maneuvers.
+
+									<br /> ➤ Tested under normal and split-μ surfaces, with/without vehicle stability control.
+
+									<br /> ➤ Demonstrated significant improvements in vehicle stability and handling performance.
 									</p>
 								</header>
 
 							</article>
 
-						<article class="post featured" style="margin-top: 0;  padding-top: 0; margin-bottom: 20px; padding-bottom: 0;">
+						<article class="post featured" style="margin-top: -50px;  padding-top: 0; margin-bottom: 20px; padding-bottom: 0;">
 
 								<header class="major" style="margin-top: 0; padding-top: 0; margin-bottom: 0;">
 									<span class="date" style="font-size: 20px;"> <strong> August to December 2023 </strong></span>
-									<h2 style="font-size: 30px;"><a href="#"> Numerical modeling and simulation of tractor-trailer system </a></h2>
-									<p style="font-size: 20px; text-align: justify;">Applied first-principles modeling to derive the fundamental equations of motion for a tractor-trailer system. 
-										Utilized linear systems theory and the transport theorem to develop a state-space representation, and implemented the complete model in MATLAB. Conducted a 
-										detailed stability analysis under varying initial hitch angles, center-of-gravity positions, and scenarios with and without lateral and longitudinal load transfers.
-										The system's response was evaluated using step inputs and fishhook maneuvers to assess dynamic behavior.
+									<h2 style="margin-top: -50px; font-size: 30px;"><a href="#"> Numerical modeling and simulation of tractor-trailer system </a></h2>
+									<p style="font-size: 20px; text-align: justify;"> ➤ Applied first-principles modeling to derive equations of motion for a tractor-trailer system.
+
+									<br /> ➤ Developed a state-space representation using linear systems theory and the transport theorem.
+
+									<br /> ➤ Implemented the full model in MATLAB for simulation and analysis.
+
+									<br /> ➤ Performed stability analysis under varying hitch angles, CG positions, and load transfer conditions.
+
+									<br /> ➤ Evaluated dynamic response using step input and fishhook maneuvers.
 									</p>
 								</header>
 
 							</article>
 							
 
-							<article class="post featured" style="margin-bottom: 10px; padding-bottom: 0;">
+							<article class="post featured" style="margin-top: -50px;   margin-bottom: 20px; padding-bottom: 0;">
 
 								<header class="major">
 									<span class="date" style="font-size: 20px;"> <strong> August to December 2023 </strong></span>
-									<h2 style="font-size: 30px;"><a href="#"> Adaptive Cruise Control and Autonomous Lane Keeping of a RC car </a></h2>
+									<h2 style="margin-top: -50px; font-size: 30px;"><a href="#"> Adaptive Cruise Control and Autonomous Lane Keeping of a RC car </a></h2>
 									<p style="font-size: 20px; text-align: justify; margin-bottom: 5px;">Designed and implemented an autonomous lane-keeping and adaptive cruise control system using Arduino programming. The control 
 										algorithm leveraged ultrasonic sensors for obstacle detection and employed a <strong>PID control strategy</strong> to maintain lane position and
 										regulate speed. To enhance sensor accuracy, <strong>Kalman filter-based sensor fusion technique</strong> was developed. Extensive PID tuning
@@ -215,9 +215,18 @@
 
 								<h2 style="margin-top: 30px; font-size: 30px;">HMI Screen HiL Testing</h2>
 
- 									 <video width="960" height="540" controls>
+ 									 <!-- <video width="960" height="540" controls>
    								     <source src="videos/MoTeC_Display.MP4" type="video/mp4">
-  									 </video>
+  									 </video> -->
+									
+									 <div class="video-container">
+										<iframe width="1080" height="720"
+										src="https://www.youtube.com/embed/QzV6TwpLAik"
+										frameborder="0"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+										allowfullscreen>
+										</iframe>
+									</div>
 
 							</article>
 
