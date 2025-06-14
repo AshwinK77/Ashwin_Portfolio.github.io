@@ -14,6 +14,8 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
   
   <style>
+  
+
     body {
       font-family: 'Arial Nova', Arial, sans-serif;
     }
@@ -494,5 +496,11 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+
+			<script>
+  			window.addEventListener('load', () => {
+   			window.dispatchEvent(new Event('resize'));
+  			});
+ 		</script>
 	</body>
 </html>
