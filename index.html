@@ -1,13 +1,14 @@
 <!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!-- ASHWIN KUMAR RANGARAJAN'S PORTFOLIO HTML CODE -->>
+
 <html>
 
 <head>
+
+	<!-- Title - Name ------------------------------------------------------------------------>
 	<title>Ashwin Kumar Rangarajan</title>
+
+
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="assets/css/main.css" />
@@ -15,35 +16,43 @@
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
 
+	<!-- PAGE STYLING STARTS---------------------------------------------------------------------------------------------->
+
 	<style>
+		/* Global Text Font Selection ------------------------------------------*/
+
 		body {
 			font-family: 'Arial Nova', Arial, sans-serif;
 		}
 
+		/* ---------------------------------------------------------------------*/
+		/* Image Formatting ----------------------------------------------------*/
+
 		.top-photo {
 			text-align: center;
 			background-color: #f4f4f4;
-			padding-top: 20px;
-			margin-top: 15px;
-			margin-bottom: -150px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			margin-top: 10px;
+			margin-bottom: -160px;
 		}
-
-		/* Git created */
 
 		.top-photo img {
 			display: block !important;
 			visibility: visible !important;
 			opacity: 1 !important;
 			width: 100%;
-			max-width: 350px;
+			max-width: 375px;
 			aspect-ratio: 1 / 1;
 			object-fit: cover;
 			object-position: center top;
 			border-radius: 50%;
-			margin: 0 auto 30px;
+			margin: 0 auto 40px;
 			border: 5px solid #969292;
 		}
 
+		/* Image Formatting Ends -------------------------------------------------*/
+		/* Introduction Formatting -----------------------------------------------*/
 		#intro {
 			text-align: center;
 			margin-top: -150px;
@@ -59,7 +68,7 @@
 
 		#intro h2 {
 			margin: 10px;
-			font-size: 25px;
+			font-size: 20px;
 			font-weight: normal;
 			text-align: center;
 		}
@@ -75,6 +84,9 @@
 			max-width: 100%;
 			overflow-x: hidden;
 		}
+
+		/* Introduction Formatting Ends -----------------------------------------------*/
+		/* Video & Image Formatting ---------------------------------------------------*/
 
 		img,
 		video,
@@ -100,6 +112,9 @@
 			height: 100%;
 		}
 
+		/* Video & Image Formatting Ends --------------------------------------------*/
+		/* Name Formatting  ---------------------------------------------------------*/
+
 		.hero-name {
 			font-size: 3.5rem;
 			font-weight: bold;
@@ -109,16 +124,64 @@
 			text-align: center;
 			margin-bottom: 10px;
 		}
+
+		/* Name Formatting Ends ---------------------------------------------------------*/
+		/* Post Featured Formatting -----------------------------------------------------*/
+
+		.post.featured:after {
+			content: "";
+			display: block;
+			width: 100%;
+			margin: 3em 0;
+			border-bottom: 1px solid #e0e0e0;
+		}
+
+		/* Post Featured Formatting Ends ------------------------------------------------*/
+		/* Radio button Navigation Formatting ----------------------------------------------------------*/
+
+		.nav-dot {
+			width: 16px;
+			height: 16px;
+			border: 2px solid #999;
+			border-radius: 50%;
+			display: inline-block;
+			transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
+			background-color: transparent;
+		}
+
+		/* Hover effect */
+		.nav-dot:hover {
+			background-color: #ccc;
+			/* light grey */
+			transform: scale(1.2);
+			cursor: pointer;
+		}
+
+		/* Active section */
+		.nav-dot.active {
+			background-color: #007BFF;
+			/* blue */
+			border-color: #007BFF;
+		}
+
+
+		/* Radio button Navigation Declaration Ends ----------------------------------------------------*/
 	</style>
+
+	<!-- PAGE STYLING ENDS---------------------------------------------------------------------------------------------->
+
 </head>
 
 
+<!-- BODY SECTION STARTS-------------------------------------------------------------------------------------------->
+
 <body class="is-preload">
 
-	<!-- Profile Image Section -->
+	<!-- Profile Image Section ---------------------------------------------------->
 	<div class="top-photo">
 		<img src="images/Ashwin_USCIS_Photo.jpg" alt="Ashwin Kumar Rangarajan">
 	</div>
+	<!-- Profile Image Section Ends ----------------------------------------------->
 
 	<!-- Wrapper -->
 	<div id="wrapper" class="fade-in"> </div>
@@ -127,6 +190,7 @@
 	<div id="intro">
 
 		<h1 class="hero-name"> Ashwin Kumar Rangarajan </h1>
+
 		<h2> <a href="https://www.linkedin.com/company/ford-motor-company/posts/?feedView=all" target="_blank"> Chassis
 				Controls Engineer Intern @ Ford Motor Company </a> |
 			<a href="https://www.linkedin.com/school/cuicar/posts/?feedView=all" target="_blank"> Ex-Deep Orange Orange
@@ -136,24 +200,22 @@
 			Automobile Enthusiast
 		</h2>
 
-		<!-- <a href="https://github.com/AshwinK77/Ashwin_Portfolio.github.io/blob/main/Resume%20Ashwin%20Kumar%20Rangarajan.pdf" download>View My Resume</a> -->
-		<!-- <a href="https://raw.githubusercontent.com/AshwinK77/Ashwin_Portfolio.github.io/main/Resume%20Ashwin%20Kumar%20Rangarajan.pdf" download="Ashwin_Kumar_Resume.pdf">
-   							📄 Download My Resume
-							</a> -->
 
 		<a id="resume-link"
 			href="https://raw.githubusercontent.com/AshwinK77/Ashwin_Portfolio.github.io/main/Resume%20Ashwin%20Kumar%20Rangarajan.pdf"
 			download="Ashwin_Kumar_Resume.pdf" style="
-								display: inline-block;
-								padding: 5px 12px;
-								background-color: #525355;
-								color: white !important;
-								border-radius: 4px;
-								text-decoration: none;
-								font-family: 'Times New Roman', Times, serif;
-								font-size: 13.5px;
-								transition: background-color 0.5s ease, color 0.5s ease;">
+				display: inline-block;
+				padding: 5px 12px;
+				background-color: #525355;
+				color: white !important;
+				border-radius: 4px;
+				text-decoration: none;
+				font-family: 'Arial Nova', Arial, sans-serif;
+				font-size: 13.5px;
+				transition: background-color 0.5s ease, color 0.5s ease;">
+
 			📄 Download Resume
+
 		</a>
 
 		<!-- <script>
@@ -212,42 +274,75 @@
 	</nav>
 
 
-	<!-- Main -->
+	<!-- Floating Project Navigation Dots -->
+	<div id="project-nav" style="
+    position: fixed;
+    top: 35%;
+    right: 30px;
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 999;">
+
+		<a href="javascript:void(0);" class="nav-dot" data-project="project1"></a>
+		<a href="javascript:void(0);" class="nav-dot" data-project="project2"></a>
+		<a href="javascript:void(0);" class="nav-dot" data-project="project3"></a>
+		<a href="javascript:void(0);" class="nav-dot" data-project="project4"></a>
+		<a href="javascript:void(0);" class="nav-dot" data-project="project5"></a>
+
+	</div>
+
+	<!-- 🔧 Existing MASSIVELY structure: DO NOT TOUCH -->
 	<div id="main">
+
+		<!-- 🔧 Insert Professional Projects heading -->
 		<h2 style="margin-top: -25px; margin-bottom: 0;"> Professional Projects </h2>
 
-		<!-- Featured Post -->
+		<!-- 🔧 BEGIN PROJECT BLOCK -->
+		<article id="project1" class="post featured" style="margin: 0 auto; max-width: 90%; padding: 20px 10px;">
 
-		<article class="post featured" style="margin-top: 0;  padding-top: 0; margin-bottom: 20px;">
+			<!-- 🔧 DATE + LINE UNDERNEATH -->
+			<div style="text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 20px;">
+				<span class="date" style="font-size: 20px;">
+					<strong> January to May 2024</strong>
+				</span>
+			</div>
 
-			<header class="major" style="margin-top: 0; padding-top: 0; margin-bottom: 0;">
-				<span class="date" style="font-size: 20px;"> <strong> January to May 2024 </strong></span>
-				<h2 style="margin-top: -50px; font-size: 30px;"> <a href="#"> Vehicle stability control using optimal
-						torque allocation in four-wheel independent hub motor vehicle </a></h2>
-				<p style="margin-top: 5px; font-size: 20px; text-align: justify;"> ➤ Designed a hierarchical model-based
-					control system using Direct Yaw Moment Control (DYC) to enhance yaw stability.
+			<!-- 🔧 TITLE + LOGO -->
+			<div style="display: flex; justify-content: space-between; align-items: center;">
+				<h2 style="margin: 0; font-size: clamp(18px, 3vw, 34px); flex: 1; margin-right: 10px;">
+					<a href="#"> VEHICLE STABILITY CONTROL USING OPTIMAL TORQUE ALLOCATION IN FOUR-WHEEL INDEPENDENT HUB
+						MOTOR VEHICLE</a>
+				</h2>
+				<img src="images/CU_ICAR.jpeg" alt="CU-ICAR" style="width: 100px; height: 40px;">
+			</div>
 
-					<br /> ➤ Implemented individual wheel torque vectoring and braking algorithms for active vehicle
-					dynamics control.
+			<!-- 🔧 PROJECT DESCRIPTION -->
+			<p style="margin-top: 10px; font-size: 20px; text-align: justify;">
+				➤ Designed a hierarchical model-based control system using Direct Yaw Moment Control (DYC) to enhance
+				yaw stability.<br />
+				➤ Implemented individual wheel torque vectoring and braking algorithms for active vehicle dynamics
+				control.<br />
+				➤ Simulated and validated controller performance in double lane change, J-turn, and sine-with-dwell
+				maneuvers.<br />
+				➤ Tested under normal and split-μ surfaces, with/without vehicle stability control.<br />
+				➤ Demonstrated significant improvements in vehicle stability and handling performance.
+			</p>
 
-					<br /> ➤ Simulated and validated controller performance in double lane change, J-turn, and
-					sine-with-dwell maneuvers.
-
-					<br /> ➤ Tested under normal and split-μ surfaces, with/without vehicle stability control.
-
-					<br /> ➤ Demonstrated significant improvements in vehicle stability and handling performance.
-				</p>
-			</header>
-
-			<footer style="margin-top: 5px;  text-align: left">
+			<!-- 🔧 TOOLS USED -->
+			<footer style="margin-top: 15px; text-align: left;">
 				<span style="font-size: 20px;"><strong>Tools used:</strong></span>
 				<img src="images/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB" style="height: 40px; margin-left: 10px;">
 				<img src="images/Simulink.jpg" alt="Simulink" title="Simulink" style="height: 40px; margin-left: 10px;">
 			</footer>
 
 		</article>
+		<!-- 🔧 END PROJECT BLOCK -->
 
-		<article class="post featured"
+		<!-- ✅ Your other projects (project2, project3...) follow normally below -->
+
+
+		<article id="project2" class="post"
 			style="margin-top: -50px;  padding-top: 0; margin-bottom: 20px; padding-bottom: 0;">
 
 			<header class="major" style="margin-top: 0; padding-top: 0; margin-bottom: 0;">
@@ -278,7 +373,7 @@
 		</article>
 
 
-		<article class="post featured" style="margin-top: -50px;   margin-bottom: 20px; padding-bottom: 0;">
+		<article id="project3" class="post" style="margin-top: -50px;   margin-bottom: 20px; padding-bottom: 0;">
 
 			<header class="major">
 				<span class="date" style="font-size: 20px;"> <strong> August to December 2023 </strong></span>
@@ -323,7 +418,7 @@
 		</article>
 
 
-		<article class="post featured" style="margin-top: 10px; margin-bottom: 20px; padding-bottom: 0;">
+		<article id="project4" class="post featured" style="margin-top: 10px; margin-bottom: 20px; padding-bottom: 0;">
 
 			<header class="major">
 				<span class="date" style="font-size: 20px;"> <strong> January to April 2025 </strong></span>
@@ -363,7 +458,7 @@
 
 		<h2 style="margin-bottom: 0;"> DIY Projects </h2>
 
-		<article class="post featured" style="margin-top: 0;  padding-top: 0; margin-bottom: 20px;">
+		<article id="project5" class="post featured" style="margin-top: 0;  padding-top: 0; margin-bottom: 20px;">
 
 			<header class="major" style="margin-top: 0; padding-top: 0; margin-bottom: 0;">
 				<span class="date" style="font-size: 20px;"> <strong> May 2025 </strong></span>
@@ -539,6 +634,94 @@
 			window.dispatchEvent(new Event('resize'));
 		});
 	</script>
+
+
+	<script>
+		// Sections to track
+		const sections = ['project1', 'project2', 'project3', 'project4', 'project5'];
+		const options = { threshold: 0.5 };
+
+		// Intersection Observer to handle active highlight
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					document.querySelectorAll('.nav-dot').forEach(dot => {
+						dot.classList.remove('active');
+					});
+					document.querySelector(`a[data-project="${entry.target.id}"]`).classList.add('active');
+				}
+			});
+		}, options);
+
+		// Attach observer to each section
+		sections.forEach(id => {
+			const section = document.getElementById(id);
+			if (section) observer.observe(section);
+		});
+
+		// Smooth nav visibility control based on scroll position
+		window.addEventListener('scroll', () => {
+			const navDots = document.getElementById('project-nav');
+			const triggerPoint = 150;  // Adjust this if needed
+
+			if (window.scrollY > triggerPoint) {
+				navDots.style.display = 'flex';
+			} else {
+				navDots.style.display = 'none';
+			}
+		});
+	</script>
+
+	<script>
+		// place new code here:
+		document.querySelectorAll('.nav-dot').forEach(dot => {
+			dot.addEventListener('click', function (e) {
+				e.preventDefault();
+				const targetId = this.getAttribute('href').substring(1);
+				const targetSection = document.getElementById(targetId);
+				targetSection.scrollIntoView({ behavior: 'smooth' });
+			});
+		});
+	</script>
+
+
+	<script>
+		function smoothScrollTo(targetY, duration = 1500) {
+			const startY = window.scrollY;
+			const distance = targetY - startY;
+			let startTime = null;
+
+			function step(currentTime) {
+				if (!startTime) startTime = currentTime;
+				const progress = currentTime - startTime;
+				const percent = Math.min(progress / duration, 1);
+				const ease = easeInOutQuad(percent);
+				window.scrollTo(0, startY + distance * ease);
+				if (progress < duration) {
+					window.requestAnimationFrame(step);
+				}
+			}
+
+			function easeInOutQuad(t) {
+				return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+			}
+
+			window.requestAnimationFrame(step);
+		}
+
+		document.querySelectorAll('.nav-dot').forEach(dot => {
+			dot.addEventListener('click', function () {
+				const targetId = this.getAttribute('data-project');
+				const targetSection = document.getElementById(targetId);
+				if (targetSection) {
+					const sectionRect = targetSection.getBoundingClientRect();
+					const absoluteTop = window.scrollY + sectionRect.top;
+					smoothScrollTo(absoluteTop - 20, 1500); // offset of 20px for spacing
+				}
+			});
+		});
+	</script>
+
 </body>
 
 </html>
