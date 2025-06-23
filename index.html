@@ -179,9 +179,11 @@
 <body class="is-preload">
 
 	<!-- Profile Image Section ---------------------------------------------------->
+
 	<div class="top-photo">
 		<img src="images/Ashwin_USCIS_Photo.jpg" alt="Ashwin Kumar Rangarajan">
 	</div>
+
 	<!-- Profile Image Section Ends ----------------------------------------------->
 
 	<!-- Wrapper -->
@@ -201,7 +203,7 @@
 			Automobile Enthusiast
 		</h2>
 
-
+		<!-- Resume Link to download---------------------------------------------------------------------------------------------------------->
 		<a id="resume-link"
 			href="https://raw.githubusercontent.com/AshwinK77/Ashwin_Portfolio.github.io/main/Resume%20Ashwin%20Kumar%20Rangarajan.pdf"
 			download="Ashwin_Kumar_Resume.pdf" style="
@@ -219,25 +221,21 @@
 
 		</a>
 
-		<!-- <script>
-							const link = document.currentScript.previousElementSibling;
-							link.addEventListener("mouseover", () => link.style.backgroundColor = "#a9abaf");
-							link.addEventListener("mouseout", () => link.style.backgroundColor = "#525355");
-							</script> -->
-
 		<script>
 			const link = document.getElementById("resume-link");
 			link.addEventListener("mouseover", () => {
 				link.style.backgroundColor = "#e0e0e0"; // light background
 				link.style.color = "black";
-				link.style.textDecoration = "none";            // black text
+				link.style.textDecoration = "none";     // black text
 			});
 			link.addEventListener("mouseout", () => {
 				link.style.backgroundColor = "#525355"; // original blue
 				link.style.color = "white";
-				link.style.textDecoration = "none";           // original white text
+				link.style.textDecoration = "none";     // original white text
 			});
 		</script>
+
+		<!-- Resume Link to download ends ------------------------------------------------------------------------------------------------------>
 
 		<p>An enthusiastic engineer passionate about automobiles, driven to contribute
 			to society through innovation and technology.
@@ -247,12 +245,13 @@
 		</ul>
 	</div>
 
-	<!-- Header -->
+	<!-- Header Starts ------------------------------------------------------------------------------------>
+
 	<header id="header">
 		<a href="index.html" class="logo">Ashwin Kumar Rangarajan</a>
 	</header>
 
-	<!-- Nav -->
+	<!-- Section Navigation---------------------------------------------------------------------------------->
 
 	<nav id="nav">
 
@@ -273,9 +272,11 @@
 		</ul>
 
 	</nav>
+	<!-- Section Navigation Ends------------------------------------------------------------------------------>
 
 
-	<!-- Floating Project Navigation Dots -->
+	<!-- Floating Project Navigation Dots --------------------------------------------------------->
+
 	<div id="project-nav" style="
     position: fixed;
     top: 35%;
@@ -293,14 +294,18 @@
 
 	</div>
 
-	<!-- 🔧 Existing MASSIVELY structure: DO NOT TOUCH -->
+	<!-- Floating Project Navigation Dots Ends ------------------------------------------------------>
+
+
+
+	<!-- PROJECTS SECTION STARTS----------------------------------------------------------------------------------------------------------------------->
+
 	<div id="main">
 
-		<!-- 🔧 Insert Professional Projects heading -->
-		<h2 style="margin-top: -25px; margin-bottom: 0;"> Professional Projects </h2>
+		<!-- Project 1 Starts ----------------------------------------------------------------------------------------->
 
-		<!-- 🔧 BEGIN PROJECT BLOCK -->
 		<article id="project1" class="post featured" style="margin: 0 auto; max-width: 90%; padding: 20px 10px;">
+			<h2 style="margin-top: 20px; margin-bottom: 0;"> Professional Projects </h2>
 
 			<!-- 🔧 DATE + LINE UNDERNEATH -->
 			<div style="text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 20px;">
@@ -338,34 +343,42 @@
 			</footer>
 
 		</article>
-		<!-- 🔧 END PROJECT BLOCK -->
 
-		<!-- ✅ Your other projects (project2, project3...) follow normally below -->
+		<!-- Project 1 Ends ------------------------------------------------------------------------------------------>
 
 
-		<article id="project2" class="post"
-			style="margin-top: -50px;  padding-top: 0; margin-bottom: 20px; padding-bottom: 0;">
 
-			<header class="major" style="margin-top: 0; padding-top: 0; margin-bottom: 0;">
-				<span class="date" style="font-size: 20px;"> <strong> August to December 2023 </strong></span>
-				<h2 style="margin-top: -50px; font-size: 30px;"><a href="#"> Numerical modeling and simulation of
-						tractor-trailer system </a></h2>
-				<p style="margin-bottom: 5px; font-size: 20px; text-align: justify; "> ➤ Applied first-principles
-					modeling to derive equations of motion for a tractor-trailer system.
+		<!-- Project 2 Starts ----------------------------------------------------------------------------------------->
 
-					<br /> ➤ Developed a state-space representation using linear systems theory and the transport
-					theorem.
+		<article id="project2" class="post featured" style="margin: 0 auto; max-width: 90%; padding: 20px 10px;">
 
-					<br /> ➤ Implemented the full model in MATLAB for simulation and analysis.
+			<!-- 🔧 DATE + LINE UNDERNEATH -->
+			<div style="text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 20px;">
+				<span class="date" style="font-size: 20px;">
+					<strong> August to December 2023 </strong>
+				</span>
+			</div>
 
-					<br /> ➤ Performed stability analysis under varying hitch angles, CG positions, and load transfer
-					conditions.
+			<!-- TITLE + LOGO -->
+			<div style="display: flex; justify-content: space-between; align-items: center;">
+				<h2 style="margin: 0; font-size: clamp(18px, 3vw, 34px); flex: 1; margin-right: 10px;">
+					<a href="#"> NUMERICAL MODELING AND SIMULATION OF TRACTOR-TRAILER SYSTEM </a>
+				</h2>
+				<img src="images/CU_ICAR.jpeg" alt="CU-ICAR" style="width: 100px; height: 40px;">
+			</div>
 
-					<br /> ➤ Evaluated dynamic response using step input and fishhook maneuvers.
-				</p>
-			</header>
+			<!-- PROJECT DESCRIPTION -->
+			<p style="margin-top: 10px; font-size: 20px; text-align: justify;">
+				➤ Applied first-principles modeling to derive equations of motion for a tractor-trailer system <br />
+				➤ Developed a state-space representation using linear systems theory and the transport theorem <br />
+				➤ Implemented the full model in MATLAB for simulation and analysis <br />
+				➤ Performed stability analysis under varying hitch angles, CG positions, and load transfer conditions
+				<br />
+				➤ Evaluated dynamic response using step input and fishhook maneuvers
+			</p>
 
-			<footer style="margin-top: 5px;  text-align: left">
+			<!-- TOOLS USED -->
+			<footer style="margin-top: 15px; text-align: left;">
 				<span style="font-size: 20px;"><strong>Tools used:</strong></span>
 				<img src="images/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB" style="height: 40px; margin-left: 10px;">
 				<img src="images/Simulink.jpg" alt="Simulink" title="Simulink" style="height: 40px; margin-left: 10px;">
@@ -373,41 +386,51 @@
 
 		</article>
 
+		<!-- Project 2 Ends ------------------------------------------------------------------------>
 
-		<article id="project3" class="post" style="margin-top: -50px;   margin-bottom: 20px; padding-bottom: 0;">
 
-			<header class="major">
-				<span class="date" style="font-size: 20px;"> <strong> August to December 2023 </strong></span>
-				<h2 style="margin-top: -50px; font-size: 30px;"><a href="#"> Adaptive Cruise Control and Autonomous Lane
-						Keeping of a RC car </a></h2>
-				<p style="font-size: 20px; text-align: justify; margin-bottom: 5px;">➤ Designed and implemented an
-					autonomous lane-keeping and adaptive cruise control system using Arduino.
 
-					<br /> ➤ Employed ultrasonic sensors and PID control to maintain lane position and regulate vehicle
-					speed.
+		<!-- Project 3 Starts ----------------------------------------------------------------------------------------->
 
-					<br /> ➤ Developed a Kalman filter-based sensor fusion technique to improve sensor accuracy.
+		<article id="project3" class="post featured" style="margin: 0 auto; max-width: 90%; padding: 20px 10px;">
 
-					<br /> ➤ Conducted extensive PID tuning for smooth and responsive control behavior.
+			<!-- 🔧 DATE + LINE UNDERNEATH -->
+			<div style="text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 20px;">
+				<span class="date" style="font-size: 20px;">
+					<strong> August to December 2023 </strong>
+				</span>
+			</div>
 
-					<br /> ➤ Validated the system across diverse track conditions using a data-driven development
-					approach.
-				</p>
-			</header>
+			<!-- TITLE + LOGO -->
+			<div style="display: flex; justify-content: space-between; align-items: center;">
+				<h2 style="margin: 0; font-size: clamp(18px, 3vw, 34px); flex: 1; margin-right: 10px;">
+					<a href="#"> ADAPTIVE CRUISE CONTROL AND AUTONOMOUS LANE KEEPING OF A RC CAR </a>
+				</h2>
+				<img src="images/CU_ICAR.jpeg" alt="CU-ICAR" style="width: 100px; height: 40px;">
+			</div>
 
-			<footer style="margin-top: 5px;  text-align: left">
+			<!-- PROJECT DESCRIPTION -->
+			<p style="margin-top: 10px; font-size: 20px; text-align: justify;">
+				➤ Designed and implemented an autonomous lane-keeping and adaptive cruise control system using Arduino
+				<br />
+				➤ Employed ultrasonic sensors and PID control to maintain lane position and regulate vehicle speed
+				<br />
+				➤ Developed a Kalman filter-based sensor fusion technique to improve sensor accuracy <br />
+				➤ Conducted extensive PID tuning for smooth and responsive control behavior <br />
+				➤ Validated the system across diverse track conditions using a data-driven development approach
+			</p>
+
+			<!-- TOOLS USED -->
+			<footer style="margin-top: 15px; text-align: left;">
 				<span style="font-size: 20px;"><strong>Tools used:</strong></span>
 				<img src="images/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB" style="height: 40px; margin-left: 10px;">
-				<img src="images/Simulink.jpg" alt="Simulink" title="Simulink" style="height: 40px; margin-left: 10px;">
 				<img src="images/imagesarduino_Icon.png" alt="Arduino" title="Arduino"
 					style="height: 40px; margin-left: 10px;">
+				<img src="images/MS_Excel_Icon.jpg" alt="Excel" title="Excel" style="height: 40px; margin-left: 10px;">
 			</footer>
 
+			<!-- DESCRIPTION + VIDEO -->
 			<h2 style="margin-top: 30px;font-size: 30px;">Autonomous Control Algorithm Demonstration</h2>
-
-			<!-- <video width="960" height="540" controls>
-   								     <source src="videos/IMG_0749.MOV" type="video/mp4">
-  									 </video> -->
 
 			<div class="video-container">
 				<iframe width="1080" height="720" src="https://www.youtube.com/embed/ui93FdPq0fI" frameborder="0"
@@ -418,32 +441,50 @@
 
 		</article>
 
+		<!-- Project 3 Ends ------------------------------------------------------------------------>
 
-		<article id="project4" class="post featured" style="margin-top: 10px; margin-bottom: 20px; padding-bottom: 0;">
 
-			<header class="major">
-				<span class="date" style="font-size: 20px;"> <strong> January to April 2025 </strong></span>
-				<h2 style="font-size: 30px;"><a href="#"> HMI screen design using MoTeC C1812 display device</a></h2>
-				<p style="font-size: 20px; text-align: justify;  margin-bottom: 5px;">➤ Developed a customized
-					Human-Machine Interface (HMI) using the MoTeC C1812 display.
 
-					<br /> ➤ Integrated real-time vehicle data via a robust CAN communication architecture.
+		<!-- Project 4 Starts ---------------------------------------------------------------------->
 
-					<br /> ➤ Designed an intuitive GUI to visualize performance and diagnostic parameters.
+		<article id="project4" class="post featured" style="margin: 0 auto; max-width: 90%; padding: 20px 10px;">
 
-					<br /> ➤ Enabled seamless multi-page navigation through steering wheel-mounted buttons.
+			<!-- 🔧 DATE + LINE UNDERNEATH -->
+			<div style="text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 20px;">
+				<span class="date" style="font-size: 20px;">
+					<strong> January to April 2025 </strong>
+				</span>
+			</div>
 
-					<br /> ➤ Enhanced driver interaction and situational awareness during dynamic testing.
-				</p>
-			</header>
+			<!-- TITLE + LOGO -->
+			<div style="display: flex; justify-content: space-between; align-items: center;">
+				<h2 style="margin: 0; font-size: clamp(18px, 3vw, 34px); flex: 1; margin-right: 10px;">
+					<a href="#"> HMI DISPLAY DESIGN USING MOTEC C1812 DISPLAY DEVICE </a>
+				</h2>
+				<img src="images/CU_ICAR.jpeg" alt="CU-ICAR" style="width: 100px; height: 40px;">
+			</div>
 
-			<footer style="margin-top: 5px;  text-align: left">
+			<!-- PROJECT DESCRIPTION -->
+			<p style="margin-top: 10px; font-size: 20px; text-align: justify;">
+				➤ Developed a customized Human-Machine Interface (HMI) using the MoTeC C1812 display <br />
+				➤ Integrated real-time vehicle data via a robust CAN communication architecture <br />
+				➤ Designed an intuitive GUI to visualize performance and diagnostic parameters <br />
+				➤ Enabled seamless multi-page navigation through steering wheel-mounted buttons <br />
+				➤ Enhanced driver interaction and situational awareness during dynamic testing
+			</p>
+
+			<!-- TOOLS USED -->
+			<footer style="margin-top: 15px; text-align: left;">
+
 				<span style="font-size: 20px;"><strong>Tools used:</strong></span>
 				<img src="images/New_Eagle_Icon_1.png" alt="New Eagle" title="New Eagle"
 					style="height: 40px; margin-left: 10px;">
 				<img src="images/Vector_icon.png" alt="Vector" title="Vector" style="height: 40px; margin-left: 10px;">
 				<img src="images/MoTeC_Icon.png" alt="MoTeC" title="MoTeC" style="height: 40px; margin-left: 10px;">
+
 			</footer>
+
+			<!-- DESCRIPTION + VIDEO -->
 
 			<h2 style="margin-top: 30px; font-size: 30px;">HMI Screen HiL Testing</h2>
 
@@ -456,36 +497,54 @@
 
 		</article>
 
+		<!-- Project 4 Ends ------------------------------------------------------------------------>
 
-		<h2 style="margin-bottom: 0;"> DIY Projects </h2>
 
-		<article id="project5" class="post featured" style="margin-top: 0;  padding-top: 0; margin-bottom: 20px;">
 
-			<header class="major" style="margin-top: 0; padding-top: 0; margin-bottom: 0;">
-				<span class="date" style="font-size: 20px;"> <strong> May 2025 </strong></span>
-				<h2 style="margin-top: 0; padding-top: 0; margin-bottom: 15px; font-size: 30px;"><a href="#">
-						Music-Reactive LED Visualizer Using Arduino </a></h2>
-				<p style="margin-top: 5px; font-size: 20px; text-align: justify;">➤ Designed and built a DIY
-					sound-reactive LED system using an Arduino Uno board.
+		<!-- Project 5 Starts ---------------------------------------------------------------------->
 
-					<br /> ➤ Integrated a sound sensor module to detect audio signals in real time.
+		<article id="project5" class="post featured" style="margin: 0 auto; max-width: 90%; padding: 20px 10px;">
+			<h2 style="margin-top: 20px; margin-bottom: 0;"> DIY Projects </h2>
 
-					<br /> ➤ Programmed the microcontroller to generate dynamic LED patterns synchronized to music based
-					on amplitude.
+			<!-- 🔧 DATE + LINE UNDERNEATH -->
+			<div style="text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 20px;">
+				<span class="date" style="font-size: 20px;">
+					<strong> May 2025 </strong>
+				</span>
+			</div>
 
-					<br /> ➤ Fine-tuned the sensor sensitivity and implemented basic filtering to improve signal
-					accuracy.
+			<!-- TITLE + LOGO -->
+			<div style="display: flex; justify-content: space-between; align-items: center;">
+				<h2 style="margin: 0; font-size: clamp(18px, 3vw, 34px); flex: 1; margin-right: 10px;">
+					<a href="#"> MUSIC-REACTIVE LED VISUALIZER USING ARDUINO </a>
+				</h2>
+				<img src="images/CU_ICAR.jpeg" alt="CU-ICAR" style="width: 100px; height: 40px;">
+			</div>
 
-					<br /> ➤ This project created an engaging visual experience, ideal for ambient lighting and musical
-					displays.
-				</p>
-			</header>
+			<!-- PROJECT DESCRIPTION -->
+			<p style="margin-top: 10px; font-size: 20px; text-align: justify;">
+				➤ Designed and built a DIY sound-reactive LED system using an Arduino Uno board <br />
+				➤ Integrated a sound sensor module to detect audio signals in real time <br />
+				➤ Programmed the microcontroller to generate dynamic LED patterns synchronized to music based on
+				amplitude <br />
+				➤ Fine-tuned the sensor sensitivity and implemented basic filtering to improve signal accuracy <br />
+				➤ This project created an engaging visual experience, ideal for ambient lighting and musical displays
+			</p>
 
-			<h2 style="margin-top: 30px;font-size: 30px;"> Music reactive LED</h2>
+			<!-- TOOLS USED -->
+			<footer style="margin-top: 15px; text-align: left;">
 
-			<!-- <video width="960" height="540" controls>
-   								     <source src="https://youtube.com/shorts/0feYiHCP59g?feature=share" type="video/mp4">
-  									 </video> -->
+				<span style="font-size: 20px;"><strong>Tools used:</strong></span>
+				<img src="images/New_Eagle_Icon_1.png" alt="New Eagle" title="New Eagle"
+					style="height: 40px; margin-left: 10px;">
+				<img src="images/Vector_icon.png" alt="Vector" title="Vector" style="height: 40px; margin-left: 10px;">
+				<img src="images/MoTeC_Icon.png" alt="MoTeC" title="MoTeC" style="height: 40px; margin-left: 10px;">
+
+			</footer>
+
+			<!-- DESCRIPTION + VIDEO -->
+
+			<h2 style="margin-top: 30px; font-size: 30px;"> Music reactive LED IN ACTION </h2>
 
 			<div class="video-container">
 				<iframe width="1080" height="720" src="https://www.youtube.com/embed/IkWAoybO4-A" frameborder="0"
@@ -496,78 +555,25 @@
 
 		</article>
 
-
-
-		<!-- Posts -->
-		<!--	
-						<section class="posts">
-								<article>
-									<header>
-										<span class="date">April 24, 2017</span>
-										<h2><a href="#">Sed magna<br />
-										ipsum faucibus</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</article>
-					-->
-
-
-
-
-		<!-- Footer -->
-		<!-- <footer>
-								<div class="pagination">
-									<a href="#" class="previous">Prev</a>
-									<a href="#" class="page active">1</a>
-									<a href="#" class="page">2</a>
-									<a href="#" class="page">3</a>
-									<span class="extra">&hellip;</span>
-									<a href="#" class="page">8</a>
-									<a href="#" class="page">9</a>
-									<a href="#" class="page">10</a>
-									<a href="#" class="next">Next</a>
-								</div>
-							</footer> 
-						-->
+		<!-- Project 5 Ends ------------------------------------------------------------------------>
 
 	</div>
 
+	<!-- PROJECTS SECTION ENDS----------------------------------------------------------------------------------------------------------------------->
 
 
 
+	<!-- FOOTER SECTION STARTS  -------------------------------------------------------------------------------------------------------------------->
 
-	<!-- Footer -->
 	<footer id="footer">
-		<!--
-						<section>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section>
-					-->
+
 		<section class="split contact" style="font-family: 'Arial Nova', Arial, sans-serif; padding-bottom: 0;">
+
+			<!-- CONTACT SECTION STARTS ----------------------------------------------------------------------------------------->
+
 			<div class="three-column-layout" style="display: flex; width: 100%;  justify-content: center; gap: 40px;">
 
+				<!-- ADDRESS -->
 				<section class="column" style="flex: 1; padding: 20px; text-align: center; padding-bottom: 5px;">
 					<h3 style=" font-size: 25px; text-align: center;">📍 Address</h3>
 					<p style="font-size: 15px; text-align: center;">
@@ -579,11 +585,13 @@
 					</p>
 				</section>
 
+				<!-- CONTACT NUMBER -->
 				<section class="column" style="flex: 1; padding: 20px; text-align: center; padding-bottom: 5px;">
 					<h3 style="font-size: 25px; text-align: center;">📞 Phone</h3>
 					<p style="font-size: 15px; text-align: center;"> <strong>+1-(864)-449-9085</strong></p>
 				</section>
 
+				<!-- EMAIL IDS -->
 				<section class="column" style="flex: 1; padding: 20px; text-align: center; padding-bottom: 5px;">
 					<h3 style="font-size: 25px; text-align: center;">📧 Email</h3>
 					<p style="font-size: 15px; text-align: center;"><strong><a
@@ -591,9 +599,14 @@
 							<a href="mailto:ashwintwister@gmail.com">ashwintwister@gmail.com </strong> </a>
 					</p>
 				</section>
+
 			</div>
 
-			<!-- Social icons below the grid -->
+			<!-- CONTACT SECTION ENDS ------------------------------------------------------------------------------------------>
+
+
+			<!-- SOCIAL MEDIA CONTACT STARTS ----------------------------------------------------------------------------------->
+
 			<section
 				style="font-family: 'Arial Nova', Arial, sans-serif; width: 100%; text-align: center; margin-top: 0px; padding-top: 10px; padding-bottom: 30px;">
 
@@ -609,18 +622,32 @@
 					</li>
 				</ul>
 			</section>
+
+			<!-- SOCIAL MEDIA CONTACT ENDS ---------------------------------------------------------------------------------------->
+
 		</section>
+
 	</footer>
 
-	<!-- Copyright -->
+	<!-- FOOTER SECTION STARTS  -------------------------------------------------------------------------------------------------------------------->
+
+
+
+	<!-- COPYRIGHT SECTION STARTS  ----------------------------------------------------------------------------------------------------------------->
+
 	<div id="copyright" style="font-family: 'Arial Nova', Arial, sans-serif; margin-top: 15px;">
 		<ul>
 			<li>&copy; 2025 Ashwin Kumar Rangarajan. <br /> All rights reserved.</li>
 		</ul>
 	</div>
 
+	<!-- COPYRIGHT SECTION ENDS ------------------------------------------------------------------------------------------------------------------->
 
-	<!-- Scripts -->
+
+
+
+	<!-- JAVA SCRIPT SECTION STARTS --------------------------------------------------------------------------------------------------------------->
+
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.scrollex.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -636,6 +663,7 @@
 		});
 	</script>
 
+	<!-- SCRIPT FOR RADIO BUTTONS STARTS ----------------------------------------------------------------------------------->
 
 	<script>
 		// Sections to track
@@ -672,6 +700,9 @@
 			}
 		});
 	</script>
+
+	<!-- SCRIPT FOR RADIO BUTTONS ENDS ----------------------------------------------------------------------------------->
+
 
 	<script>
 		// place new code here:
@@ -722,6 +753,9 @@
 			});
 		});
 	</script>
+
+	<!-- JAVA SCRIPT SECTION ENDS ---------------------------------------------------------------------------------------------------------------->
+
 
 </body>
 
