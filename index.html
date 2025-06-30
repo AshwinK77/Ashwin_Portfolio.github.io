@@ -167,6 +167,48 @@
 
 
 		/* Radio button Navigation Declaration Ends ----------------------------------------------------*/
+
+		/* Slideshow Styling ----------------------------------------------------*/
+		.slideshow-container {
+			position: relative;
+		}
+
+		.mySlides {
+			display: none;
+		}
+
+		.prev,
+		.next {
+			position: absolute;
+			top: 50%;
+			padding: 16px;
+			margin-top: -22px;
+			color: black;
+			font-weight: bold;
+			font-size: 24px;
+			user-select: none;
+		}
+
+		.prev {
+			left: 0;
+		}
+
+		.next {
+			right: 0;
+		}
+
+		.dot {
+			height: 15px;
+			width: 15px;
+			margin: 0 2px;
+			background-color: #bbb;
+			border-radius: 50%;
+			display: inline-block;
+		}
+
+		.active-dot {
+			background-color: #717171;
+		}
 	</style>
 
 	<!-- PAGE STYLING ENDS---------------------------------------------------------------------------------------------->
@@ -192,7 +234,9 @@
 	<!-- Intro -->
 	<div id="intro">
 
-		<h1 class="hero-name"> Ashwin Kumar Rangarajan </h1>
+		<h1 class="hero-name">
+			<a href="https://www.linkedin.com/in/ashwin-kumar-rangarajan" target="_blank"> Ashwin Kumar Rangarajan </a>
+		</h1>
 
 		<h2> <a href="https://www.linkedin.com/company/ford-motor-company/posts/?feedView=all" target="_blank"> Chassis
 				Controls Engineer Intern @ Ford Motor Company </a> |
@@ -257,8 +301,8 @@
 
 		<ul class="links">
 			<li class="active"><a href="index.html"> Projects </a></li>
-			<li><a href="generic.html"> Skills</a></li>
-			<!-- <li><a href="elements.html">Elements Reference</a></li> -->
+			<li><a href="elements.html"> Professional Experience </a></li>
+			<li><a href="generic.html"> Skills </a></li>
 		</ul>
 
 		<ul class="icons">
@@ -317,10 +361,12 @@
 			<!-- 🔧 TITLE + LOGO -->
 			<div style="display: flex; justify-content: space-between; align-items: center;">
 				<h2 style="margin: 0; font-size: clamp(18px, 3vw, 34px); flex: 1; margin-right: 10px;">
-					<a href="#"> VEHICLE STABILITY CONTROL USING OPTIMAL TORQUE ALLOCATION IN FOUR-WHEEL INDEPENDENT HUB
-						MOTOR VEHICLE</a>
+					<a href="https://docs.google.com/presentation/d/1MjtDIrMDHcZM7OthvQ0mwP87KM2leXJIMbNRAdkcE4E/edit?usp=sharing"
+						target="_blank">
+						VEHICLE STABILITY CONTROL USING OPTIMAL TORQUE ALLOCATION IN FOUR-WHEEL INDEPENDENT HUB MOTOR
+						VEHICLE</a>
 				</h2>
-				<img src="images/CU_ICAR.jpeg" alt="CU-ICAR" style="width: 100px; height: 40px;">
+				<img src="images/ICAR_Logo2.png" alt="CU-ICAR" style="width: 100px; height: 40px;">
 			</div>
 
 			<!-- 🔧 PROJECT DESCRIPTION -->
@@ -334,6 +380,93 @@
 				➤ Tested under normal and split-μ surfaces, with/without vehicle stability control.<br />
 				➤ Demonstrated significant improvements in vehicle stability and handling performance.
 			</p>
+
+			<div class="slideshow-wrapper"
+				style="overflow: hidden; max-width: 800px; margin: auto; position: relative;">
+
+				<div class="slideshow-container" id="slideshow-track"
+					style="display: flex; transition: transform 1s ease;">
+
+					<div class="slide" style="min-width: 100%;">
+						<img src="images/Project_1/Slide1.png" style="width:100%">
+						<div style="text-align: center; font-size: 18px; margin-top: 10px;"> <strong> Model & Controller
+							</strong>
+						</div>
+					</div>
+
+					<div class="slide" style="min-width: 100%;">
+						<img src="images/Project_1/Slide2.png" style="width:100%">
+						<div style="text-align: center; font-size: 18px; margin-top: 10px;"><strong> Sine with Dwell -
+								Oversteer Characteristics
+							</strong>
+						</div>
+					</div>
+
+					<div class="slide" style="min-width: 100%;">
+						<img src="images/Project_1/Slide3.png" style="width:100%">
+						<div style="text-align: center; font-size: 18px; margin-top: 10px;"><strong> Sine with Dwell -
+								Understeer Characteristics
+							</strong>
+						</div>
+					</div>
+
+					<div class="slide" style="min-width: 100%;">
+						<img src="images/Project_1/Slide4.png" style="width:100%">
+						<div style="text-align: center; font-size: 18px; margin-top: 10px;"><strong> Fishhook Maneuver -
+								Oversteer Characteristics
+							</strong>
+						</div>
+					</div>
+
+					<div class="slide" style="min-width: 100%;">
+						<img src="images/Project_1/Slide5.png" style="width:100%">
+						<div style="text-align: center; font-size: 18px; margin-top: 10px;"><strong> Fishhook Maneuver -
+								Understeer Characteristics
+							</strong>
+						</div>
+					</div>
+
+					<div class="slide" style="min-width: 100%;">
+						<img src="images/Project_1/Slide6.png" style="width:100%">
+						<div style="text-align: center; font-size: 18px; margin-top: 10px;"><strong> Double Lane Change
+								- Oversteer Characteristics
+							</strong>
+						</div>
+					</div>
+
+					<div class="slide" style="min-width: 100%;">
+						<img src="images/Project_1/Slide7.png" style="width:100%">
+						<div style="text-align: center; font-size: 18px; margin-top: 10px;"><strong> Double Lane Change
+								- Understeer Characteristics
+							</strong>
+						</div>
+					</div>
+
+				</div>
+
+				<a class="prev" onclick="plusSlides(-1)"
+					style="cursor:pointer; position: absolute; left: 10px; top: 50%; font-size: 30px;">&#10094;</a>
+				<a class="next" onclick="plusSlides(1)"
+					style="cursor:pointer; position: absolute; right: 10px; top: 50%; font-size: 30px;">&#10095;</a>
+
+			</div>
+
+			<div style="text-align:center; margin-top: 10px;">
+				<span class="dot" onclick="currentSlide(1)"
+					style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
+				<span class="dot" onclick="currentSlide(2)"
+					style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
+				<span class="dot" onclick="currentSlide(3)"
+					style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
+				<span class="dot" onclick="currentSlide(4)"
+					style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
+				<span class="dot" onclick="currentSlide(5)"
+					style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
+				<span class="dot" onclick="currentSlide(6)"
+					style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
+				<span class="dot" onclick="currentSlide(7)"
+					style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
+			</div>
 
 			<!-- 🔧 TOOLS USED -->
 			<footer style="margin-top: 15px; text-align: left;">
@@ -364,7 +497,7 @@
 				<h2 style="margin: 0; font-size: clamp(18px, 3vw, 34px); flex: 1; margin-right: 10px;">
 					<a href="#"> NUMERICAL MODELING AND SIMULATION OF TRACTOR-TRAILER SYSTEM </a>
 				</h2>
-				<img src="images/CU_ICAR.jpeg" alt="CU-ICAR" style="width: 100px; height: 40px;">
+				<img src="images/ICAR_Logo2.png" alt="CU-ICAR" style="width: 100px; height: 40px;">
 			</div>
 
 			<!-- PROJECT DESCRIPTION -->
@@ -406,7 +539,7 @@
 				<h2 style="margin: 0; font-size: clamp(18px, 3vw, 34px); flex: 1; margin-right: 10px;">
 					<a href="#"> ADAPTIVE CRUISE CONTROL AND AUTONOMOUS LANE KEEPING OF A RC CAR </a>
 				</h2>
-				<img src="images/CU_ICAR.jpeg" alt="CU-ICAR" style="width: 100px; height: 40px;">
+				<img src="images/ICAR_Logo2.png" alt="CU-ICAR" style="width: 100px; height: 40px;">
 			</div>
 
 			<!-- PROJECT DESCRIPTION -->
@@ -461,7 +594,7 @@
 				<h2 style="margin: 0; font-size: clamp(18px, 3vw, 34px); flex: 1; margin-right: 10px;">
 					<a href="#"> HMI DISPLAY DESIGN USING MOTEC C1812 DISPLAY DEVICE </a>
 				</h2>
-				<img src="images/CU_ICAR.jpeg" alt="CU-ICAR" style="width: 100px; height: 40px;">
+				<img src="images/Deep_Orange_Logo.png" alt="CU-ICAR" style="width: 100px; height: 40px;">
 			</div>
 
 			<!-- PROJECT DESCRIPTION -->
@@ -518,7 +651,7 @@
 				<h2 style="margin: 0; font-size: clamp(18px, 3vw, 34px); flex: 1; margin-right: 10px;">
 					<a href="#"> MUSIC-REACTIVE LED VISUALIZER USING ARDUINO </a>
 				</h2>
-				<img src="images/CU_ICAR.jpeg" alt="CU-ICAR" style="width: 100px; height: 40px;">
+				<img src="images/Home.jpg" alt="CU-ICAR" style="width: 50px; height: 50px;">
 			</div>
 
 			<!-- PROJECT DESCRIPTION -->
@@ -629,7 +762,7 @@
 
 	</footer>
 
-	<!-- FOOTER SECTION STARTS  -------------------------------------------------------------------------------------------------------------------->
+	<!-- FOOTER SECTION ENDS  -------------------------------------------------------------------------------------------------------------------->
 
 
 
@@ -756,6 +889,33 @@
 
 	<!-- JAVA SCRIPT SECTION ENDS ---------------------------------------------------------------------------------------------------------------->
 
+	<script>
+		let slideIndex = 0;
+		const slides = document.querySelectorAll('.slide');
+		const totalSlides = slides.length;
+		const slideshowTrack = document.getElementById('slideshow-track');
+		const dots = document.querySelectorAll('.dot');
+
+		function updateSlide() {
+			slideshowTrack.style.transform = `translateX(-${slideIndex * 100}%)`;
+			dots.forEach((dot, idx) => {
+				dot.style.backgroundColor = (idx === slideIndex) ? '#717171' : '#bbb';
+			});
+		}
+
+		function plusSlides(n) {
+			slideIndex = (slideIndex + n + totalSlides) % totalSlides;
+			updateSlide();
+		}
+
+		function currentSlide(n) {
+			slideIndex = n - 1;
+			updateSlide();
+		}
+
+		// Initialize
+		updateSlide();
+	</script>
 
 </body>
 
