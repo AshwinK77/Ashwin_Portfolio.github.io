@@ -94,6 +94,61 @@
 			height: 100%;
 			object-fit: cover;
 		}
+
+		/* CSS code for RE section media uniformity ends -----------------------------------------------------*/
+
+
+		.slideshow-container {
+			position: relative;
+		}
+
+		.slideshow-track,
+		.slideshow-track-2,
+		.slideshow-track-3 {
+			display: none;
+		}
+
+		.slide,
+		.slide-2,
+		.slide-3 {
+			min-width: 100%;
+			box-sizing: border-box;
+		}
+
+		.prev,
+		.next {
+			position: absolute;
+			top: 50%;
+			padding: 16px;
+			margin-top: -22px;
+			color: black;
+			font-weight: bold;
+			font-size: 24px;
+			user-select: none;
+		}
+
+		.prev {
+			left: 0;
+		}
+
+		.next {
+			right: 0;
+		}
+
+		.dot,
+		.dot-2,
+		.dot-3 {
+			height: 15px;
+			width: 15px;
+			margin: 0 2px;
+			background-color: #bbb;
+			display: inline-block;
+			border-radius: 50%;
+		}
+
+		.active-dot {
+			background-color: #717171 !important;
+		}
 	</style>
 
 	<title> Professional Experience </title>
@@ -222,7 +277,7 @@
 								<img src="images/Brake_Supervisor.png" alt="Overall Supervisory Control">
 							</div>
 							<div style="text-align: center; font-size: 18px; margin-top: 10px;">
-								<strong>Overall Supervisory Control</strong>
+								<strong> Overall Supervisory Control </strong>
 							</div>
 						</div>
 
@@ -769,22 +824,23 @@
 
 		<!-- JAVA SCRIPT SECTION ENDS ---------------------------------------------------------------------------------------------------------------->
 
+
 		<script>
+			// ========= Project 1 =========
 			let slideIndex = 0;
-			const slides = document.querySelectorAll('.slide');
-			const totalSlides = slides.length;
-			const dots = document.querySelectorAll('.dot');
-			const slideshowTrack = document.getElementById("slideshow-track"); // <-- ADD THIS LINE
+			const slideshowTrack = document.getElementById("slideshow-track");
+			const slides = document.querySelectorAll(".slide");
+			const dots = document.querySelectorAll(".dot");
 
 			function updateSlide() {
 				slideshowTrack.style.transform = `translateX(-${slideIndex * 100}%)`;
 				dots.forEach((dot, idx) => {
-					dot.style.backgroundColor = (idx === slideIndex) ? '#717171' : '#bbb';
+					dot.style.backgroundColor = idx === slideIndex ? '#717171' : '#bbb';
 				});
 			}
 
 			function plusSlides(n) {
-				slideIndex = (slideIndex + n + totalSlides) % totalSlides;
+				slideIndex = (slideIndex + n + slides.length) % slides.length;
 				updateSlide();
 			}
 
@@ -793,21 +849,18 @@
 				updateSlide();
 			}
 
-			// Initialize
 			updateSlide();
-		</script>
 
-
-		<script>
+			// ========= Project 2 =========
 			let slideIndex2 = 0;
-			const slides2 = document.querySelectorAll('.slide-2');
-			const dots2 = document.querySelectorAll('.dot-2');
-			const slideshowTrack2 = document.getElementById("slideshow-track-2"); // ✅ Added
+			const slideshowTrack2 = document.getElementById("slideshow-track-2");
+			const slides2 = document.querySelectorAll(".slide-2");
+			const dots2 = document.querySelectorAll(".dot-2");
 
 			function updateSlide2() {
 				slideshowTrack2.style.transform = `translateX(-${slideIndex2 * 100}%)`;
-				dots2.forEach((dot, i) => {
-					dot.style.backgroundColor = (i === slideIndex2) ? '#717171' : '#bbb';
+				dots2.forEach((dot, idx) => {
+					dot.style.backgroundColor = idx === slideIndex2 ? '#717171' : '#bbb';
 				});
 			}
 
@@ -821,19 +874,18 @@
 				updateSlide2();
 			}
 
-			updateSlide2(); // Initialize on page load
-		</script>
+			updateSlide2();
 
-		<script>
+			// ========= Project 3 =========
 			let slideIndex3 = 0;
-			const slides3 = document.querySelectorAll('.slide-3');
-			const dots3 = document.querySelectorAll('.dot-3');
-			const slideshowTrack3 = document.getElementById("slideshow-track-3"); // ✅ Added
+			const slideshowTrack3 = document.getElementById("slideshow-track-3");
+			const slides3 = document.querySelectorAll(".slide-3");
+			const dots3 = document.querySelectorAll(".dot-3");
 
 			function updateSlide3() {
 				slideshowTrack3.style.transform = `translateX(-${slideIndex3 * 100}%)`;
 				dots3.forEach((dot, idx) => {
-					dot.style.backgroundColor = (idx === slideIndex3) ? '#717171' : '#bbb';
+					dot.style.backgroundColor = idx === slideIndex3 ? '#717171' : '#bbb';
 				});
 			}
 
@@ -847,7 +899,7 @@
 				updateSlide3();
 			}
 
-			updateSlide3(); // Initialize on page load
+			updateSlide3();
 		</script>
 
 
