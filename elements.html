@@ -100,14 +100,28 @@
 
 		.slideshow-container {
 			position: relative;
+			overflow: visible;
+			/* allows arrows to be visible outside image bounds */
+			max-width: 800px;
+			margin: auto;
 		}
 
+		.slideshow-track-0,
 		.slideshow-track,
 		.slideshow-track-2,
 		.slideshow-track-3 {
 			display: none;
 		}
 
+		.slideshow-wrapper {
+			position: relative;
+			overflow: visible;
+			/* allows arrows to be visible outside image bounds */
+			max-width: 800px;
+			margin: auto;
+		}
+
+		.slide-0,
 		.slide,
 		.slide-2,
 		.slide-3 {
@@ -119,22 +133,33 @@
 		.next {
 			position: absolute;
 			top: 50%;
-			padding: 16px;
-			margin-top: -22px;
-			color: black;
-			font-weight: bold;
+			transform: translateY(-50%);
 			font-size: 24px;
+			font-weight: bold;
+			color: black;
+			background-color: rgba(255, 255, 255, 0.7);
+			border-radius: 50%;
+			width: 40px;
+			height: 40px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			z-index: 2;
+			cursor: pointer;
 			user-select: none;
+			text-decoration: none;
+			border: none;
 		}
 
 		.prev {
-			left: 0;
+			left: -150px;
 		}
 
 		.next {
-			right: 0;
+			right: -150px;
 		}
 
+		.dot-0,
 		.dot,
 		.dot-2,
 		.dot-3 {
@@ -200,6 +225,7 @@
 		gap: 20px;
 		z-index: 999;">
 
+			<a href="javascript:void(0);" class="nav-dot" data-project="project0"></a>
 			<a href="javascript:void(0);" class="nav-dot" data-project="project1"></a>
 			<a href="javascript:void(0);" class="nav-dot" data-project="project2"></a>
 			<a href="javascript:void(0);" class="nav-dot" data-project="project3"></a>
@@ -215,10 +241,123 @@
 
 		<div id="main">
 
+			<!-- Project0 starts ----------------------------------------------------------------------------------------->
+
+			<article id="project0" class="post featured" style="margin: 0 auto; max-width: 90%; padding: 20px 10px;">
+				<h2 style="margin-top: 20px; margin-bottom: 0;"> Professional Projects </h2>
+
+				<!-- 🔧 DATE + LINE UNDERNEATH -->
+				<div
+					style="text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 20px;">
+					<span class="date" style="font-size: 20px;">
+						<strong> <br /> May 2025 - Present </strong>
+					</span>
+				</div>
+
+				<!-- 🔧 TITLE + LOGO -->
+				<div style="display: flex; justify-content: space-between; align-items: left;">
+					<h2 style="margin: 0; font-size: clamp(18px, 3vw, 34px); flex: 1; margin-right: 10px;">
+						<a href="https://docs.google.com/presentation/d/1MjtDIrMDHcZM7OthvQ0mwP87KM2leXJIMbNRAdkcE4E/edit?usp=sharing"
+							target="_blank">
+							SUMMER INTERN, FORD MOTOR COMPANY </a> <br />
+					</h2>
+
+					<h3 style="margin-top: 20px; font-size: 20px; text-align: justify;">
+
+					</h3>
+					<img src="images/Ford_Logo.jpg" alt="CU-ICAR" style="width: 100px; height: 40px;">
+				</div>
+
+				<div style="display: flex; justify-content: space-between; font-size: 20px; margin-top: 10px;">
+					<strong>Chassis Controls Engineer - Research & Advanced Engineering Division </strong>
+					<strong>Dearborn, Michigan (US) </strong>
+				</div>
+
+				<!-- 🔧 PROJECT DESCRIPTION -->
+				<p style="margin-top: 10px; font-size: 20px; text-align: justify;">
+					<strong> <u> Steer-by-wire System </u> </strong> <br />
+					Developing a Steer-by-Wire system based on a fixed wheel concept with dual redundancy system
+					in vehicle motion controls architecture <br />
+					<strong> <u> Responsibilities: </u> </strong> <br />
+					➤ Develop software control strategy; integrate & validate for SiL, HiL and real-world in-vehicle
+					testing
+					<br />
+					➤ Develop a secondary steering system hardware on the test vehicle to enable real-time calibration
+					and data acquisition <br />
+					➤ Integrate control software in vehicle motion controls architecture on GitHub platform <br />
+					➤ Collaborate with suppliers and cross-functional teams to ensure seamless hardware integration and
+					alignment with system requirements <br />
+					➤ Plan and execute, testing and calibration, on Ford proving grounds to validate system
+					functionality & robustness
+				</p>
+
+				<div class="slideshow-wrapper"
+					style="overflow: hidden; max-width: 800px; margin: auto; position: relative;">
+
+					<!-- Project 1 Slideshow -->
+					<div class="slideshow-container" id="slideshow-track-0"
+						style="display: flex; transition: transform 1s ease;">
+
+						<div class="slide-0" style="min-width: 100%;">
+							<div class="media-container">
+								<img src="images/Ford_Internship.png" alt="Overall Supervisory Control">
+							</div>
+							<div style="text-align: center; font-size: 18px; margin-top: 10px;">
+								<strong> Steer-by-Wire System Architecture </strong>
+							</div>
+						</div>
+
+						<div class="slide-0" style="min-width: 100%;">
+							<div class="media-container">
+								<img src="images/Ford_Internship.png" alt="Overall Supervisory Control">
+							</div>
+							<div style="text-align: center; font-size: 18px; margin-top: 10px;">
+								<strong> Steer-by-Wire System Architecture </strong>
+							</div>
+						</div>
+
+					</div>
+
+					<a class="prev" onclick="plusSlides0(-1)"
+						style="cursor:pointer; position: absolute; left: -5px; top: 50%; font-size: 30px;">&#10094;</a>
+					<a class="next" onclick="plusSlides0(1)"
+						style="cursor:pointer; position: absolute; right: -5px; top: 50%; font-size: 30px;">&#10095;</a>
+
+				</div>
+
+				<div style="text-align:center; margin-top: 10px;">
+					<span class="dot-0" onclick="currentSlide0(1)"
+						style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
+					<span class="dot-0" onclick="currentSlide0(2)"
+						style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
+				</div>
+
+				<!-- 🔧 TOOLS USED -->
+				<footer style="margin-top: 15px; text-align: left;">
+					<span style="font-size: 20px;"><strong>Tools used:</strong></span>
+					<img src="images/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB"
+						style="height: 40px; margin-left: 10px;">
+					<img src="images/Simulink.jpg" alt="Simulink" title="Simulink"
+						style="height: 40px; margin-left: 10px;">
+					<img src="images/icons/Stateflow.jpg" alt="Stateflow" title="Stateflow"
+						style="height: 40px; margin-left: 10px;">
+					<img src="images/icons/dSpace.png" alt="dSPACE" title="dSPACE"
+						style="height: 40px; margin-left: 10px;">
+					<img src="images/icons/ATI_Vision.png" alt="ATI" title="ATI"
+						style="height: 40px; margin-left: 10px;">
+					<img src="images/GitHub.png" alt="GitHub" title="GitHub" style="height: 40px; margin-left: 10px;">
+
+				</footer>
+
+			</article>
+
+			<!-- Project 0 ends ----------------------------------------------------------------------------------------->
+
+
+
 			<!-- Project 1 Starts ----------------------------------------------------------------------------------------->
 
 			<article id="project1" class="post featured" style="margin: 0 auto; max-width: 90%; padding: 20px 10px;">
-				<h2 style="margin-top: 20px; margin-bottom: 0;"> Professional Projects </h2>
 
 				<!-- 🔧 DATE + LINE UNDERNEATH -->
 				<div
@@ -322,9 +461,9 @@
 					</div>
 
 					<a class="prev" onclick="plusSlides(-1)"
-						style="cursor:pointer; position: absolute; left: 10px; top: 50%; font-size: 30px;">&#10094;</a>
+						style="cursor:pointer; position: absolute; left: 0px; top: 50%; font-size: 30px;">&#10094;</a>
 					<a class="next" onclick="plusSlides(1)"
-						style="cursor:pointer; position: absolute; right: 10px; top: 50%; font-size: 30px;">&#10095;</a>
+						style="cursor:pointer; position: absolute; right: 0px; top: 50%; font-size: 30px;">&#10095;</a>
 
 				</div>
 
@@ -437,9 +576,9 @@
 					</div>
 
 					<a class="prev" onclick="plusSlides2(-1)"
-						style="cursor:pointer; position: absolute; left: 10px; top: 50%; font-size: 30px;">&#10094;</a>
+						style="cursor:pointer; position: absolute; left: 2px; top: 50%; font-size: 30px;">&#10094;</a>
 					<a class="next" onclick="plusSlides2(1)"
-						style="cursor:pointer; position: absolute; right: 10px; top: 50%; font-size: 30px;">&#10095;</a>
+						style="cursor:pointer; position: absolute; right: 2px; top: 50%; font-size: 30px;">&#10095;</a>
 
 				</div>
 
@@ -594,9 +733,9 @@
 					</div>
 
 					<a class="prev" onclick="plusSlides3(-1)"
-						style="cursor:pointer; position: absolute; left: 10px; top: 50%; font-size: 30px;">&#10094;</a>
+						style="cursor:pointer; position: absolute; left: 2px; top: 50%; font-size: 30px;">&#10094;</a>
 					<a class="next" onclick="plusSlides3(1)"
-						style="cursor:pointer; position: absolute; right: 10px; top: 50%; font-size: 30px;">&#10095;</a>
+						style="cursor:pointer; position: absolute; right: 2px; top: 50%; font-size: 30px;">&#10095;</a>
 
 				</div>
 
@@ -737,7 +876,7 @@
 
 		<script>
 			// Sections to track
-			const sections = ['project1', 'project2', 'project3'];
+			const sections = ['project0', 'project1', 'project2', 'project3'];
 			const options = { threshold: 0.5 };
 
 			// Intersection Observer to handle active highlight
@@ -827,6 +966,30 @@
 
 
 		<script>
+			// ========= Project 0 =========
+			let slideIndex0 = 0;
+			const slideshowTrack0 = document.getElementById("slideshow-track-0");
+			const slides0 = document.querySelectorAll(".slide-0");
+			const dots0 = document.querySelectorAll(".dot-0");
+
+			function updateSlide0() {
+				slideshowTrack0.style.transform = `translateX(-${slideIndex0 * 100}%)`;
+				dots0.forEach((dot, idx) => {
+					dot.style.backgroundColor = idx === slideIndex0 ? '#717171' : '#bbb';
+				});
+			}
+
+			function plusSlides0(n) {
+				slideIndex0 = (slideIndex0 + n + slides0.length) % slides0.length;
+				updateSlide0();
+			}
+
+			function currentSlide0(n) {
+				slideIndex0 = n - 1;
+				updateSlide0();
+			}
+
+			updateSlide0();
 			// ========= Project 1 =========
 			let slideIndex = 0;
 			const slideshowTrack = document.getElementById("slideshow-track");
