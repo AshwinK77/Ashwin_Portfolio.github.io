@@ -2,15 +2,24 @@
 <html>
 
 <head>
+  <meta charset="utf-8" />
+  <title>Technical Skills</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript>
+    <link rel="stylesheet" href="assets/css/noscript.css" />
+  </noscript>
+
+  <!-- Carlito font -->
+  <link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    @font-face {
-      font-family: 'Arial Nova';
-      src: local('Arial Nova');
-    }
-
+    /* Global */
     body {
-      font-family: 'Arial Nova', Arial, sans-serif !important;
+      font-family: 'Carlito', Arial, sans-serif !important;
+      color: #111;
     }
 
     html,
@@ -19,18 +28,200 @@
       overflow-x: hidden;
     }
 
-    img,
-    video,
-    iframe {
+    img {
       max-width: 100%;
       height: auto;
+    }
+
+    /* Page title */
+    .skills-title {
+      text-align: center;
+      font-size: 30px;
+      letter-spacing: 2px;
+      margin: 8px 0 10px;
+    }
+
+    .skills-kicker {
+      text-align: center;
+      color: #6b7280;
+      margin: 0 0 24px;
+    }
+
+    /* Two-column layout stretched wider */
+    .skills-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      max-width: 95%;
+      margin: 0 auto;
+      padding: 0 10px 40px;
+    }
+
+    @media (max-width: 1024px) {
+      .skills-wrapper {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        padding: 0 10px;
+      }
+    }
+
+    /* Panel with full background */
+    .skill-panel {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
+      height: 440px;
+      isolation: isolate;
+    }
+
+    .skill-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: var(--panel-bg);
+      background-size: cover;
+      background-position: center;
+      filter: blur(1.5px) brightness(0.8) saturate(.95);
+      transform: scale(1.03);
+      z-index: 0;
+      border-radius: inherit;
+    }
+
+    .panel-header {
+      position: absolute;
+      left: 18px;
+      top: 18px;
+      z-index: 1;
+      font: 700 20px/1.2 'Carlito', Arial, sans-serif;
+      color: #0f172a;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .75);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+    }
+
+    /* Bottom transparent strip */
+    .skills-strip {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      padding: 14px 16px 18px;
+      background: transparent;
+      border-top: none;
+    }
+
+    /* Grid inside strip */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(90px, 1fr));
+      gap: 10px;
+    }
+
+    @media (max-width:1024px) {
+      .skills-grid {
+        grid-template-columns: repeat(3, minmax(90px, 1fr));
+      }
+    }
+
+    @media (max-width:720px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, minmax(90px, 1fr));
+      }
+    }
+
+    .skill-card {
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      padding: 5px;
+      min-height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .14);
+    }
+
+    /* Modular icon sizing */
+    .skill-icon {
+      --icon-size: 80px;
+      --icon-fit: 95%;
+      width: var(--icon-size);
+      height: var(--icon-size);
+      margin-bottom: 6px;
+    }
+
+    .skill-icon img {
+      max-width: var(--icon-fit);
+      max-height: var(--icon-fit);
+      object-fit: contain;
+    }
+
+    /* Utility classes for quick sizing */
+    .icon-56 {
+      --icon-size: 56px;
+    }
+
+    .icon-64 {
+      --icon-size: 64px;
+    }
+
+    .icon-72 {
+      --icon-size: 72px;
+    }
+
+    .icon-80 {
+      --icon-size: 80px;
+    }
+
+    .icon-96 {
+      --icon-size: 96px;
+    }
+
+    .icon-112 {
+      --icon-size: 112px;
+    }
+
+    .icon-128 {
+      --icon-size: 128px;
+    }
+
+    .fit-90 {
+      --icon-fit: 90%;
+    }
+
+    .fit-95 {
+      --icon-fit: 95%;
+    }
+
+    .fit-100 {
+      --icon-fit: 100%;
+    }
+
+    .skill-name {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .skill-note {
+      font-size: 12px;
+      color: #555;
     }
 
     .video-container {
       position: relative;
       width: 100%;
       padding-bottom: 56.25%;
-      /* 16:9 aspect ratio */
       height: 0;
       overflow: hidden;
     }
@@ -43,18 +234,10 @@
       height: 100%;
     }
   </style>
-
-  <title>Technical Skills</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <noscript>
-    <link rel="stylesheet" href="assets/css/noscript.css" />
-  </noscript>
 </head>
 
 <body class="is-preload">
-  <div id="wrapper" class='fade-in'>
+  <div id="wrapper" class="fade-in">
 
     <!-- Header -->
     <header id="header">
@@ -68,7 +251,6 @@
         <li><a href="elements.html"> Professional Experience </a></li>
         <li class="active"><a href="generic.html"> Skills </a></li>
       </ul>
-
       <ul class="icons">
         <li><a href="https://www.facebook.com/rangarajan.ashwinkumar" target="_blank"
             class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -81,101 +263,201 @@
 
     <!-- Main -->
     <div id="main" class="fade-in">
+      <section id="technical-skills" style="padding:100px 0 40px;">
 
-      <section id="technical-skills" style="font-family: 'Arial Nova', Arial, sans-serif; padding: 20px 60px;">
-        <h2 style="text-align: center; margin-bottom: 25px;">Technical Skills</h2>
+        <div class="skills-wrapper">
 
-        <!-- Programming Languages -->
-        <h3 style="margin-top: 40px;">💻 Programming Languages</h3>
-        <div style="display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;">
-          <div style="text-align: center;"><img src="images/icons/Matlab_Icon.jpg" alt="MATLAB"
-              style="height: 48px;"><br><strong style="font-size: 14px;">MATLAB Embedded Coder</strong></div>
-          <div style="text-align: center;"><img src="images/icons/C.png" alt="C" style="height: 48px;"><br><strong
-              style="font-size: 14px;">C</strong></div>
-          <div style="text-align: center;"><img src="images/icons/CPP.png" alt="C++" style="height: 48px;"><br><strong
-              style="font-size: 14px;">C++</strong></div>
-          <div style="text-align: center;"><img src="images/icons/imagesarduino_Icon.png" alt="Arduino"
-              style="height: 48px;"><br><strong style="font-size: 14px;">Arduino</strong></div>
-        </div>
+          <!-- Programming Languages -->
+          <article class="skill-panel" style="--panel-bg:url('images/code.jpg');">
+            <div class="panel-header"> Programming Platforms</div>
+            <div class="skills-strip">
+              <div class="skills-grid">
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/Matlab_icon.png" alt="Simulink"></div>
+                  <div class="skill-name">Embedded Coder</div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/CPP.png" alt="C++"></div>
+                  <div class="skill-name">C / C++</div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/embeded-c.png" alt="MATLAB"></div>
+                  <div class="skill-name">Embedded C</div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/Arduino.png" alt="Arduino"></div>
+                  <div class="skill-name">Arduino</div>
+                </div>
+              </div>
+            </div>
+          </article>
 
-        <!-- Simulation & Calibration Tools -->
-        <h3 style="margin-top: 40px;">🛠️ Simulation & Calibration Tools</h3>
-        <div style="display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;">
-          <div style="text-align: center;"><img src="images/icons/Simulink.jpg" alt="Simulink"
-              style="height: 48px;"><br><strong style="font-size: 14px;">Simulink</strong></div>
-          <div style="text-align: center;"><img src="images/icons/Stateflow.jpg" alt="Stateflow"
-              style="height: 48px;"><br><strong style="font-size: 14px;">Stateflow</strong></div>
-          <div style="text-align: center;"><img src="images/icons/Carsim.jpg" alt="CarSim"
-              style="height: 48px;"><br><strong style="font-size: 14px;">CarSim</strong></div>
-          <div style="text-align: center;"><img src="images/icons/dSpace.png" alt="dSPACE"
-              style="height: 48px;"><br><strong style="font-size: 14px;">Control Desk</strong></div>
-          <div style="text-align: center;"><img src="images/icons/ATI_Vision.png" alt="ATI Vision"
-              style="height: 48px;"><br><strong style="font-size: 14px;">Vision</strong></div>
-          <div style="text-align: center;"><img src="images/icons/Vector.png" alt="CANdb++"
-              style="height: 48px;"><br><strong style="font-size: 14px;">CANdb++</strong></div>
-        </div>
+          <!-- Simulation & Calibration Tools -->
+          <article class="skill-panel" style="--panel-bg:url('images/Simulation.jpg');">
+            <div class="panel-header">Simulation & Calibration Tools</div>
+            <div class="skills-strip">
+              <div class="skills-grid">
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/Matlab_icon.png" alt="Simulink"></div>
+                  <div class="skill-name">Simulink/Stateflow</div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/CarSim.png" alt="CarSim"></div>
+                  <div class="skill-name">CarSim</div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/icons/ATI_Vision.png" alt="Vision Analyzer">
+                  </div>
+                  <div class="skill-name">Vision & VDA</div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/dSPACE.png" alt="dSPACE"></div>
+                  <div class="skill-name">Control Desk</div>
+                </div>
+              </div>
+            </div>
+          </article>
 
-        <!-- Data Acquisition Software -->
-        <h3 style="margin-top: 40px;">📈 Data Acquisition Software</h3>
-        <div style="display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;">
-          <div style="text-align: center;"><img src="images/icons/ATI_Vision.png" alt="Vision Data Analyzer"
-              style="height: 48px;"><br><strong style="font-size: 14px;">Vision Data Analyzer</strong></div>
-          <div style="text-align: center;"><img src="images/icons/Kvaser.jpg" alt="Kvaser"
-              style="height: 48px;"><br><strong style="font-size: 14px;">Kvaser CANKing</strong></div>
-          <div style="text-align: center;"><img src="images/icons/Simcenter_Testlab.png" alt="Testlab"
-              style="height: 48px;"><br><strong style="font-size: 14px;">Siemens Testlab</strong></div>
-          <div style="text-align: center;"><img src="images/icons/2D_Racelogic.png" alt="2D Racelogic"
-              style="height: 48px;"><br><strong style="font-size: 14px;">2D Racelogic</strong></div>
-          <div style="text-align: center;"><img src="images/icons/VBox.jpg" alt="VBox" style="height: 48px;"><br><strong
-              style="font-size: 14px;">VBox</strong></div>
-          <div style="text-align: center;"><img src="images/icons/HBM.png" alt="HBM eDAQ"
-              style="height: 48px;"><br><strong style="font-size: 14px;">HBM eDAQ</strong></div>
-        </div>
+          <!-- Data Acquisition Software -->
+          <article class="skill-panel" style="--panel-bg:url('images/Data_Acquisition.jpg');">
+            <div class="panel-header">Data Acquisition Tools</div>
+            <div class="skills-strip">
+              <div class="skills-grid">
 
-        <!-- Modeling Tools -->
-        <h3 style="margin-top: 40px;">📐 Modeling Tools</h3>
-        <div style="display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;">
-          <div style="text-align: center;"><img src="images/icons/Creo.png" alt="PTC Creo"
-              style="height: 48px;"><br><strong style="font-size: 14px;">Creo Parametric</strong></div>
-          <div style="text-align: center;"><img src="images/icons/Siemens_NX.png" alt="Siemens NX"
-              style="height: 48px;"><br><strong style="font-size: 14px;">Siemens NX</strong></div>
-          <div style="text-align: center;"><img src="images/icons/SolidWorks.png" alt="SolidWorks"
-              style="height: 48px;"><br><strong style="font-size: 14px;">SolidWorks</strong></div>
-        </div>
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/icons/2D_Racelogic.png" alt="2D Racelogic">
+                  </div>
+                  <div class="skill-name">2D Racelogic</div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon icon-72 fit-100"><img src="images/VBOX.jpg" alt="VBox"></div>
+                  <div class="skill-name">VBOX</div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/Speedgoat.jpg" alt="HBM eDAQ"></div>
+                  <div class="skill-name">Speedgoat</div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/icons/HBM.png" alt="HBM eDAQ"></div>
+                  <div class="skill-name">HBM eDAQ</div>
+                </div>
+              </div>
+            </div>
+          </article>
 
-        <!-- Other Applications -->
-        <h3 style="margin-top: 40px;">🧰 Other Applications</h3>
-        <div style="display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;">
-          <div style="text-align: center;"><img src="images/icons/MS_Word_Icon.jpg" alt="MS Office"
-              style="height: 48px;"><br><strong style="font-size: 14px;">Word</strong></div>
-          <div style="text-align: center;"><img src="images/icons/MS_Excel_Icon.jpg" alt="MS Office"
-              style="height: 48px;"><br><strong style="font-size: 14px;">Excel</strong></div>
-          <div style="text-align: center;"><img src="images/icons/G_Suite.png" alt="G-Suite"
-              style="height: 48px;"><br><strong style="font-size: 14px;">G-Suite</strong></div>
-          <div style="text-align: center;"><img src="images/icons/Power_BI.png" alt="Power BI"
-              style="height: 48px;"><br><strong style="font-size: 14px;">Power BI</strong></div>
-        </div>
+          <!-- Modeling Tools -->
+          <article class="skill-panel" style="--panel-bg:url('images/Vehicle_Network.jpg');">
+            <div class="panel-header">Vehicle Network Tools</div>
+            <div class="skills-strip">
+              <div class="skills-grid">
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/Vector_icon.png" alt="Creo"></div>
+                  <div class="skill-name">CANalyzer</div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/Vector_icon.png" alt="Creo"></div>
+                  <div class="skill-name">CANape</div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/Vector_icon.png" alt="Creo"></div>
+                  <div class="skill-name">CANdb++</div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/icons/Kvaser.jpg" alt="Siemens NX"></div>
+                  <div class="skill-name">CANKing</div>
+                </div>
+              </div>
+          </article>
 
-        <!-- Training -->
-        <h3 style="margin-top: 40px;">📚 Training</h3>
-        <div style="display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;">
-          <div style="text-align: center;"><img src="images/icons/Electrical_Safety.jpg" alt="Safety"
-              style="height: 48px;"><br><strong style="font-size: 14px;">HV/LV Electrical Safety</strong></div>
-          <div style="text-align: center;"><img src="images/icons/Tool_Handling.png" alt="Tool handling"
-              style="height: 48px;"><br><strong style="font-size: 14px;">Tools handling</strong></div>
-          <div style="text-align: center;"><img src="images/icons/7_Qc_Tools.png" alt="Quality Tools"
-              style="height: 48px;"><br><strong style="font-size: 14px;">Quality Tools</strong></div>
-          <div style="text-align: center;"><img src="images/icons/FMEA.jpg" alt="FMEA" style="height: 48px;"><br><strong
-              style="font-size: 14px;">FMEA</strong></div>
-        </div>
+          <!-- Other Applications -->
+          <article class="skill-panel" style="--panel-bg:url('images/Project_Mgmt.jpg');">
+            <div class="panel-header">Project Management & Version Control Tools</div>
+            <div class="skills-strip">
+              <div class="skills-grid">
 
-        <!-- Riding -->
-        <h3 style="margin-top: 40px;">🏍️ Riding</h3>
-        <div style="display: flex; justify-content: center;">
-          <div style="text-align: center;">
-            <img src="images/icons/Motorcycle.png" alt="Riding" style="height: 48px;"><br>
-            <strong style="font-size: 14px;">Motorcycle Off-road & Trail Riding</strong>
-          </div>
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/MS_Office.png" alt="Word"></div>
+                  <div class="skill-name">MS Office</div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/Atlassian.png" alt="G-Suite"></div>
+                  <div class="skill-name">JAMA/JIRA</div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/GitHub_1.png" alt="Arduino"></div>
+                  <div class="skill-name">GitHub</div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/Power_BI.jpg" alt="Power BI"></div>
+                  <div class="skill-name">Power BI</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Modeling Tools -->
+          <article class="skill-panel" style="--panel-bg:url('images/Modeling.jpg');">
+            <div class="panel-header">Modeling Tools</div>
+            <div class="skills-strip">
+              <div class="skills-grid">
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/icons/Creo.png" alt="HV/LV Safety"></div>
+                  <div class="skill-name">Creo Parametric</div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/Solidworks.jpg" alt="Tool Handling"></div>
+                  <div class="skill-name">Solidworks</div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/Siemens_NX.png" alt="Quality Tools"></div>
+                  <div class="skill-name">Siemens NX</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Training -->
+          <article class="skill-panel" style="--panel-bg:url('images/Training.jpg');">
+            <div class="panel-header">Training</div>
+            <div class="skills-strip">
+              <div class="skills-grid">
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/icons/Electrical_Safety.jpg"
+                      alt="HV/LV Safety"></div>
+                  <div class="skill-name">HV/LV Safety</div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/Electrical_Schematics.jpg"
+                      alt="Quality Tools"></div>
+                  <div class="skill-name">Electrical Schematics</div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/FMEA.jpg" alt="FMEA"></div>
+                  <div class="skill-name">FMEA</div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/icons/Tool_Handling.png" alt="Tool Handling">
+                  </div>
+                  <div class="skill-name">Tool Handling</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Riding -->
+          <article class="skill-panel" style="--panel-bg:url('images/Riding.jpeg');">
+            <div class="panel-header">Riding</div>
+            <div class="skills-strip">
+              <div class="skills-grid">
+                <div class="skill-card">
+                  <div class="skill-icon icon-64 fit-100"><img src="images/icons/Motorcycle.png"
+                      alt="Off-road & Trail Riding"></div>
+                  <div class="skill-name">Off-road & Trail Riding</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
         </div>
       </section>
     </div>
@@ -198,7 +480,8 @@
                 style="font-family: 'Arial Nova', Arial, sans-serif; color: inherit;">
                 <strong>5, Research Drive, Greenville, <br />
                   South Carolina 29607,<br />
-                  United States of America </strong>
+                  United States of America</strong>
+              </a>
             </p>
           </section>
 
@@ -211,9 +494,13 @@
           <!-- EMAIL IDS -->
           <section class="column" style="flex: 1; padding: 20px; text-align: center; padding-bottom: 5px;">
             <h3 style="font-size: 25px; text-align: center;">📧 Email</h3>
-            <p style="font-size: 15px; text-align: center;"><strong><a
-                  href="mailto:rangar2@g.clemson.edu">rangar2@g.clemson.edu</a> <br />
-                <a href="mailto:ashwintwister@gmail.com">ashwintwister@gmail.com </strong> </a>
+            <p style="font-size: 15px; text-align: center;"><strong>
+                <a href="mailto:rangar2@g.clemson.edu" target="_blank"
+                  style="font-family: 'Arial Nova', Arial, sans-serif; color: inherit;">rangar2@g.clemson.edu</a>
+                <br />
+                <a href="mailto:ashwintwister@gmail.com" target="_blank"
+                  style="font-family: 'Arial Nova', Arial, sans-serif; color: inherit;">ashwintwister@gmail.com
+              </strong> </a>
             </p>
           </section>
 
@@ -246,6 +533,7 @@
 
     </footer>
 
+
     <!-- FOOTER SECTION ENDS  -------------------------------------------------------------------------------------------------------------------->
 
 
@@ -259,6 +547,8 @@
     </div>
 
     <!-- COPYRIGHT SECTION ENDS ------------------------------------------------------------------------------------------------------------------->
+
+  </div>
 </body>
 
 </html>

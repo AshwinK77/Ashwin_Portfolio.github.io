@@ -1,9 +1,18 @@
 <!DOCTYPE HTML>
 
 
-<html>
+<html lang="en">
 
 <head>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+		rel="stylesheet">
+
+	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
 
 	<style>
 		@font-face {
@@ -12,7 +21,8 @@
 		}
 
 		body {
-			font-family: 'Arial Nova', Arial, sans-serif !important;
+			font-family: "Carlito", sans-serif;
+
 		}
 
 		html,
@@ -28,25 +38,9 @@
 			height: auto;
 		}
 
-		.video-container {
-			position: relative;
-			width: 100%;
-			padding-bottom: 56.25%;
-			/* 16:9 aspect ratio */
-			height: 0;
-			overflow: hidden;
-		}
-
-		.video-container iframe {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-		}
-
 		/* Radio button Navigation Formatting ----------------------------------------------------------*/
 
+		/* --- Existing Nav Dot Styling --- */
 		.nav-dot {
 			width: 16px;
 			height: 16px;
@@ -55,6 +49,8 @@
 			display: inline-block;
 			transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
 			background-color: transparent;
+			position: relative;
+			/* <-- added so tooltips position correctly */
 		}
 
 		/* Hover effect */
@@ -72,32 +68,63 @@
 			border-color: #007BFF;
 		}
 
+		/* --- Tooltip Additions --- */
+		.nav-dot::after {
+			content: attr(data-label);
+			/* text comes from HTML attribute */
+			position: absolute;
+			top: 50%;
+			left: -12px;
+			transform: translate(-100%, -50%);
+			background: #333;
+			color: #fff;
+			font-size: 13px;
+			font-weight: 600;
+			padding: 4px 8px;
+			border-radius: 6px;
+			white-space: nowrap;
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity 0.25s ease-in-out;
+			z-index: 1000;
+		}
+
+		/* Show tooltip on hover */
+		.nav-dot:hover::after {
+			opacity: 1;
+		}
+
 
 		/* Radio button Navigation Declaration Ends ----------------------------------------------------*/
 
 
 
 		/* CSS code for RE section media uniformity -----------------------------------------------------*/
-		.media-container {
+		.media-container,
+		.video-container {
 			position: relative;
-			padding-bottom: 75%;
-			/* 16:9 Aspect Ratio */
-			height: 0;
-			overflow: hidden;
 			width: 100%;
-			max-height: 600px;
+			aspect-ratio: 16 / 9;
+			/* keeps uniform height for all media */
+			height: auto;
+			overflow: hidden;
 			background-color: #000;
+			/* adds consistent background */
+			border-radius: 8px;
 		}
 
-		.media-container iframe,
+
+		/* Let everything inside fill the container */
 		.media-container img,
-		.media-container video {
+		.video-container iframe,
+		.video-container video {
 			position: absolute;
 			top: 0;
 			left: 0;
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+			/* ensures full fill without stretching */
 		}
 
 		/* CSS code for RE section media uniformity ends -----------------------------------------------------*/
@@ -122,7 +149,7 @@
 			position: relative;
 			overflow: visible;
 			/* allows arrows to be visible outside image bounds */
-			max-width: 800px;
+			max-width: 1000px;
 			margin: auto;
 		}
 
@@ -179,6 +206,488 @@
 		.active-dot {
 			background-color: #717171 !important;
 		}
+
+		/* ----------------------- Tabs Trial --------------------------- */
+
+		/* ---------------- Tabs Styling ---------------- */
+		.tabs {
+			margin-top: 16px;
+			border: 1px solid #e8e8ee;
+			border-radius: 16px;
+			overflow: hidden;
+		}
+
+		.tabs input[type="radio"] {
+			position: absolute;
+			left: -9999px;
+		}
+
+		.tabs .tab-head {
+			display: flex;
+			background: #f6f7fb;
+			border-bottom: 1px solid #e1e4eb;
+			/* the grey rule */
+			border-top-left-radius: 16px;
+			border-top-right-radius: 16px;
+			overflow: hidden;
+		}
+
+		.tabs .tab-head label {
+			flex: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 54px;
+			font-size: 22px;
+			font-weight: 700;
+			letter-spacing: .02em;
+			color: #2a2a2a;
+			cursor: pointer;
+			transition: background .2s, color .2s, border .2s;
+			border-bottom: 1px solid transparent;
+			/* lets us “swap” the underline */
+		}
+
+		.tabs .tab-head label:last-child {
+			border-right: none;
+		}
+
+		.tabs .tab-head label::before,
+		.tabs .tab-head label::after {
+			content: none !important;
+		}
+
+		/* RA (green) */
+		#ra-tabs #ra-r:checked~.tab-head label[for="ra-r"],
+		#ra-tabs #ra-a:checked~.tab-head label[for="ra-a"],
+		#ra-tabs #ra-s:checked~.tab-head label[for="ra-s"],
+		#ra-tabs #ra-t:checked~.tab-head label[for="ra-t"],
+		#ra-tabs #ra-g:checked~.tab-head label[for="ra-g"] {
+			color: #006633;
+			/* your darker green */
+			border-bottom: 5px solid #006633;
+			margin-bottom: -2px;
+			/* fixes the vertical offset */
+		}
+
+		/* Ford (blue) */
+		#ford-tabs #ford-r:checked~.tab-head label[for="ford-r"],
+		#ford-tabs #ford-a:checked~.tab-head label[for="ford-a"],
+		#ford-tabs #ford-s:checked~.tab-head label[for="ford-s"],
+		#ford-tabs #ford-t:checked~.tab-head label[for="ford-t"],
+		#ford-tabs #ford-g:checked~.tab-head label[for="ford-g"] {
+			color: #002280;
+			border-bottom: 5px solid #002280;
+			margin-bottom: -2px;
+		}
+
+		/* DO (peach/pink) — add do-p */
+		#do-tabs #do-r:checked~.tab-head label[for="do-r"],
+		#do-tabs #do-a:checked~.tab-head label[for="do-a"],
+		#do-tabs #do-s:checked~.tab-head label[for="do-s"],
+		#do-tabs #do-t:checked~.tab-head label[for="do-t"],
+		#do-tabs #do-g:checked~.tab-head label[for="do-g"],
+		#do-tabs #do-p:checked~.tab-head label[for="do-p"] {
+			/* ← NEW */
+			color: #c04d01;
+			border-bottom: 5px solid #c04d01;
+			margin-bottom: -2px;
+		}
+
+		/* RE (magenta) */
+		#re-tabs #re-r:checked~.tab-head label[for="re-r"],
+		#re-tabs #re-a:checked~.tab-head label[for="re-a"],
+		#re-tabs #re-s:checked~.tab-head label[for="re-s"],
+		#re-tabs #re-t:checked~.tab-head label[for="re-t"],
+		#re-tabs #re-g:checked~.tab-head label[for="re-g"] {
+			color: #660066;
+			border-bottom: 5px solid #660066;
+			margin-bottom: -2px;
+		}
+
+		.tabs .tab-content {
+			background: #fff;
+			padding: 18px 20px;
+			text-align: left;
+			font-size: 19px;
+			/* smaller than body text */
+			line-height: 1.55;
+			/* keep readability */
+		}
+
+
+		.tabs .tab-panel {
+			display: none;
+		}
+
+		.tabs #ford-r:checked~.panels .r,
+		.tabs #ford-a:checked~.panels .a,
+		.tabs #ford-s:checked~.panels .s,
+		.tabs #ford-t:checked~.panels .t,
+		.tabs #ford-g:checked~.panels .g {
+			display: block;
+		}
+
+		/* Show panels for Deep Orange tabs — add do-p */
+		.tabs #do-r:checked~.panels .r,
+		.tabs #do-a:checked~.panels .a,
+		.tabs #do-s:checked~.panels .s,
+		.tabs #do-t:checked~.panels .t,
+		.tabs #do-g:checked~.panels .g,
+		.tabs #do-p:checked~.panels .p {
+			/* ← NEW */
+			display: block;
+		}
+
+		/* Show panels for Research Assistant tabs */
+		.tabs #ra-r:checked~.panels .r,
+		.tabs #ra-a:checked~.panels .a,
+		.tabs #ra-s:checked~.panels .s,
+		.tabs #ra-t:checked~.panels .t,
+		.tabs #ra-g:checked~.panels .g {
+			display: block;
+		}
+
+		/* Show panels for Royal Enfield tabs */
+		.tabs #re-r:checked~.panels .r,
+		.tabs #re-a:checked~.panels .a,
+		.tabs #re-s:checked~.panels .s,
+		.tabs #re-t:checked~.panels .t,
+		.tabs #re-g:checked~.panels .g {
+			display: block;
+		}
+
+		/* Bullets left aligned */
+		.tabs .tab-content ul {
+			padding-left: 1.25rem;
+			margin: .25rem 0 0;
+			list-style: disc outside;
+			line-height: 1.65;
+		}
+
+
+		.tabs .tab-content li {
+			margin: .25rem 0;
+		}
+
+
+		.tabs .callout {
+			background: #f7fbff;
+			border: 1px solid #d8e9ff;
+			padding: 10px 12px;
+			border-radius: 10px;
+			margin-bottom: 10px;
+			font-style: italic;
+			font-size: 19px;
+			line-height: 1.5;
+		}
+
+		/* ----- GALLERY: make container have natural height; remove absolute positioning for img ----- */
+		.tabs .tab-panel.g .media-container {
+			position: relative;
+			padding-bottom: 0;
+			/* no aspect hack */
+			height: auto;
+			max-height: 800px;
+			background: transparent;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.tabs .tab-panel.g .media-container img {
+			position: static;
+			/* override the global absolute rule */
+			width: auto;
+			max-width: 70%;
+			height: auto;
+			max-height: 800px;
+			object-fit: contain;
+			display: block;
+			margin: 0 auto;
+		}
+
+		/* ----------------------- Tabs Trial --------------------------- */
+
+		.prev,
+		.next {
+			display: none !important;
+		}
+
+		/* Ford → Light Blue */
+		#ford-tabs {
+			background-color: #cce9fc;
+			/* light blue */
+		}
+
+		/* Deep Orange → Light Pink */
+		#do-tabs {
+			background-color: #ebd9c1;
+			/* light pink */
+		}
+
+		/* Research Assistant → Light Green */
+		#ra-tabs {
+			background-color: #ccfce0;
+			/* light green */
+		}
+
+		/* Royal Enfield → Light Magenta */
+		#re-tabs {
+			background-color: #e6cbfc;
+			/* light magenta */
+		}
+
+		/* Make inner content (panels) white for all */
+		#ford-tabs .tab-content,
+		#do-tabs .tab-content,
+		#ra-tabs .tab-content,
+		#re-tabs .tab-content {
+			background-color: #ffffff;
+		}
+
+		/*------- Timeline Badge -----------------------------*/
+
+		.timeline-badge {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			padding: 10px 20px;
+			/* slightly larger padding */
+			background: #fff;
+			border: 1px solid #e1e4eb;
+			border-radius: 999px;
+			/* pill */
+			font-size: 20px;
+			/* bigger text */
+			font-weight: 800;
+			/* bolder */
+			letter-spacing: .02em;
+			color: #2a2a2a;
+			box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+		}
+
+		/* small icon */
+		.timeline-badge::before {
+			content: "📅";
+			font-size: 18px;
+			line-height: 1;
+		}
+
+		/* Centering container already exists above each tabs box – keep it */
+		.date-wrap {
+			text-align: center;
+			margin-bottom: -10px;
+			/* matches your current spacing */
+		}
+
+		/* Optional: add a thin left accent that matches each section’s theme */
+		#ford-tabs~.accent,
+		#do-tabs~.accent,
+		#ra-tabs~.accent,
+		#re-tabs~.accent {
+			display: none;
+		}
+
+		/* safety */
+
+		.timeline-badge.ford {
+			border-left: 6px solid #002280;
+		}
+
+		.timeline-badge.do {
+			border-left: 6px solid #c04d01;
+		}
+
+		.timeline-badge.ra {
+			border-left: 6px solid #006633;
+		}
+
+		.timeline-badge.re {
+			border-left: 6px solid #660066;
+		}
+
+		/*------- Timeline Badge -----------------------------*/
+
+		/* Remove the line between project articles */
+		.post.featured {
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		/* Optional: add gentle spacing instead */
+		.post.featured {
+			margin-bottom: 40px;
+			/* adjust spacing between projects */
+		}
+
+		/* Add space below the timeline badge (before the tab box starts) */
+		.date-wrap {
+			text-align: center;
+			margin-bottom: 20px;
+			/* increased from -10px */
+		}
+
+		/* Add space above the very first project’s timeline */
+		#project0 .date-wrap {
+			margin-top: 30px;
+			/* pushes first badge away from header/nav */
+		}
+
+
+		/* Bottom-right floating FA arrow, aligned with the right-side radio dots */
+		.actions--float-br {
+			position: fixed;
+			right: 40px;
+			/* match your #project-nav offset */
+			bottom: 28px;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			border: 0;
+			z-index: 1200;
+			pointer-events: none;
+			/* container ignores clicks */
+		}
+
+		.actions--float-br>li {
+			margin: 0;
+		}
+
+		/* Base button look (Font Awesome circle with arrow) */
+		.actions--float-br .button {
+			pointer-events: auto;
+			/* clickable */
+			display: block;
+			width: 200px;
+			height: 200px;
+			line-height: 200px;
+			/* centers the FA arrow */
+			padding: 0;
+			border-radius: 50%;
+			background-color: #f0f2f5;
+			/* light grey */
+			border-color: #f0f2f5;
+			color: #1f5fff;
+			/* arrow color */
+			font-size: 1.15rem;
+			/* arrow size */
+			box-shadow: 0 4px 10px rgba(0, 0, 0, .18);
+			text-decoration: none;
+			-webkit-tap-highlight-color: transparent;
+
+			/* hidden by default: fade + slide */
+			opacity: 0;
+			transform: translateY(12px) scale(.95);
+			will-change: transform, opacity;
+			transition:
+				transform .22s cubic-bezier(.22, .61, .36, 1),
+				opacity .26s ease-out,
+				background-color .3s,
+				border-color .3s;
+		}
+
+		/* ONLY while hidden, change slide direction when scrolling up */
+		body.scrolling-up .actions--float-br .button:not(.show) {
+			transform: translateY(-12px) scale(.95);
+		}
+
+		/* visible state – lock size/position */
+		.actions--float-br .button.show {
+			opacity: 1;
+			transform: translateY(0) scale(1) !important;
+		}
+
+		/* gentle hover (no size change) */
+		.actions--float-br .button:hover {
+			background-color: #e5e8ee;
+			border-color: #e5e8ee;
+		}
+
+		/* Smaller "Back to top" tooltip */
+		.actions--float-br .button::after {
+			font-size: 12px;
+			/* was 13px */
+			line-height: 1.1;
+			/* a bit tighter */
+			padding: 4px 6px;
+			/* was 6px 8px */
+			border-radius: 4px;
+			/* was 6px */
+			letter-spacing: 0;
+			/* keep compact */
+			max-width: none;
+			/* ensure no extra width is forced */
+			left: auto !important;
+			/* ignore any previous 'left' */
+			right: calc(100% + 8px) !important;
+			/* 8px gap to the left of the button */
+			transform: translateY(-50%) translateX(0) !important;
+			text-align: right;
+		}
+
+		/* Keep the same smooth entrance on hover/focus */
+		.actions--float-br .button:hover::after,
+		.actions--float-br .button:focus-visible::after {
+			opacity: 1;
+			transform: translateY(-50%) translateX(0) !important;
+		}
+
+		/* Optional: even smaller on very small screens */
+		@media (max-width: 480px) {
+			.actions--float-br .button::after {
+				font-size: 11px;
+				padding: 3px 5px;
+				border-radius: 4px;
+			}
+		}
+
+		.actions--float-br .button {
+			overflow: visible !important;
+		}
+
+		.actions--float-br .button::after {
+			content: attr(data-tooltip) !important;
+		}
+
+		/* Force the "Back to top" tooltip to the LEFT of the circle and position it correctly */
+		.actions--float-br .button {
+			position: relative;
+			overflow: visible;
+		}
+
+		/* anchor + allow overflow */
+
+		.actions--float-br .button::after {
+			content: attr(data-tooltip) !important;
+			position: absolute !important;
+			top: 50% !important;
+			left: auto !important;
+			right: calc(100% + 8px) !important;
+			/* place to the LEFT of the circle */
+			transform: translateY(-50%) !important;
+
+			/* visual box (smaller, compact) */
+			/*background: rgba(0, 0, 0, .5);*/
+			color: #fff;
+			font-size: 15px;
+			line-height: 1.1;
+			padding: 4px 6px;
+			border-radius: 4px;
+			white-space: nowrap;
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity .3s, transform .2s;
+			z-index: 1300;
+		}
+
+		/* show on hover/focus */
+		.actions--float-br .button:hover::after,
+		.actions--float-br .button:focus-visible::after {
+			opacity: 1;
+			transform: translateY(-50%) !important;
+			/* smooth in */
+		}
 	</style>
 
 	<title> Professional Experience </title>
@@ -230,11 +739,12 @@
 		gap: 20px;
 		z-index: 999;">
 
-			<a href="javascript:void(0);" class="nav-dot" data-project="project0"></a>
-			<a href="javascript:void(0);" class="nav-dot" data-project="project1"></a>
-			<a href="javascript:void(0);" class="nav-dot" data-project="project2"></a>
-			<a href="javascript:void(0);" class="nav-dot" data-project="project3"></a>
+			<a href="javascript:void(0);" class="nav-dot" data-project="project0" data-label="Ford Internship"></a>
+			<a href="javascript:void(0);" class="nav-dot" data-project="project1" data-label="Deep Orange 16"></a>
+			<a href="javascript:void(0);" class="nav-dot" data-project="project2" data-label="Research Assistant"></a>
+			<a href="javascript:void(0);" class="nav-dot" data-project="project3" data-label="Royal Enfield"></a>
 		</div>
+
 
 		<!-- Floating Project Navigation Dots Ends ------------------------------------------------------>
 
@@ -249,281 +759,327 @@
 			<!-- Project0 starts ----------------------------------------------------------------------------------------->
 
 			<article id="project0" class="post featured" style="margin: 0 auto; max-width: 90%; padding: 20px 10px;">
-				<h2 style="margin-top: 20px; margin-bottom: 0;"> Professional Projects </h2>
 
-				<!-- 🔧 DATE + LINE UNDERNEATH -->
-				<div
-					style="text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 20px;">
-					<span class="date" style="font-size: 20px;">
-						<strong> <br /> May 2025 - July 2025 </strong>
-					</span>
+
+				<div class="date-wrap">
+					<span class="timeline-badge ford">May 2025 – July 2025</span>
 				</div>
 
-				<!-- 🔧 TITLE + LOGO -->
-				<div style="display: flex; justify-content: space-between; align-items: left;">
-					<h2 style="margin: 0; font-size: clamp(18px, 3vw, 34px); flex: 1; margin-right: 10px;">
+				<!-- Tabs -->
+				<div class="tabs" id="ford-tabs">
 
-						SUMMER INTERN, FORD MOTOR COMPANY </a> <br />
-					</h2>
-
-					<h3 style="margin-top: 20px; font-size: 20px; text-align: justify;">
-
-					</h3>
-					<img src="images/Ford_Logo.jpg" alt="CU-ICAR" style="width: 100px; height: 40px;">
-				</div>
-
-				<div style="display: flex; justify-content: space-between; font-size: 20px; margin-top: 10px;">
-					<strong>Chassis Controls Software & Systems Engineer - Research & Advanced Engineering Division
-					</strong>
-					<strong>Dearborn, Michigan (US) </strong>
-				</div>
-
-				<!-- 🔧 PROJECT DESCRIPTION -->
-				<p style="margin-top: 10px; font-size: 20px; text-align: justify;">
-					<strong> <u> Steer-by-wire System </u> </strong> <br />
-					<strong> Led the development, integration and real-time validation of a dual redundant new
-						Steer-by-Wire concept </strong><br />
-					<strong> <u> Responsibilities: </u> </strong> <br />
-					➤ Designed and implemented software control strategy with validation across MiL, HiL and
-					in-vehicle environments <br />
-					➤ Integrated the control algorithm into the Vehicle Motion Control framework and maintained
-					versioning on GitHub <br />
-					➤ Engineered the system hardware setup and established real-time CAN communication <br />
-					➤ Conducted benchmark analysis and use case derivation of traditional vs. new steering wheel
-					concepts using study clinic data, ensuring alignment with system-level expected behavior
-					<br />
-					➤ Collaborated with suppliers and cross-functional teams to ensure seamless hardware & software
-					integration <br />
-
-					<strong> <u> Achievements: </u> </strong> <br />
-					✅ First engineer to successfully test the steer-by-wire concept in real time on the F-150 research
-					vehicle at Ford’s proving grounds. <br />
-					✅ As a side task, migrated calibration and data acquisition from <strong> dSPACE to ATI Vision
-					</strong> to enable more efficient field tuning and validation.
-				</p>
-
-				<div class="slideshow-wrapper"
-					style="overflow: hidden; max-width: 800px; margin: auto; position: relative;">
-
-					<!-- Project 1 Slideshow -->
-					<div class="slideshow-container" id="slideshow-track-0"
-						style="display: flex; transition: transform 1s ease;">
-
-						<div class="slide-0" style="min-width: 100%;">
-							<div class="media-container">
-								<img src="images/Ford_Internship.png" alt="Overall Supervisory Control">
-							</div>
-							<div style="text-align: center; font-size: 18px; margin-top: 10px;">
-								<strong> Steer-by-Wire System Architecture </strong>
-							</div>
+					<!-- Ford title + logo inside tab box -->
+					<div style="padding:16px 20px;">
+						<div style="display:flex; justify-content:space-between; align-items:center;">
+							<h2 style="margin:0; font-size: clamp(18px, 3vw, 34px);">
+								SUMMER INTERN, FORD MOTOR COMPANY
+							</h2>
+							<img src="images/Ford_Logo.jpg" alt="Ford" style="width:100px; height:40px;">
 						</div>
-
-						<div class="slide-0" style="min-width: 100%;">
-							<div class="media-container">
-								<img src="images/Ford_Internship.png" alt="Overall Supervisory Control">
-							</div>
-							<div style="text-align: center; font-size: 18px; margin-top: 10px;">
-								<strong> Steer-by-Wire System Architecture </strong>
-							</div>
+						<div style="display:flex; justify-content:space-between; font-size:20px; margin-top:10px;">
+							<strong>Chassis Controls Software & Systems Engineer - Research & Advanced Engineering
+								Division</strong>
+							<strong>Dearborn, Michigan (US)</strong>
 						</div>
-
 					</div>
 
-					<a class="prev" onclick="plusSlides0(-1)"
-						style="cursor:pointer; position: absolute; left: -5px; top: 50%; font-size: 30px;">&#10094;</a>
-					<a class="next" onclick="plusSlides0(1)"
-						style="cursor:pointer; position: absolute; right: -5px; top: 50%; font-size: 30px;">&#10095;</a>
+					<!-- Tabs -->
+					<div class="tabs" id="ford-tabs">
+						<input type="radio" name="ford-tabs" id="ford-r" checked>
+						<input type="radio" name="ford-tabs" id="ford-a">
+						<input type="radio" name="ford-tabs" id="ford-s">
+						<input type="radio" name="ford-tabs" id="ford-t"><!-- Tools -->
+						<input type="radio" name="ford-tabs" id="ford-g"><!-- Gallery -->
 
-				</div>
+						<div class="tab-head">
+							<label for="ford-r">Responsibilities</label>
+							<label for="ford-a">Achievements</label>
+							<label for="ford-s">Skills</label>
+							<label for="ford-t">Tools Used</label><!-- now 4th -->
+							<label for="ford-g">Gallery</label><!-- now 5th -->
+						</div>
 
-				<div style="text-align:center; margin-top: 10px;">
-					<span class="dot-0" onclick="currentSlide0(1)"
-						style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
-					<!-- <span class="dot-0" onclick="currentSlide0(2)"
-						style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span> -->
-				</div>
+						<div class="panels tab-content">
+							<!-- Responsibilities -->
+							<div class="tab-panel r">
+								<div class="callout"><strong> Steer-by-Wire (Dual-redundancy concept): </strong> Control
+									Software Development →
+									Systems
+									integration →
+									Real-time validation.</div>
+								<ul>
+									<li>Designed & validated control strategy across <strong>MiL, HiL,
+											in-vehicle</strong>.
+									</li>
+									<li>Integrated algorithm into <strong> Vehicle Motion Control </strong>
+										architecture;
+										versioning on <strong>GitHub</strong>.
+									</li>
+									<li>Engineered hardware setup; prototype debugging; established real-time <strong>
+											CAN</strong> communication
+									</li>
+									<li>Benchmarked <strong> traditional vs. SbW system </strong> using scenario
+										development
+										and driver clinic
+										data</li>
+									<li>Collaborated with suppliers & cross-functional teams for seamless HW/SW
+										integration
+									</li>
+								</ul>
+							</div>
 
-				<!-- 🔧 TOOLS USED -->
-				<footer style="margin-top: 15px; text-align: left;">
-					<span style="font-size: 20px;"><strong>Tools used: <br /></strong></span>
-					<img src="images/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB"
-						style="height: 40px; margin-left: 10px;">
-					<img src="images/Simulink.jpg" alt="Simulink" title="Simulink"
-						style="height: 40px; margin-left: 10px;">
-					<img src="images/icons/Stateflow.jpg" alt="Stateflow" title="Stateflow"
-						style="height: 40px; margin-left: 10px;">
-					<img src="images/icons/dSpace.png" alt="dSPACE" title="dSPACE"
-						style="height: 40px; margin-left: 10px;">
-					<img src="images/icons/ATI_Vision.png" alt="ATI" title="ATI"
-						style="height: 50px; margin-left: 10px;">
-					<img src="images/GitHub.png" alt="GitHub" title="GitHub" style="height: 40px; margin-left: 10px;">
+							<!-- Achievements -->
+							<div class="tab-panel a">
+								<ul>
+									<li><strong>First engineer</strong> to test the new SbW concept real-time at Ford’s
+										proving grounds.</li>
+									<li>Migrated calibration interface from <strong>dSPACE ControlDesk→ ATI
+											Vision</strong>
+										to streamline field tuning.</li>
+								</ul>
+							</div>
 
-				</footer>
+							<!-- Skills -->
+							<div class="tab-panel s">
+								<ul>
+									<li>Control systems & vehicle dynamics</li>
+									<li>MiL / HiL / in-vehicle validation</li>
+									<li>Real-time CAN communication</li>
+									<li>System benchmarking & calibration</li>
+									<li>Hardware bring-up & debugging</li>
+									<li>Cross-functional collaboration</li>
+								</ul>
+							</div>
 
+							<!-- Tools -->
+							<div class="tab-panel t">
+								<div style="display:flex; flex-wrap:wrap; gap:25px; align-items:center;">
+									<img src="images/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB" style="height:100px;">
+									<img src="images/Simulink.jpg" alt="Simulink" title="Simulink" style="height:80px;">
+									<img src="images/icons/Stateflow.jpg" alt="Stateflow" title="Stateflow"
+										style="height:90px;">
+									<img src="images/icons/dSpace.png" alt="dSPACE" title="dSPACE" style="height:80px;">
+									<img src="images/icons/ATI_Vision.png" alt="ATI Vision" title="ATI Vision"
+										style="height:125px;">
+									<img src="images/GitHub.png" alt="GitHub" title="GitHub" style="height:70px;">
+								</div>
+							</div>
+
+							<!-- Gallery -->
+							<div class="tab-panel g">
+								<div class="slideshow-wrapper"
+									style="overflow:hidden; max-width:800px; margin:auto; position:relative;">
+									<div class="slideshow-container" id="slideshow-track-0"
+										style="display:flex; transition: transform 1s ease;">
+										<div class="slide-0" style="min-width:100%;">
+											<div class="media-container">
+												<img src="images/Ford_Internship.png" alt="Steer-by-Wire Architecture">
+											</div>
+											<div style="text-align:center; font-size:18px; margin-top:10px;">
+												<strong>Steer-by-Wire Architecture</strong>
+											</div>
+										</div>
+									</div>
+
+									<!-- arrows -->
+									<a class="prev" onclick="plusSlides0(-1)"
+										style="cursor:pointer; position:absolute; left:2px; top:50%; font-size:30px;">&#10094;</a>
+									<a class="next" onclick="plusSlides0(1)"
+										style="cursor:pointer; position:absolute; right:2px; top:50%; font-size:30px;">&#10095;</a>
+								</div>
+
+								<!-- dots -->
+								<div style="text-align:center; margin-top:10px;">
+									<span class="dot-0" onclick="currentSlide0(1)"></span>
+								</div>
+							</div>
+						</div>
+					</div>
 			</article>
 
 			<!-- Project 0 ends ----------------------------------------------------------------------------------------->
 
 
-
 			<!-- Project 1 Starts ----------------------------------------------------------------------------------------->
 
-			<article id="project1" class="post featured" style="margin: 0 auto; max-width: 90%; padding: 20px 10px;">
+			<article id="project1" class="post featured" style="margin:0 auto; max-width:90%; padding:20px 10px;">
 
-				<!-- 🔧 DATE + LINE UNDERNEATH -->
-				<div
-					style="text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 20px;">
-					<span class="date" style="font-size: 20px;">
-						<strong> Jan 2024 to Apr 2025 </strong>
-					</span>
+				<!-- Date (no underline) -->
+				<div class="date-wrap">
+					<span class="timeline-badge do">Jan 2024 – Apr 2025</span>
 				</div>
 
-				<!-- 🔧 TITLE + LOGO -->
-				<div style="display: flex; justify-content: space-between; align-items: left;">
-					<h2 style="margin: 0; font-size: clamp(18px, 3vw, 34px); flex: 1; margin-right: 10px;">
+				<!-- Tabs (Deep Orange) -->
+				<div class="tabs" id="do-tabs">
 
-						DEEP ORANGE 16 INTERN, CLEMSON UNIVERSITY </a> <br />
-					</h2>
-
-					<h3 style="margin-top: 20px; font-size: 20px; text-align: justify;">
-
-					</h3>
-					<img src="images/ICAR_Logo2.png" alt="CU-ICAR" style="width: 100px; height: 40px;">
-				</div>
-
-				<div style="display: flex; justify-content: space-between; font-size: 20px; margin-top: 10px;">
-					<strong>Vehicle Dynamics & Controls Engineer </strong>
-					<strong>Greenville, South Carolina (US) </strong>
-				</div>
-
-				<!-- 🔧 PROJECT DESCRIPTION -->
-				<p style="margin-top: 10px; font-size: 20px; text-align: justify;">
-					<strong> Focused on developing a rapid response vehicle for disaster scenarios, involving prototype
-						development with close industry collaboration </strong>
-
-					<strong> <u> Responsibilities: </u> </strong> <br />
-					➤ Developed and implemented a HiL bench test setup for Brembo’s Sensify brake-by-wire system,
-					including calibration, fault detection and fail-safe logic <br />
-					➤ Designed and implemented a start-up state machine on a New Eagle
-					ECU, with validation performed in MiL and HiL environments. <br />
-					➤ Derived electronic park brake use cases and integrated them into the HMI and brake control
-					architecture <br />
-					➤ Designed a DYC torque vectoring algorithm to emulate differential behavior in a 4-wheel hub motor
-					hybrid HV architecture <br />
-					➤ Designed a HiL bench set-up and its wiring harness for PWM control of suspension dampers to test
-					real-time control strategies
-					<br />
-					➤ Developed a custom HMI using the MoTeC C1812 display; implemented CAN-based GUI for live data
-					visualization and steering wheel button-based navigation <br />
-					➤ Applied the V-model systems engineering process to define requirements, coordinate
-					cross-functional teams and perform physical testing per US Army TOPs and FMVSS standards <br />
-
-					<strong> <u> Achievements: </u> </strong> <br />
-					✅ Developed a supervisory brake control framework enabling seamless integration of functionalities
-					while
-					enhancing debugging efficiency<br />
-					✅ Solely developed and implemented a custom MoTeC center console HMI within 2 months, incorporating
-					hardware CAN wiring considerations for seamless integration.
-				</p>
-
-				<div class="slideshow-wrapper"
-					style="overflow: hidden; max-width: 800px; margin: auto; position: relative;">
-
-					<!-- Project 1 Slideshow -->
-					<div class="slideshow-container" id="slideshow-track"
-						style="display: flex; transition: transform 1s ease;">
-
-						<div class="slide" style="min-width: 100%;">
-							<div class="media-container">
-								<img src="images/Brake_Supervisor_Architecture.png" alt="Overall Supervisory Control">
-							</div>
-							<div style="text-align: center; font-size: 18px; margin-top: 10px;">
-								<strong> Supervisory State Machine Architecture </strong>
-							</div>
+					<!-- Title + role + logo INSIDE the tabs box -->
+					<div style="padding:16px 20px;">
+						<div style="display:flex; justify-content:space-between; align-items:center;">
+							<h2 style="margin:0; font-size:clamp(18px,3vw,34px);">DEEP ORANGE 16 INTERN, CLEMSON
+								UNIVERSITY</h2>
+							<img src="images/ICAR_Logo2.png" alt="CU-ICAR" style="width:100px; height:40px;">
 						</div>
-
-						<div class="slide" style="min-width: 100%;">
-							<div class="media-container">
-								<img src="images/Actuator_Control_Architecture.png" alt="Individual Actuator Control">
-							</div>
-							<div style="text-align: center; font-size: 18px; margin-top: 10px;">
-								<strong> Individual Actuator State Machine Architecture </strong>
-							</div>
+						<div
+							style="display:flex; justify-content:space-between; flex-wrap:wrap; font-size:20px; margin-top:10px;">
+							<strong>Vehicle Dynamics & Controls Engineer</strong>
+							<strong>Greenville, South Carolina (US)</strong>
 						</div>
-
-						<div class="slide" style="min-width: 100%;">
-							<div class="media-container">
-								<img src="images/Brake_Supervisor.png" alt="Actuator Control Block">
-							</div>
-							<div style="text-align: center; font-size: 18px; margin-top: 10px;">
-								<strong> Brake System & Individual Actuator Supervisors </strong>
-							</div>
-						</div>
-
-						<div class="slide" style="min-width: 100%;">
-							<div class="media-container">
-								<img src="images/Control_System_Architecture.png"
-									alt="Brake System Start-up State Machine">
-							</div>
-							<div style="text-align: center; font-size: 18px; margin-top: 10px;">
-								<strong> Control System Architecture </strong>
-							</div>
-						</div>
-
-						<div class="slide" style="min-width: 100%;">
-							<div class="media-container">
-								<img src="images/Individual_Control_Block.png"
-									alt="Individual Actuators Start-up State Machine">
-							</div>
-							<div style="text-align: center; font-size: 18px; margin-top: 10px;">
-								<strong> Individual Control Block Definition </strong>
-							</div>
-						</div>
-
 					</div>
 
-					<a class="prev" onclick="plusSlides(-1)"
-						style="cursor:pointer; position: absolute; left: 0px; top: 50%; font-size: 30px;">&#10094;</a>
-					<a class="next" onclick="plusSlides(1)"
-						style="cursor:pointer; position: absolute; right: 0px; top: 50%; font-size: 30px;">&#10095;</a>
+					<!-- Radios -->
+					<input type="radio" name="do-tabs" id="do-r" checked>
+					<input type="radio" name="do-tabs" id="do-a">
+					<input type="radio" name="do-tabs" id="do-s">
+					<input type="radio" name="do-tabs" id="do-t">
+					<input type="radio" name="do-tabs" id="do-g">
+					<input type="radio" name="do-tabs" id="do-p">
 
-				</div>
+					<!-- Tab headers -->
+					<div class="tab-head">
+						<label for="do-r">Responsibilities</label>
+						<label for="do-a">Achievements</label>
+						<label for="do-s">Skills</label>
+						<label for="do-t">Tools Used</label>
+						<label for="do-p">Partners</label> <!-- NEW -->
+						<label for="do-g">Gallery</label>
+					</div>
 
-				<div style="text-align:center; margin-top: 10px;">
-					<span class="dot" onclick="currentSlide(1)"
-						style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
-					<span class="dot" onclick="currentSlide(2)"
-						style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
-					<span class="dot" onclick="currentSlide(3)"
-						style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
-					<span class="dot" onclick="currentSlide(4)"
-						style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
-					<span class="dot" onclick="currentSlide(5)"
-						style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
-				</div>
+					<!-- Panels -->
+					<div class="panels tab-content">
+						<!-- Responsibilities -->
+						<div class="tab-panel r">
+							<div class="callout"><strong> Project Focus: </strong>Developing a rapid response vehicle
+								for disaster scenarios,
+								involving
+								prototype
+								development with close industry collaboration </div>
+							<ul>
+								<li>Developed <strong>control algorithm and start-up state machine </strong> for
+									Brembo Sensify
+									brake-by-wire system.</li>
+								<li>Built <strong>HiL test bench setup </strong> for brake-by-wire testing, calibration,
+									and fault detection.
+								</li>
+								<li>Derived <strong> electronic park brake (EPB) </strong> use cases and integrated EPB
+									logic with service brakes and HMI
+									functions.</li>
+								<li>Designed <strong> DYC torque-vectoring algorithm </strong> to emulate differential
+									behavior.</li>
+								<li>Engineered <strong> wiring harness and test bench setup </strong> for Fox Live Valve
+									suspension
+									PWM damping control.</li>
+								<li>Developed custom <strong> MoTeC C1812 HMI </strong> with CAN GUI and steering-wheel
+									button navigation.
+								</li>
+								<li>Applied <strong> V-model </strong> systems engineering for end-to-end integration -
+									from personas,
+									requirements and scenarios to verification and validation as per US Army TOPs &
+									FMVSS standards.
+								</li>
+							</ul>
+						</div>
 
-				<footer style="margin-top: 15px; text-align: left;">
-					<span style="font-size: 20px;"><strong>Project Partners: <br /> </strong></span>
-					<img src="images/US Army.jpg" alt="US Army" title="US Army"
-						style="height: 70px; margin-left: 10px;">
-					<img src="images/Devcom.png" alt="Devcom" title="Devcom" style="height: 80px; margin-left: 10px;">
-					<img src="images/North American Rescue.png" alt="North American Rescue"
-						title="North American Rescue" style="height: 80px; margin-left: 10px;">
-					<img src="images/Brembo.png" alt="Brembo" title="Brembo" style="height: 70px; margin-left: 10px;">
-					<img src="images/Fox.png" alt="Fox" title="Fox" style="height: 70px; margin-left: 10px;">
-				</footer>
-				<!-- 🔧 TOOLS USED -->
-				<footer style="margin-top: 15px; text-align: left;">
-					<span style="font-size: 20px;"><strong><br /> Tools used: <br /></strong></span>
-					<img src="images/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB"
-						style="height: 40px; margin-left: 10px;">
-					<img src="images/Simulink.jpg" alt="Simulink" title="Simulink"
-						style="height: 40px; margin-left: 10px;">
-					<img src="images/New_Eagle_Icon_1.png" alt="New Eagle" title="New Eagle"
-						style="height: 40px; margin-left: 10px;">
-					<img src="images/GitHub.png" alt="GitHub" title="GitHub" style="height: 40px; margin-left: 10px;">
-				</footer>
+						<!-- Achievements -->
+						<div class="tab-panel a">
+							<ul>
+								<li>Built a <strong>supervisory brake control framework </strong> that streamlined
+									functionality & debugging.
+								</li>
+								<li>Solo-delivered MoTeC center-console HMI in <strong> 2 months </strong>, including
+									vehicle CAN wiring integration.</li>
+							</ul>
+						</div>
 
+						<!-- Skills -->
+						<div class="tab-panel s">
+							<ul>
+								<li>HiL/MiL validation & bench design</li>
+								<li>State machine development & supervisory control</li>
+								<li>Model/Non-model based control system development</li>
+								<li>Cross-domain integration</li>
+								<li>Real-time CAN communication and diagnostics</li>
+								<li>HMI customization and GUI development</li>
+								<li>V-model systems engineering</li>
+							</ul>
+						</div>
+
+						<!-- Tools Used (moved from footer) -->
+						<div class="tab-panel t">
+							<div style="display:flex; flex-wrap:wrap; gap:25px; align-items:center;">
+								<img src="images/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB" style="height:100px;">
+								<img src="images/Simulink.jpg" alt="Simulink" title="Simulink" style="height:80px;">
+								<img src="images/icons/Stateflow.jpg" alt="Stateflow" title="Stateflow"
+									style="height:90px;">
+								<img src="images/New_Eagle_Icon_1.png" alt="New Eagle" title="New Eagle"
+									style="height:100px;">
+								<img src="images/GitHub.png" alt="GitHub" title="GitHub" style="height:70px;">
+							</div>
+						</div>
+
+						<div class="tab-panel p">
+							<div style="display:flex; flex-wrap:wrap; gap:20px; align-items:center;">
+								<!-- Replace with your real partners/logos; examples below -->
+								<img src="images/US Army.jpg" alt="New Eagle" title="New Eagle" style="height:100px;">
+								<img src="images/Devcom.png" alt="Devcom" title="Devcom" style="height:100px;">
+								<img src="images/North American Rescue.png" alt="NAR" title="NAR" style="height:110px;">
+								<img src="images/Brembo.png" alt="Brembo" title="Brembo" style="height:80px;">
+								<img src="images/Fox.png" alt="Fox" title="Fox" style="height:100px;">
+							</div>
+						</div>
+
+						<!-- Gallery (reusing your existing slider) -->
+						<div class="tab-panel g">
+							<div class="slideshow-wrapper"
+								style="overflow:hidden; max-width:800px; margin:auto; position:relative;">
+								<div class="slideshow-container" id="slideshow-track"
+									style="display:flex; transition: transform 1s ease;">
+									<!-- slides kept exactly as before -->
+									<div class="slide" style="min-width:100%;">
+										<div class="media-container"><img src="images/Brake_Supervisor_Architecture.png"
+												alt="Overall Supervisory Control"></div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;">
+											<strong>Supervisory State Machine Architecture</strong>
+										</div>
+									</div>
+									<div class="slide" style="min-width:100%;">
+										<div class="media-container"><img src="images/Actuator_Control_Architecture.png"
+												alt="Individual Actuator Control"></div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;">
+											<strong>Individual Actuator State Machine Architecture</strong>
+										</div>
+									</div>
+									<div class="slide" style="min-width:100%;">
+										<div class="media-container"><img src="images/Brake_Supervisor.png"
+												alt="Actuator Control Block"></div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;"><strong>Brake
+												System & Individual Actuator Supervisors</strong></div>
+									</div>
+									<div class="slide" style="min-width:100%;">
+										<div class="media-container"><img src="images/Control_System_Architecture.png"
+												alt="Control System Architecture"></div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;"><strong>Control
+												System Architecture</strong></div>
+									</div>
+									<div class="slide" style="min-width:100%;">
+										<div class="media-container"><img src="images/Individual_Control_Block.png"
+												alt="Individual Control Block"></div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;">
+											<strong>Individual Control Block Definition</strong>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div style="text-align:center; margin-top:10px;">
+								<span class="dot" onclick="currentSlide(1)"></span>
+								<span class="dot" onclick="currentSlide(2)"></span>
+								<span class="dot" onclick="currentSlide(3)"></span>
+								<span class="dot" onclick="currentSlide(4)"></span>
+								<span class="dot" onclick="currentSlide(5)"></span>
+							</div>
+						</div>
+					</div><!-- /.panels -->
+
+				</div><!-- /.tabs -->
 			</article>
 
 			<!-- Project 1 Ends ------------------------------------------------------------------------------------------>
@@ -531,119 +1087,132 @@
 
 
 			<!-- Project 2 Starts ----------------------------------------------------------------------------------------->
-			<article id="project2" class="post featured" style="margin: 0 auto; max-width: 90%; padding: 20px 10px;">
+			<article id="project2" class="post featured" style="margin:0 auto; max-width:90%; padding:20px 10px;">
 
-				<!-- 🔧 DATE + LINE UNDERNEATH -->
-				<div
-					style="text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 20px;">
-					<span class="date" style="font-size: 20px;">
-						<strong> May 2024 to Dec 2024 </strong>
-					</span>
+				<div class="date-wrap">
+					<span class="timeline-badge ra">May 2024 – Dec 2024</span>
 				</div>
 
-				<!-- 🔧 TITLE + LOGO -->
-				<div style="display: flex; justify-content: space-between; align-items: left;">
-					<h2 style="margin: 0; font-size: clamp(18px, 3vw, 34px); flex: 1; margin-right: 10px;">
 
-						Graduate Research Assistant </a>
-					</h2>
-					<img src="images/ICAR_Logo2.png" alt="CU-ICAR" style="width: 100px; height: 40px;">
-				</div>
+				<div class="tabs" id="ra-tabs">
 
-				<div style="display: flex; justify-content: space-between; font-size: 20px; margin-top: 10px;">
-					<strong>Professor Dr. Matthias J. Schmid</strong>
-					<strong>Greenville, South Carolina (US)</strong>
-				</div>
-
-				<!-- 🔧 PROJECT DESCRIPTION -->
-				<p style="margin-top: 10px; font-size: 20px; text-align: justify;">
-					<strong> <u> Responsibilities: </u> </strong> <br />
-					➤ Served as Data Acquisition and Vehicle Dynamics Controls & Test Engineer for the Deep Orange 14
-					project, a U.S. Army research vehicle <br />
-					➤ Instrumented a BMW 535xi vehicle for data collection during dynamic maneuvers and brake tests
-					(4-post shaker, skid pad, slalom, double lane change) as a part of
-					research activity and graduate coursework at in-house facilities and ITIC proving grounds <br />
-
-					<strong> <u> Achievements: </u> </strong> <br />
-					✅ Played a key role in facilitating big-stage testing for the very first time <br />
-					✅ The critical data acquired from testing were leveraged to construct a virtual vehicle model and
-					perform corresponding simulations.
-
-				</p>
-
-				<div class=" slideshow-wrapper"
-					style="overflow: hidden; max-width: 800px; margin: auto; position: relative;">
-
-					<!-- Project 2 Slideshow -->
-					<div class="slideshow-container" id="slideshow-track-2"
-						style="display: flex; transition: transform 1s ease;">
-
-						<div class="slide-2" style="min-width: 100%;">
-							<div class="media-container">
-								<img src="images/BMW Testing/Steering Pad Testing Pic.jpg" alt="Thailand Ride">
-							</div>
-							<div style="text-align: center; font-size: 18px; margin-top: 10px;"><strong> Steering Pad
-									Testing at <span style="letter-spacing: 1.5px;">ITIC</span> Proving Grounds
-								</strong></div>
+					<div style="padding:16px 20px;">
+						<div style="display:flex; justify-content:space-between; align-items:center;">
+							<h2 style="margin:0; font-size:clamp(18px,3vw,34px);">GRADUATE RESEARCH ASSISTANT</h2>
+							<img src="images/ICAR_Logo2.png" alt="CU-ICAR" style="width:100px; height:40px;">
 						</div>
-
-						<div class="slide-2" style="min-width: 100%;">
-							<div class="media-container">
-								<iframe src="https://drive.google.com/file/d/1nq7AjNkjsL-B7QaLf7N5y7MRsHBw24SJ/preview"
-									width="100%" height="100%" allow="autoplay" allowfullscreen>
-								</iframe>
-							</div>
-							<div style="text-align: center; font-size: 18px; margin-top: 10px;"><strong> Steering Pad
-									Testing at ITIC Proving Grounds </strong></div>
+						<div style="display:flex; justify-content:space-between; font-size:20px; margin-top:10px;">
+							<strong>Professor Dr. Matthias J. Schmid</strong>
+							<strong>Greenville, South Carolina (US)</strong>
 						</div>
-
-						<div class="slide-2" style="min-width: 100%;">
-							<div class="media-container">
-								<img src="images/BMW Testing/Ash_&_Dr._Schmid.jpg" alt="Hunter Launch">
-							</div>
-							<div style="text-align: center; font-size: 18px; margin-top: 10px;"><strong> With my
-									Professor Dr. Schmid </strong></div>
-						</div>
-
-						<div class="slide-2" style="min-width: 100%;">
-							<div class="media-container">
-								<img src="images/BMW Testing/Ash_Testing_Pic.jpg" alt="Proving Grounds">
-							</div>
-							<div style="text-align: center; font-size: 18px; margin-top: 10px;"><strong> Casual Testing
-								</strong></div>
-						</div>
-
 					</div>
 
-					<a class="prev" onclick="plusSlides2(-1)"
-						style="cursor:pointer; position: absolute; left: 2px; top: 50%; font-size: 30px;">&#10094;</a>
-					<a class="next" onclick="plusSlides2(1)"
-						style="cursor:pointer; position: absolute; right: 2px; top: 50%; font-size: 30px;">&#10095;</a>
+					<input type="radio" name="ra-tabs" id="ra-r" checked>
+					<input type="radio" name="ra-tabs" id="ra-a">
+					<input type="radio" name="ra-tabs" id="ra-s">
+					<input type="radio" name="ra-tabs" id="ra-t">
+					<input type="radio" name="ra-tabs" id="ra-g">
 
-				</div>
+					<div class="tab-head">
+						<label for="ra-r">Responsibilities</label>
+						<label for="ra-a">Achievements</label>
+						<label for="ra-s">Skills</label>
+						<label for="ra-t">Tools Used</label>
+						<label for="ra-g">Gallery</label>
+					</div>
 
-				<div style="text-align:center; margin-top: 10px;">
-					<span class="dot-2" onclick="currentSlide2(1)"
-						style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
-					<span class="dot-2" onclick="currentSlide2(2)"
-						style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
-					<span class="dot-2" onclick="currentSlide2(3)"
-						style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
-					<span class="dot-2" onclick="currentSlide2(4)"
-						style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
-				</div>
+					<div class="panels tab-content">
 
+						<div class="tab-panel r">
+							<div class="callout"><strong> Vehicle dynamics controls & test engineer:</strong> Deep
+								Orange 14
+								(U.S.Army Prototype) and BMW 535xi research vehicle</div>
+							<ul>
+								<li>Led vehicle instrumentation and data acquisition, integrating IMU, accelerometers,
+									steering angle, ride height, and slip angle sensors with CAN data for dynamic
+									analysis.</li>
+								<li>Planned and executed vehicle dynamics tests at ITIC proving grounds, including
+									double lane change, steering pad, acceleration, and braking maneuvers.</li>
+								<li>Managed data collection and dissemination for student analysis and coursework
+									deliverables.</li>
+								<li>Supported virtual vehicle model development using sensor and CAN data for dynamic
+									validation.</li>
+							</ul>
+						</div>
 
-				<!-- 🔧 TOOLS USED -->
-				<footer style="margin-top: 15px; text-align: left;">
-					<span style="font-size: 20px;"><strong>Tools used: <br /></strong></span>
-					<img src="images/icons/HBM.png" alt="HBM" title="HBM" style="height: 40px; margin-left: 10px;">
-					<img src="images/icons/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB"
-						style="height: 40px; margin-left: 10px;">
-					<img src="images/icons/Simcenter_Testlab.png" alt="Testlab" title="Testlab"
-						style="height: 40px; margin-left: 10px;">
-				</footer>
+						<div class="tab-panel a">
+							<ul>
+								<li>Enabled first-ever big-stage testing for the program.</li>
+								<li>Test data leveraged to build virtual vehicle model and run simulations.</li>
+							</ul>
+						</div>
 
+						<div class="tab-panel s">
+							<ul>
+								<li>Vehicle instrumentation & Data acquisition system setup and synchronization</li>
+								<li>Test planning and execution</li>
+								<li>Cross-functional collaboration (students, faculty, and lab engineers)</li>
+								<li>Post-processing and visualization - DAQ systems & MATLAB scripts</li>
+							</ul>
+						</div>
+
+						<div class="tab-panel t">
+							<div style="display:flex; flex-wrap:wrap; gap:15px; align-items:center;">
+								<img src="images/icons/HBM.png" alt="HBM" title="HBM" style="height:90px;">
+								<img src="images/icons/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB"
+									style="height:90px;">
+								<img src="images/icons/Simcenter_Testlab.png" alt="Testlab" title="Testlab"
+									style="height:90px;">
+							</div>
+						</div>
+
+						<div class="tab-panel g">
+							<div class="slideshow-wrapper"
+								style="overflow:hidden; max-width:800px; margin:auto; position:relative;">
+								<div class="slideshow-container" id="slideshow-track-2"
+									style="display:flex; transition: transform 1s ease;">
+									<div class="slide-2" style="min-width:100%;">
+										<div class="media-container"><img
+												src="images/BMW Testing/Steering Pad Testing Pic.jpg"
+												alt="Steering Pad"></div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;">
+											<strong>Steering Pad Testing – ITIC</strong>
+										</div>
+									</div>
+									<div class="slide-2" style="min-width:100%;">
+										<div class="video-container">
+											<iframe
+												src="https://drive.google.com/file/d/1nq7AjNkjsL-B7QaLf7N5y7MRsHBw24SJ/preview"
+												width="100%" height="100%" allow="autoplay" allowfullscreen></iframe>
+										</div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;">
+											<strong>Steering Pad Testing – ITIC (Video)</strong>
+										</div>
+									</div>
+									<div class="slide-2" style="min-width:100%;">
+										<div class="media-container"><img src="images/BMW Testing/Ash_&_Dr._Schmid.jpg"
+												alt="Professor"></div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;"><strong>With
+												Prof. Schmid</strong></div>
+									</div>
+									<div class="slide-2" style="min-width:100%;">
+										<div class="media-container"><img src="images/BMW Testing/Ash_Testing_Pic.jpg"
+												alt="Testing"></div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;"><strong>Casual
+												Testing</strong></div>
+									</div>
+								</div>
+							</div>
+							<div style="text-align:center; margin-top:10px;">
+								<span class="dot-2" onclick="currentSlide2(1)"></span>
+								<span class="dot-2" onclick="currentSlide2(2)"></span>
+								<span class="dot-2" onclick="currentSlide2(3)"></span>
+								<span class="dot-2" onclick="currentSlide2(4)"></span>
+							</div>
+						</div>
+					</div><!-- /.panels -->
+
+				</div><!-- /.tabs -->
 			</article>
 
 			<!-- Project 2 Ends ------------------------------------------------------------------------------------------>
@@ -651,187 +1220,180 @@
 
 			<!-- Project 3 Starts ----------------------------------------------------------------------------------------->
 
-			<article id="project3" class="post featured" style="margin: 0 auto; max-width: 90%; padding: 20px 10px;">
+			<article id="project3" class="post featured" style="margin:0 auto; max-width:90%; padding:20px 10px;">
 
-				<!-- 🔧 DATE + LINE UNDERNEATH -->
-				<div
-					style="text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 20px;">
-					<span class="date" style="font-size: 20px;">
-						<strong> Aug 2018 to Jun 2023 </strong>
-					</span>
+				<div class="date-wrap">
+					<span class="timeline-badge re">Aug 2018 – Jun 2023</span>
 				</div>
 
-				<!-- 🔧 TITLE + LOGO -->
-				<div style="display: flex; justify-content: space-between; align-items: left;">
-					<h2 style="margin: 0; font-size: clamp(18px, 3vw, 34px); flex: 1; margin-right: 10px;">
+				<div class="tabs" id="re-tabs">
 
-						ROYAL ENFIELD (GLOBAL HEADQUARTERS) </a> <br />
-					</h2>
-
-					<h3 style="margin-top: 20px; font-size: 20px; text-align: justify;">
-
-					</h3>
-					<img src="images/RE.jpg" alt="CU-ICAR" style="width: 100px; height: 40px;">
-				</div>
-
-				<div style="display: flex; justify-content: space-between; font-size: 20px; margin-top: 10px;">
-					<strong> Assistant Manager - New Product Development (Chassis Testing & Validation) </strong>
-					<strong> Chennai, TamilNadu (India) </strong>
-				</div>
-
-				<!-- 🔧 PROJECT DESCRIPTION -->
-				<p style="margin-top: 10px; font-size: 20px; text-align: justify;">
-					<strong> <u> Responsibilities: </u> </strong> <br />
-					➤ <strong> Project Manager </strong> for chassis systems integration, scheduling project meetings
-					with cross-functional
-					teams to address development-stage challenges, conducting trials, root cause analysis, recommending
-					design modifications, and validating solutions. Established new internal testing procedures aligned
-					with <strong> ECE, FMVSS and Indian regulations </strong><br />
-					➤ Led as the <strong> ABS Development manager & test engineer </strong>, overseeing the testing and
-					validation of ABS
-					calibration programs to meet safety standards, homologation requirements, and subjective/objective
-					performance criteria. Managed alternate sourcing evaluations and final approvals while coordinating
-					weekly meetings with cross-functional teams to ensure project accountability <br />
-					➤ Served as a <strong> Vehicle Performance Test Engineer </strong>, developing verification plans,
-					maintaining
-					validation reports and conducting testing activities to assess vehicle attributes, including brake
-					systems, ride and handling and ergonomics <br />
-					➤ Gained hands-on expertise in prototype development, successfully building <strong> five motorcycle
-						prototypes </strong> from concept to SOP, with proficiency in tool handling and assembly
-					processes <br />
-
-					<strong> <u> Achievements: </u> </strong> <br />
-					✅ Won the Trailblazer Award twice for valuable contributions to ABS development, testing, and
-					overall
-					project success <br />
-					✅ Represented the Testing & Validation team during the global launch of the Hunter 350 in Bangkok,
-					Thailand
-				</p>
-
-				<div class="slideshow-wrapper"
-					style="overflow: hidden; max-width: 800px; margin: auto; position: relative;">
-
-					<!-- Project 3 Slideshow -->
-					<div class="slideshow-container" id="slideshow-track-3"
-						style="display: flex; transition: transform 1s ease;">
-
-						<div class="slide-3" style="min-width: 100%;">
-							<div class="media-container">
-								<img src="images/RE Docs/Thailand_Pic.jpg" alt="Thailand Ride">
-							</div>
-							<div style="text-align: center; font-size: 18px; margin-top: 10px;"><strong>Hunter Launch
-									Ride - Bangkok, Thailand</strong></div>
+					<div style="padding:16px 20px;">
+						<div style="display:flex; justify-content:space-between; align-items:center;">
+							<h2 style="margin:0; font-size:clamp(18px,3vw,34px);">ROYAL ENFIELD (GLOBAL HEADQUARTERS)
+							</h2>
+							<img src="images/RE_Logo.png" alt="Royal Enfield" style="width:175px; height:40%;">
 						</div>
-
-						<div class="slide-3" style="min-width: 100%;">
-							<div class="media-container">
-								<img src="images/RE Docs/Off Road Training.JPG" alt="Off-Road Training">
-							</div>
-							<div style="text-align: center; font-size: 18px; margin-top: 10px;"><strong>Off-Road
-									Training</strong></div>
+						<div style="display:flex; justify-content:space-between; font-size:20px; margin-top:10px;">
+							<strong>Assistant Manager – NPD (Chassis Testing & Validation)</strong>
+							<strong>Chennai, Tamil Nadu (India)</strong>
 						</div>
-
-						<div class="slide-3" style="min-width: 100%;">
-							<div class="media-container">
-								<iframe src="https://drive.google.com/file/d/1KH5jCWXI9UCcOSYLKZ80K6K-gum_OelA/preview"
-									width="100%" height="100%" allow="autoplay" allowfullscreen>
-								</iframe>
-							</div>
-							<div style="text-align: center; font-size: 18px; margin-top: 10px;"><strong>Dry Braking Test
-									- ABS Validation</strong></div>
-						</div>
-
-						<div class="slide-3" style="min-width: 100%;">
-							<div class="media-container">
-								<iframe src="https://drive.google.com/file/d/13sj6bf8rY9Q-UJQXVfG63Gp3vKMa-3Wc/preview"
-									width="100%" height="100%" allow="autoplay" allowfullscreen>
-								</iframe>
-							</div>
-							<div style="text-align: center; font-size: 18px; margin-top: 10px;"><strong>Wet Braking Test
-									- ABS Validation</strong></div>
-						</div>
-
-						<div class="slide-3" style="min-width: 100%;">
-							<div class="media-container">
-								<iframe src="https://drive.google.com/file/d/1uiMbfIjwyHAXRCh6ggZw-dypd2aiVJg4/preview"
-									width="100%" height="100%" allow="autoplay" allowfullscreen>
-								</iframe>
-							</div>
-							<div style="text-align: center; font-size: 18px; margin-top: 10px;"><strong>Wheelie Control
-									Test - Traction Control Validation </strong></div>
-						</div>
-
-						<div class="slide-3" style="min-width: 100%;">
-							<div class="media-container">
-								<img src="images/RE Docs/Hunter_Launch.jpg" alt="Hunter Launch">
-							</div>
-							<div style="text-align: center; font-size: 18px; margin-top: 10px;"><strong>Hunter 350
-									Launch - Bangkok, Thailand</strong></div>
-						</div>
-
-						<div class="slide-3" style="min-width: 100%;">
-							<div class="media-container">
-								<img src="images/RE Docs/Track_Pic.jpg" alt="Proving Grounds">
-							</div>
-							<div style="text-align: center; font-size: 18px; margin-top: 10px;"><strong>ABS Validation
-									in Proving Grounds</strong></div>
-						</div>
-
 					</div>
 
-					<a class="prev" onclick="plusSlides3(-1)"
-						style="cursor:pointer; position: absolute; left: 2px; top: 50%; font-size: 30px;">&#10094;</a>
-					<a class="next" onclick="plusSlides3(1)"
-						style="cursor:pointer; position: absolute; right: 2px; top: 50%; font-size: 30px;">&#10095;</a>
+					<input type="radio" name="re-tabs" id="re-r" checked>
+					<input type="radio" name="re-tabs" id="re-a">
+					<input type="radio" name="re-tabs" id="re-s">
+					<input type="radio" name="re-tabs" id="re-t">
+					<input type="radio" name="re-tabs" id="re-g">
 
-				</div>
+					<div class="tab-head">
+						<label for="re-r">Responsibilities</label>
+						<label for="re-a">Achievements</label>
+						<label for="re-s">Skills</label>
+						<label for="re-t">Tools Used</label>
+						<label for="re-g">Gallery</label>
+					</div>
 
-				<div style="text-align:center; margin-top: 10px;">
-					<span class="dot-3" onclick="currentSlide3(1)"
-						style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
-					<span class="dot-3" onclick="currentSlide3(2)"
-						style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
-					<span class="dot-3" onclick="currentSlide3(3)"
-						style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
-					<span class="dot-3" onclick="currentSlide3(4)"
-						style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
-					<span class="dot-3" onclick="currentSlide3(5)"
-						style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
-					<span class="dot-3" onclick="currentSlide3(6)"
-						style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
-					<span class="dot-3" onclick="currentSlide3(7)"
-						style="cursor:pointer; display:inline-block; height:15px; width:15px; margin: 0 5px; background-color:#bbb; border-radius:50%;"></span>
-				</div>
+					<div class="panels tab-content">
+						<div class="tab-panel r">
+							<ul>
+								<li><strong>Project manager </strong> for chassis systems integration; led
+									cross-functional team discussions, problem-solving, trials,
+									RCAs & design changes.</li>
+								<li><strong>ABS development/test engineer: </strong> Signed off ABS calibration programs
+									for homologation and performance validation.</li>
+								<li><strong> Vehicle performance test engineer:</strong> verification plans, validation
+									reporting for brakes, ride/handling, ergonomics.</li>
+								<li> Led a team of seven engineers in prototype build, validation, and production
+									readiness activities across five motorcycle platforms.</li>
+								<li>Established internal testing procedures aligned with <strong> ECE, FMVSS & Indian
+									</strong> ECE, FMVSS & Indian regulations.</li>
+								<li>Led prototype build across five platforms, supporting
+									development from concept to SOP.</li>
+							</ul>
+						</div>
 
-				<!-- 🔧 TOOLS USED -->
-				<footer style="margin-top: 15px; text-align: left;">
-					<span style="font-size: 20px;"><strong>Tools used: <br /></strong></span>
-					<img src="images/icons/2D_Racelogic.png" alt="2D Racelogic" title="2D Racelogic"
-						style="height: 40px; margin-left: 10px;">
-					<img src="images/icons/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB"
-						style="height: 40px; margin-left: 10px;">
-					<img src="images/icons/Simulink.jpg" alt="Simulink" title="Simulink"
-						style="height: 40px; margin-left: 10px;">
-					<img src="images/icons/VBox.jpg" alt="VBox Automotive" title="VBox Automotive"
-						style="height: 40px; margin-left: 10px;">
-					<img src="images/icons/Vector.png" alt="Vector" title="Vector"
-						style="height: 40px; margin-left: 10px;">
-					<img src="images/icons/Creo.png" alt="Creo" title="Creo" style="height: 40px; margin-left: 10px;">
-					<img src="images/icons/G_Suite.png" alt="G-Suite" title="G-Suite"
-						style="height: 40px; margin-left: 10px;">
-					<img src="images/icons/MS_Excel_Icon.jpg" alt="MS_Excel_Icon" title="MS_Excel_Icon"
-						style="height: 40px; margin-left: 10px;">
-					<img src="images/icons/MS_Word_Icon.jpg" alt="MS_Word_Icon" title="MS_Word_Icon"
-						style="height: 40px; margin-left: 10px;">
-					<img src="images/icons/Power_BI.png" alt="Power_BI" title="Power_BI"
-						style="height: 40px; margin-left: 10px;">
-					<img src="images/icons/Tool_Handling.png" alt="Tool_Handling" title="Tool_Handling"
-						style="height: 40px; margin-left: 10px;">
-				</footer>
+						<div class="tab-panel a">
+							<ul>
+								<li>Won the <strong> Trailblazer Award (twice)</strong> for ABS development & overall
+									project maturity.
+								</li>
+								<li>Represented India's testing & validation team at the <strong> global launch
+										event</strong> of Hunter 350 (Bangkok).</li>
+							</ul>
+						</div>
 
+						<div class="tab-panel s">
+							<ul>
+								<li>Vehicle integration, testing & validation</li>
+								<li>Design Verification Plan & Report generation (DVP&R)</li>
+								<li>Project management & cross-functional leadership</li>
+								<li>Performance testing (Brakes, Ride & Handling, NVH & Ergonomics)</li>
+								<li>Team leadership & Stakeholder coordination</li>
+								<li>Prototype build & development</li>
+							</ul>
+						</div>
+
+						<div class="tab-panel t">
+							<div style="display:flex; flex-wrap:wrap; gap:16px; align-items:center;">
+								<img src="images/icons/2D_Racelogic.png" alt="2D Racelogic" title="2D Racelogic"
+									style="height:60px;">
+								<img src="images/icons/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB"
+									style="height:60px;">
+								<img src="images/icons/Simulink.jpg" alt="Simulink" title="Simulink"
+									style="height:60px;">
+								<img src="images/icons/VBox.jpg" alt="VBox Automotive" title="VBox Automotive"
+									style="height:60px;">
+								<img src="images/icons/Vector.png" alt="Vector" title="Vector" style="height:60px;">
+								<img src="images/icons/Creo.png" alt="Creo" title="Creo" style="height:60px;">
+								<img src="images/icons/G_Suite.png" alt="G-Suite" title="G-Suite" style="height:60px;">
+								<img src="images/icons/MS_Excel_Icon.jpg" alt="Excel" title="Excel"
+									style="height:60px;">
+								<img src="images/icons/MS_Word_Icon.jpg" alt="Word" title="Word" style="height:60px;">
+								<img src="images/icons/Power_BI.png" alt="Power BI" title="Power BI"
+									style="height:60px;">
+								<img src="images/icons/Tool_Handling.png" alt="Tool Handling" title="Tool Handling"
+									style="height:60px;">
+							</div>
+						</div>
+
+						<div class="tab-panel g">
+							<div class="slideshow-wrapper"
+								style="overflow:hidden; max-width:800px; margin:auto; position:relative;">
+								<div class="slideshow-container" id="slideshow-track-3"
+									style="display:flex; transition: transform 1s ease;">
+									<div class="slide-3" style="min-width:100%;">
+										<div class="media-container"><img src="images/RE Docs/Thailand_Pic.jpg"
+												alt="Thailand Ride"></div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;"><strong>Hunter
+												350 Launch Recce – Bangkok, Thailand</strong></div>
+									</div>
+									<div class="slide-3" style="min-width:100%;">
+										<div class="media-container"><img src="images/RE Docs/Off Road Training.JPG"
+												alt="Off-Road Training"></div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;">
+											<strong>Off-Road Training</strong>
+										</div>
+									</div>
+									<div class="slide-3" style="min-width:100%;">
+										<div class="video-container">
+											<iframe
+												src="https://drive.google.com/file/d/1KH5jCWXI9UCcOSYLKZ80K6K-gum_OelA/preview"
+												width="100%" height="100%" allow="autoplay" allowfullscreen></iframe>
+										</div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;"><strong>Dry
+												Braking – ABS Validation</strong></div>
+									</div>
+									<div class="slide-3" style="min-width:100%;">
+										<div class="video-container">
+											<iframe
+												src="https://drive.google.com/file/d/13sj6bf8rY9Q-UJQXVfG63Gp3vKMa-3Wc/preview"
+												width="100%" height="100%" allow="autoplay" allowfullscreen></iframe>
+										</div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;"><strong>Wet
+												Braking – ABS Validation</strong></div>
+									</div>
+									<div class="slide-3" style="min-width:100%;">
+										<div class="video-container">
+											<iframe
+												src="https://drive.google.com/file/d/1uiMbfIjwyHAXRCh6ggZw-dypd2aiVJg4/preview"
+												width="100%" height="100%" allow="autoplay" allowfullscreen></iframe>
+										</div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;"><strong>
+												Traction Control Validation</strong></div>
+									</div>
+									<div class="slide-3" style="min-width:100%;">
+										<div class="media-container"><img src="images/RE Docs/Hunter_Launch.jpg"
+												alt="Hunter Launch"></div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;"><strong>Hunter
+												350 Launch – Bangkok</strong></div>
+									</div>
+									<div class="slide-3" style="min-width:100%;">
+										<div class="media-container"><img src="images/RE Docs/Track_Pic.jpg"
+												alt="Proving Grounds"></div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;"><strong>ABS
+												Validation – Proving Grounds</strong></div>
+									</div>
+								</div>
+							</div>
+							<div style="text-align:center; margin-top:10px;">
+								<span class="dot-3" onclick="currentSlide3(1)"></span>
+								<span class="dot-3" onclick="currentSlide3(2)"></span>
+								<span class="dot-3" onclick="currentSlide3(3)"></span>
+								<span class="dot-3" onclick="currentSlide3(4)"></span>
+								<span class="dot-3" onclick="currentSlide3(5)"></span>
+								<span class="dot-3" onclick="currentSlide3(6)"></span>
+								<span class="dot-3" onclick="currentSlide3(7)"></span>
+							</div>
+						</div>
+					</div><!-- /.panels -->
+
+				</div><!-- /.tabs -->
 			</article>
 
 			<!-- Project 3 Ends ------------------------------------------------------------------------------------------>
+
+
 		</div>
 
 		<!-- FOOTER SECTION STARTS  -------------------------------------------------------------------------------------------------------------------->
@@ -853,7 +1415,8 @@
 								style="font-family: 'Arial Nova', Arial, sans-serif; color: inherit;">
 								<strong>5, Research Drive, Greenville, <br />
 									South Carolina 29607,<br />
-									United States of America </strong>
+									United States of America</strong>
+							</a>
 						</p>
 					</section>
 
@@ -866,9 +1429,13 @@
 					<!-- EMAIL IDS -->
 					<section class="column" style="flex: 1; padding: 20px; text-align: center; padding-bottom: 5px;">
 						<h3 style="font-size: 25px; text-align: center;">📧 Email</h3>
-						<p style="font-size: 15px; text-align: center;"><strong><a
-									href="mailto:rangar2@g.clemson.edu">rangar2@g.clemson.edu</a> <br />
-								<a href="mailto:ashwintwister@gmail.com">ashwintwister@gmail.com </strong> </a>
+						<p style="font-size: 15px; text-align: center;"><strong>
+								<a href="mailto:rangar2@g.clemson.edu" target="_blank"
+									style="font-family: 'Arial Nova', Arial, sans-serif; color: inherit;">rangar2@g.clemson.edu</a>
+								<br />
+								<a href="mailto:ashwintwister@gmail.com" target="_blank"
+									style="font-family: 'Arial Nova', Arial, sans-serif; color: inherit;">ashwintwister@gmail.com
+							</strong> </a>
 						</p>
 					</section>
 
@@ -901,6 +1468,7 @@
 			</section>
 
 		</footer>
+
 
 		<!-- FOOTER SECTION ENDS  -------------------------------------------------------------------------------------------------------------------->
 
@@ -1113,8 +1681,77 @@
 			updateSlide3();
 		</script>
 
+		<ul class="actions--float-br">
+			<li>
+				<a id="backToTop" href="#header" class="button icon solid solo fa-arrow-up scrolly"
+					data-tooltip="Back to top" aria-label="Back to top"></a>
+			</li>
+		</ul>
 
+		<script>
+			(() => {
+				const btn = document.getElementById('backToTop')
+					|| document.querySelector('.actions--float-br .button');
+				if (!btn) return;
 
+				// thresholds: appear after SHOW_Y; hide only when above HIDE_Y
+				const SHOW_Y = 420;
+				const HIDE_Y = 260;
+
+				let ticking = false;
+				let lastY = window.scrollY || document.documentElement.scrollTop || 0;
+
+				function onScroll() {
+					if (ticking) return;
+					requestAnimationFrame(() => {
+						const y = window.scrollY || document.documentElement.scrollTop || 0;
+
+						// direction class on <body> (used by CSS to change slide direction)
+						if (y < lastY) {
+							document.body.classList.add('scrolling-up');
+							document.body.classList.remove('scrolling-down');
+						} else if (y > lastY) {
+							document.body.classList.add('scrolling-down');
+							document.body.classList.remove('scrolling-up');
+						}
+						lastY = y;
+
+						// hysteresis so it doesn't pop at the edge
+						const shown = btn.classList.contains('show');
+						if (!shown && y > SHOW_Y) btn.classList.add('show');
+						else if (shown && y < HIDE_Y) btn.classList.remove('show');
+
+						ticking = false;
+					});
+					ticking = true;
+				}
+
+				window.addEventListener('scroll', onScroll, { passive: true });
+				document.addEventListener('DOMContentLoaded', onScroll);
+
+				// Smooth scroll to top
+				btn.addEventListener('click', (e) => {
+					e.preventDefault();
+					if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+						window.scrollTo(0, 0);
+						return;
+					}
+					const startY = window.scrollY || document.documentElement.scrollTop || 0;
+					const start = performance.now();
+					const dur = 800; // ms
+
+					const easeInOutQuad = t => (t < 0.5) ? 2 * t * t : -1 + (4 - 2 * t) * t;
+
+					function step(now) {
+						const t = Math.min((now - start) / dur, 1);
+						const eased = easeInOutQuad(t);
+						window.scrollTo(0, Math.round(startY * (1 - eased)));
+						if (t < 1) requestAnimationFrame(step);
+					}
+					requestAnimationFrame(step);
+				});
+			})();
+		</script>
 </body>
 
 </html>
