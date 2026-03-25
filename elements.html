@@ -382,13 +382,11 @@
 			line-height: 1.5;
 		}
 
-<<<<<<< HEAD
+
 		/* ----- GALLERY: make container have natural height;
 		remove absolute positioning for img ----- */
 
-=======
 		/* ----- GALLERY: make container have natural height; remove absolute positioning for img ----- */
->>>>>>> 2484de73fb09da056a9706b364f04387acdf99ef
 		.tabs .tab-panel.g .media-container {
 			position: relative;
 			padding-bottom: 0;
@@ -515,23 +513,17 @@
 
 		/*------- Timeline Badge -----------------------------*/
 
-<<<<<<< HEAD
 
 
-
-=======
->>>>>>> 2484de73fb09da056a9706b364f04387acdf99ef
 		/* Remove the line between project articles */
 		.post.featured {
 			border: none !important;
 			box-shadow: none !important;
-<<<<<<< HEAD
-=======
+
 		}
 
 		/* Optional: add gentle spacing instead */
 		.post.featured {
->>>>>>> 2484de73fb09da056a9706b364f04387acdf99ef
 			margin-bottom: 40px;
 			/* adjust spacing between projects */
 		}
@@ -703,6 +695,47 @@
 			transform: translateY(-50%) !important;
 			/* smooth in */
 		}
+
+
+		/* New Experience (blue theme example) */
+		#newexp-tabs #newexp-r:checked~.tab-head label[for="newexp-r"],
+		#newexp-tabs #newexp-a:checked~.tab-head label[for="newexp-a"],
+		#newexp-tabs #newexp-s:checked~.tab-head label[for="newexp-s"],
+		#newexp-tabs #newexp-t:checked~.tab-head label[for="newexp-t"],
+		#newexp-tabs #newexp-g:checked~.tab-head label[for="newexp-g"] {
+			color: #d57e04;
+			border-bottom: 5px solid #d57e04;
+			margin-bottom: -2px;
+		}
+
+		.tabs #newexp-r:checked~.panels .r,
+		.tabs #newexp-a:checked~.panels .a,
+		.tabs #newexp-s:checked~.panels .s,
+		.tabs #newexp-t:checked~.panels .t,
+		.tabs #newexp-g:checked~.panels .g {
+			display: block;
+		}
+
+		#newexp-tabs {
+			background-color: #fef3c7;
+		}
+
+		#newexp-tabs .tab-content {
+			background-color: #ffffff;
+		}
+
+		.timeline-badge.newexp {
+			border-left: 6px solid #d57e04;
+		}
+
+		.inline-code {
+			font-family: Consolas, "Courier New", monospace;
+			font-size: 0.9em;
+			background-color: #f4f4f4;
+			padding: 2px 6px;
+			border-radius: 4px;
+			color: #255ec7;
+		}
 	</style>
 
 	<title> Professional Experience </title>
@@ -754,10 +787,14 @@
 		gap: 20px;
 		z-index: 999;">
 
-			<a href="javascript:void(0);" class="nav-dot" data-project="project0" data-label="Ford Internship"></a>
-			<a href="javascript:void(0);" class="nav-dot" data-project="project1" data-label="Deep Orange 16"></a>
-			<a href="javascript:void(0);" class="nav-dot" data-project="project2" data-label="Research Assistant"></a>
-			<a href="javascript:void(0);" class="nav-dot" data-project="project3" data-label="Royal Enfield"></a>
+			<a href="javascript:void(0);" class="nav-dot" data-project="project0"
+				data-label="Rivian VW Group Technolgy"></a>
+			<a href="javascript:void(0);" class="nav-dot" data-project="project1" data-label="Ford Motor Company"></a>
+			<a href="javascript:void(0);" class="nav-dot" data-project="project2"
+				data-label="Clemson University- Deep Orange 16"></a>
+			<a href="javascript:void(0);" class="nav-dot" data-project="project3"
+				data-label="Clemson University - RA"></a>
+			<a href="javascript:void(0);" class="nav-dot" data-project="project4" data-label="Royal Enfield"></a>
 		</div>
 
 
@@ -773,7 +810,145 @@
 
 			<!-- Project0 starts ----------------------------------------------------------------------------------------->
 
-			<article id="project0" class="post featured" style="margin: 0 auto; max-width: 90%; padding: 20px 10px;">
+			<!-- Project 0 starts ----------------------------------------------------------------------------------------->
+
+			<article id="project0" class="post featured" style="margin:0 auto; max-width:90%; padding:20px 10px;">
+
+				<div class="date-wrap">
+					<span class="timeline-badge newexp">Nov 2025 – Present</span>
+				</div>
+
+				<div class="tabs" id="newexp-tabs">
+
+					<div style="padding:16px 20px;">
+						<div style="display:flex; justify-content:space-between; align-items:center;">
+							<h2 style="margin:0; font-size:clamp(18px,3vw,34px);">SYSTEMS TEST & INTEGRATION ENGINEER,
+								RIVIAN
+								VOLKSWAGEN GROUP</h2>
+							<img src="images/Rivian_logo.png" alt="Company Logo" style="width:60px; height:55px;">
+						</div>
+						<div
+							style="display:flex; justify-content:space-between; flex-wrap:wrap; font-size:20px; margin-top:10px;">
+							<strong>Vehicle Dynamics & Controls</strong>
+							<strong>Irvine, California (US)</strong>
+						</div>
+					</div>
+
+					<input type="radio" name="newexp-tabs" id="newexp-r" checked>
+					<input type="radio" name="newexp-tabs" id="newexp-a">
+					<input type="radio" name="newexp-tabs" id="newexp-s">
+					<input type="radio" name="newexp-tabs" id="newexp-t">
+					<input type="radio" name="newexp-tabs" id="newexp-g">
+
+					<div class="tab-head">
+						<label for="newexp-r">Responsibilities</label>
+						<label for="newexp-a">Achievements</label>
+						<label for="newexp-s">Skills</label>
+						<label for="newexp-t">Tools Used</label>
+						<!-- <label for="newexp-g">Gallery</label> -->
+					</div>
+
+					<div class="panels tab-content">
+
+						<div class="tab-panel r">
+							<div class="callout"><strong>Project Focus:</strong> R1S/T and EDV platform - Vehicle
+								Dynamics Software Controls Integration
+							</div>
+							<ul>
+								<li>Vehicle dynamics controls software regression testing for feature development,
+									customer OTA releases, merge releases (MR), and supplier-related ECU changes
+								</li>
+								<li>DVP&R development, issue creation, and triaging of development and customer
+									issues</li>
+								<li>Ownership of feature-level and regression testing for the R1 and EDV platforms</li>
+							</ul>
+						</div>
+
+						<div class="tab-panel a">
+
+
+							<h3><code class="inline-code">Rivian's Hackathon Mega Event </code></h3>
+							<ul>
+								<li>Built a standalone .exe tool to identify potential failure modes from supplier
+									ECU changes with the help of AI tools.</li>
+								<li>Linked failure modes to existing JAMA test plans to highlight test coverage
+									gaps.</li>
+								<li>Automated JIRA ticket assignment for relevant teams to start testing based on
+									failure analysis
+									results.</li>
+								<li>Pulled VIN, timestamps, software version, and related test data to auto-generate
+									plots in Confluence reports.</li>
+								<li>Tracked all failure tickets associated with each supplier ECU change test plan
+									cycle.
+								</li>
+							</ul>
+
+						</div>
+
+						<div class="tab-panel s">
+							<ul>
+								<li>Controls regression testing & validation</li>
+								<li>Python-based test data post-processing</li>
+								<li>JAMA test planning & JIRA workflows</li>
+								<li>Vector CAN tools & automotive Ethernet analysis</li>
+								<li>CAN signal processing & XCP calibration</li>
+								<li>Vehicle-in-the-loop (ViL) validation</li>
+								<li>GitLab version control & collaboration</li>
+							</ul>
+						</div>
+
+						<div class="tab-panel t">
+							<div style="display:flex; flex-wrap:wrap; gap:25px; align-items:center;">
+								<img src="images/Vector_icon.png" alt="Vector" title="Vector" style="height:50px;">
+								<img src="images/Python.png" alt="Python" title="Python" style="height:50px;">
+								<img src="images/Jama.png" alt="JAMA" title="JAMA" style="height:60px;">
+								<img src="images/Jira.png" alt="Jira" title="Jira" style="height:45px;">
+								<img src="images/Gitlab.jpg" alt="Gitlab" title="Gitlab" style="height:60px;">
+								<img src="images/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB" style="height:70px;">
+								<img src="images/Cursor.png" alt="Cursor" title="Cursor" style="height:60px;">
+								<img src="images/Claude.png" alt="Claude" title="Claude" style="height:30px;">
+							</div>
+						</div>
+
+						<div class="tab-panel g">
+							<div class="slideshow-wrapper"
+								style="overflow:hidden; max-width:800px; margin:auto; position:relative;">
+								<div class="slideshow-container" id="slideshow-track-0"
+									style="display:flex; transition: transform 1s ease;">
+									<div class="slide-0" style="min-width:100%;">
+										<div class="media-container">
+											<img src="images/newexp_image1.png" alt="Gallery image 1">
+										</div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;">
+											<strong>Caption 1</strong>
+										</div>
+									</div>
+
+									<div class="slide-0" style="min-width:100%;">
+										<div class="media-container">
+											<img src="images/newexp_image2.png" alt="Gallery image 2">
+										</div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;">
+											<strong>Caption 2</strong>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div style="text-align:center; margin-top:10px;">
+								<span class="dot-0" onclick="currentSlide0(1)"></span>
+								<span class="dot-0" onclick="currentSlide0(2)"></span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</article>
+
+			<!-- Project 0 ends ----------------------------------------------------------------------------------------->
+
+
+			<article id="project1" class="post featured" style="margin: 0 auto; max-width: 90%; padding: 20px 10px;">
 
 
 				<div class="date-wrap">
@@ -894,7 +1069,6 @@
 												<strong>Steer-by-Wire Architecture</strong>
 											</div>
 										</div>
-<<<<<<< HEAD
 										<div class="slide-0" style="min-width:100%;">
 											<div class="media-container">
 												<img src="images/Ford_Testing.png" alt="F-150 Research Vehicle Testing">
@@ -913,8 +1087,6 @@
 												<strong>Calibration using ATI Vision</strong>
 											</div>
 										</div>
-=======
->>>>>>> 2484de73fb09da056a9706b364f04387acdf99ef
 									</div>
 
 									<!-- arrows -->
@@ -927,23 +1099,22 @@
 								<!-- dots -->
 								<div style="text-align:center; margin-top:10px;">
 									<span class="dot-0" onclick="currentSlide0(1)"></span>
-<<<<<<< HEAD
 									<span class="dot-0" onclick="currentSlide0(2)"></span>
 									<span class="dot-0" onclick="currentSlide0(3)"></span>
-=======
->>>>>>> 2484de73fb09da056a9706b364f04387acdf99ef
+
+
 								</div>
 							</div>
 						</div>
 					</div>
 			</article>
 
-			<!-- Project 0 ends ----------------------------------------------------------------------------------------->
+			<!-- Project 1 ends ----------------------------------------------------------------------------------------->
 
 
-			<!-- Project 1 Starts ----------------------------------------------------------------------------------------->
+			<!-- Project 2 Starts ----------------------------------------------------------------------------------------->
 
-			<article id="project1" class="post featured" style="margin:0 auto; max-width:90%; padding:20px 10px;">
+			<article id="project2" class="post featured" style="margin:0 auto; max-width:90%; padding:20px 10px;">
 
 				<!-- Date (no underline) -->
 				<div class="date-wrap">
@@ -1123,12 +1294,12 @@
 				</div><!-- /.tabs -->
 			</article>
 
-			<!-- Project 1 Ends ------------------------------------------------------------------------------------------>
+			<!-- Project 2 Ends ------------------------------------------------------------------------------------------>
 
 
 
-			<!-- Project 2 Starts ----------------------------------------------------------------------------------------->
-			<article id="project2" class="post featured" style="margin:0 auto; max-width:90%; padding:20px 10px;">
+			<!-- Project 3 Starts ----------------------------------------------------------------------------------------->
+			<article id="project3" class="post featured" style="margin:0 auto; max-width:90%; padding:20px 10px;">
 
 				<div class="date-wrap">
 					<span class="timeline-badge ra">May 2024 – Dec 2024</span>
@@ -1256,12 +1427,12 @@
 				</div><!-- /.tabs -->
 			</article>
 
-			<!-- Project 2 Ends ------------------------------------------------------------------------------------------>
+			<!-- Project 3 Ends ------------------------------------------------------------------------------------------>
 
 
-			<!-- Project 3 Starts ----------------------------------------------------------------------------------------->
+			<!-- Project 4 Starts ----------------------------------------------------------------------------------------->
 
-			<article id="project3" class="post featured" style="margin:0 auto; max-width:90%; padding:20px 10px;">
+			<article id="project4" class="post featured" style="margin:0 auto; max-width:90%; padding:20px 10px;">
 
 				<div class="date-wrap">
 					<span class="timeline-badge re">Aug 2018 – Jun 2023</span>
@@ -1316,36 +1487,37 @@
 
 						<div class="tab-panel a">
 							<ul>
-<<<<<<< HEAD
-								<li>Won the Trailblazer Award (twice) for ABS development & overall project maturity.
+								<li>Won the Trailblazer Award (twice) for ABS development & overall project
+									maturity.
 								</li>
-								<li>Represented Testing & Validation at the global launch of Hunter 350 (Bangkok).</li>
-=======
-								<li>Won the <strong> Trailblazer Award (twice)</strong> for ABS development & overall
+								<li>Represented Testing & Validation at the global launch of Hunter 350 (Bangkok).
+								</li>
+								=======
+								<li>Won the <strong> Trailblazer Award (twice)</strong> for ABS development &
+									overall
 									project maturity.
 								</li>
 								<li>Represented India's testing & validation team at the <strong> global launch
 										event</strong> of Hunter 350 (Bangkok).</li>
->>>>>>> 2484de73fb09da056a9706b364f04387acdf99ef
+								>>>>>>> 2484de73fb09da056a9706b364f04387acdf99ef
 							</ul>
 						</div>
 
 						<div class="tab-panel s">
 							<ul>
-<<<<<<< HEAD
 								<li>Vehicle testing & validation (brake systems, ride & handling)</li>
 								<li>ABS calibration & homologation</li>
 								<li>Program management & XFN leadership</li>
 								<li>Regulatory compliance (ECE, FMVSS, Indian regs)</li>
 								<li>Prototype build & DV/PV planning</li>
-=======
+
 								<li>Vehicle integration, testing & validation</li>
 								<li>Design Verification Plan & Report generation (DVP&R)</li>
 								<li>Project management & cross-functional leadership</li>
 								<li>Performance testing (Brakes, Ride & Handling, NVH & Ergonomics)</li>
 								<li>Team leadership & Stakeholder coordination</li>
 								<li>Prototype build & development</li>
->>>>>>> 2484de73fb09da056a9706b364f04387acdf99ef
+
 							</ul>
 						</div>
 
@@ -1387,11 +1559,10 @@
 										<div class="media-container"><img src="images/RE Docs/Off Road Training.JPG"
 												alt="Off-Road Training"></div>
 										<div style="text-align:center; font-size:18px; margin-top:10px;">
-<<<<<<< HEAD
 											<strong>Off-Road Training - Kolar, India</strong>
-=======
+
 											<strong>Off-Road Training</strong>
->>>>>>> 2484de73fb09da056a9706b364f04387acdf99ef
+
 										</div>
 									</div>
 									<div class="slide-3" style="min-width:100%;">
@@ -1450,7 +1621,7 @@
 				</div><!-- /.tabs -->
 			</article>
 
-			<!-- Project 3 Ends ------------------------------------------------------------------------------------------>
+			<!-- Project 4 Ends ------------------------------------------------------------------------------------------>
 
 
 		</div>
@@ -1550,7 +1721,7 @@
 
 		<script>
 			// Sections to track
-			const sections = ['project0', 'project1', 'project2', 'project3'];
+			const sections = ['project0', 'project1', 'project2', 'project3', 'project4'];
 			const options = { threshold: 0.5 };
 
 			// Intersection Observer to handle active highlight
