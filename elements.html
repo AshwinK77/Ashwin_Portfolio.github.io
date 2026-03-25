@@ -1,498 +1,1987 @@
 <!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Elements Reference - Massively by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Massively</a>
-					</header>
+<html lang="en">
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li><a href="index.html">This is Massively</a></li>
-							<li><a href="generic.html">Generic Page</a></li>
-							<li class="active"><a href="elements.html">Elements Reference</a></li>
-						</ul>
-						<ul class="icons">
-							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+<head>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+		rel="stylesheet">
 
-				<!-- Main -->
-					<div id="main">
+	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 
-						<!-- Post -->
-							<section class="post">
-								<header class="major">
-									<h1>Elements<br />
-									Reference</h1>
-								</header>
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
 
-								<!-- Text stuff -->
-									<h2>Text</h2>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>.
-									Finally, this is a <a href="#">link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-									<hr />
-									<header>
-										<h2>Heading with a Subtitle</h2>
-										<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-									</header>
-									<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-									<header>
-										<h3>Heading with a Subtitle</h3>
-										<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-									</header>
-									<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-									<header>
-										<h4>Heading with a Subtitle</h4>
-										<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-									</header>
-									<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
+	<style>
+		@font-face {
+			font-family: 'Arial Nova';
+			src: local('Arial Nova');
+		}
 
-									<hr />
+		body {
+			font-family: "Carlito", sans-serif;
 
-								<!-- Lists -->
-									<h2>Lists</h2>
-									<div class="row">
-										<div class="col-6 col-12-small">
+		}
 
-											<h3>Unordered</h3>
-											<ul>
-												<li>Dolor pulvinar etiam.</li>
-												<li>Sagittis lorem eleifend.</li>
-												<li>Felis feugiat dolore viverra.</li>
-												<li>Dolor pulvinar etiam.</li>
-											</ul>
+		html,
+		body {
+			max-width: 100%;
+			overflow-x: hidden;
+		}
 
-											<h3>Alternate</h3>
-											<ul class="alt">
-												<li>Dolor pulvinar etiam etiam.</li>
-												<li>Sagittis adipiscing eleifend.</li>
-												<li>Felis enim dolore viverra.</li>
-												<li>Dolor pulvinar etiam etiam.</li>
-											</ul>
+		img,
+		video,
+		iframe {
+			max-width: 100%;
+			height: auto;
+		}
 
-										</div>
-										<div class="col-6 col-12-small">
+		/* Radio button Navigation Formatting ----------------------------------------------------------*/
 
-											<h3>Ordered</h3>
-											<ol>
-												<li>Dolor pulvinar etiam.</li>
-												<li>Etiam vel felis at viverra.</li>
-												<li>Felis enim feugiat magna.</li>
-												<li>Etiam vel felis nullam.</li>
-												<li>Felis enim et tempus.</li>
-											</ol>
+		/* --- Existing Nav Dot Styling --- */
+		.nav-dot {
+			width: 16px;
+			height: 16px;
+			border: 2px solid #999;
+			border-radius: 50%;
+			display: inline-block;
+			transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
+			background-color: transparent;
+			position: relative;
+			/* <-- added so tooltips position correctly */
+		}
 
-											<h3>Icons</h3>
-											<ul class="icons">
-												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-												<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-												<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-											</ul>
-											<ul class="icons alt">
-												<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-												<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-												<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-												<li><a href="#" class="icon brands alt fa-github"><span class="label">Github</span></a></li>
-												<li><a href="#" class="icon brands alt fa-dribbble"><span class="label">Dribbble</span></a></li>
-											</ul>
+		/* Hover effect */
+		.nav-dot:hover {
+			background-color: #ccc;
+			/* light grey */
+			transform: scale(1.2);
+			cursor: pointer;
+		}
 
-										</div>
-									</div>
-									<h3>Definition</h3>
-									<dl>
-										<dt>Item 1</dt>
-										<dd>
-											<p>Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-										</dd>
-										<dt>Item 2</dt>
-										<dd>
-											<p>Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-										</dd>
-										<dt>Item 3</dt>
-										<dd>
-											<p>Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-										</dd>
-									</dl>
+		/* Active section */
+		.nav-dot.active {
+			background-color: #007BFF;
+			/* blue */
+			border-color: #007BFF;
+		}
 
-									<h3>Actions</h3>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions small">
-										<li><a href="#" class="button primary small">Small</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<div class="row">
-										<div class="col-6 col-12-small">
-											<ul class="actions stacked">
-												<li><a href="#" class="button primary">Default</a></li>
-												<li><a href="#" class="button">Default</a></li>
-											</ul>
-										</div>
-										<div class="col-6 col-12-small">
-											<ul class="actions stacked">
-												<li><a href="#" class="button primary small">Small</a></li>
-												<li><a href="#" class="button small">Small</a></li>
-											</ul>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-6 col-12-small">
-											<ul class="actions stacked">
-												<li><a href="#" class="button primary fit">Default</a></li>
-												<li><a href="#" class="button fit">Default</a></li>
-											</ul>
-										</div>
-										<div class="col-6 col-12-small">
-											<ul class="actions stacked">
-												<li><a href="#" class="button primary small fit">Small</a></li>
-												<li><a href="#" class="button small fit">Small</a></li>
-											</ul>
-										</div>
-									</div>
+		/* --- Tooltip Additions --- */
+		.nav-dot::after {
+			content: attr(data-label);
+			/* text comes from HTML attribute */
+			position: absolute;
+			top: 50%;
+			left: -12px;
+			transform: translate(-100%, -50%);
+			background: #333;
+			color: #fff;
+			font-size: 13px;
+			font-weight: 600;
+			padding: 4px 8px;
+			border-radius: 6px;
+			white-space: nowrap;
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity 0.25s ease-in-out;
+			z-index: 1000;
+		}
 
-									<hr />
+		/* Show tooltip on hover */
+		.nav-dot:hover::after {
+			opacity: 1;
+		}
 
-								<!-- Blockquote -->
-									<h2>Blockquote</h2>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis.</blockquote>
 
-									<hr />
+		/* Radio button Navigation Declaration Ends ----------------------------------------------------*/
 
-								<!-- Table -->
-									<h2>Table</h2>
 
-									<h3>Default</h3>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item 1</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item 2</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item 3</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item 4</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item 5</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
 
-									<h3>Alternate</h3>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item 1</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item 2</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item 3</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item 4</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item 5</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
+		/* CSS code for RE section media uniformity -----------------------------------------------------*/
+		.media-container,
+		.video-container {
+			position: relative;
+			width: 100%;
+			aspect-ratio: 16 / 9;
+			/* keeps uniform height for all media */
+			height: auto;
+			overflow: hidden;
+			background-color: #000;
+			/* adds consistent background */
+			border-radius: 8px;
+		}
 
-									<hr />
 
-								<!-- Buttons -->
-									<h2>Buttons</h2>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary large">Large</a></li>
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions fit">
-										<li><a href="#" class="button primary fit">Fit</a></li>
-										<li><a href="#" class="button fit">Fit</a></li>
-									</ul>
-									<ul class="actions fit small">
-										<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-										<li><a href="#" class="button fit small">Fit + Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-search">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Primary</span></li>
-										<li><span class="button disabled">Default</span></li>
-									</ul>
+		/* Let everything inside fill the container */
+		.media-container img,
+		.video-container iframe,
+		.video-container video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			/* ensures full fill without stretching */
+		}
 
-									<hr />
+		/* CSS code for RE section media uniformity ends -----------------------------------------------------*/
 
-								<!-- Form -->
-									<h2>Form</h2>
 
-									<form method="post" action="#">
-										<div class="row gtr-uniform">
-											<div class="col-6 col-12-xsmall">
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-											</div>
-											<div class="col-6 col-12-xsmall">
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-											</div>
-											<!-- Break -->
-											<div class="col-12">
-												<select name="demo-category" id="demo-category">
-													<option value="">- Category -</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<!-- Break -->
-											<div class="col-4 col-12-small">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="col-4 col-12-small">
-												<input type="radio" id="demo-priority-normal" name="demo-priority">
-												<label for="demo-priority-normal">Normal</label>
-											</div>
-											<div class="col-4 col-12-small">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<!-- Break -->
-											<div class="col-6 col-12-small">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="col-6 col-12-small">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">I am a human</label>
-											</div>
-											<!-- Break -->
-											<div class="col-12">
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-											<!-- Break -->
-											<div class="col-12">
-												<ul class="actions">
-													<li><input type="submit" value="Send Message" class="primary" /></li>
-													<li><input type="reset" value="Reset" /></li>
-												</ul>
-											</div>
-										</div>
-									</form>
+		.slideshow-container {
+			position: relative;
+			overflow: visible;
+			/* allows arrows to be visible outside image bounds */
+			max-width: 800px;
+			margin: auto;
+		}
 
-									<hr />
+		.slideshow-track-0,
+		.slideshow-track,
+		.slideshow-track-2,
+		.slideshow-track-3 {
+			display: none;
+		}
 
-								<!-- Image -->
-									<h2>Image</h2>
+		.slideshow-wrapper {
+			position: relative;
+			overflow: visible;
+			/* allows arrows to be visible outside image bounds */
+			max-width: 1000px;
+			margin: auto;
+		}
 
-									<h3>Fit</h3>
-									<span class="image fit"><img src="images/pic01.jpg" alt="" /></span>
-									<div class="box alt">
-										<div class="row gtr-50 gtr-uniform">
-											<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-											<!-- Break -->
-											<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-											<!-- Break -->
-											<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-										</div>
-									</div>
+		.slide-0,
+		.slide,
+		.slide-2,
+		.slide-3 {
+			min-width: 100%;
+			box-sizing: border-box;
+		}
 
-									<h3>Left &amp; Right</h3>
-									<p><span class="image left"><img src="images/pic08.jpg" alt="" /></span>Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Vestibulum ante ipsum primis in faucibus magna blandit adipiscing eu felis iaculis.</p>
-									<p><span class="image right"><img src="images/pic09.jpg" alt="" /></span>Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Vestibulum ante ipsum primis in faucibus magna blandit adipiscing eu felis iaculis.</p>
+		.prev,
+		.next {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			font-size: 24px;
+			font-weight: bold;
+			color: black;
+			background-color: rgba(255, 255, 255, 0.7);
+			border-radius: 50%;
+			width: 40px;
+			height: 40px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			z-index: 2;
+			cursor: pointer;
+			user-select: none;
+			text-decoration: none;
+			border: none;
+		}
 
-									<hr />
+		.prev {
+			left: -150px;
+		}
 
-								<!-- Box -->
-									<h2>Box</h2>
-									<div class="box">
-										<p>Felis sagittis eget tempus primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Magna sed etiam ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus lorem ipsum dolor sit amet nullam. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Vestibulum ante ipsum primis in faucibus magna blandit adipiscing eu felis iaculis volutpat lorem ipsum dolor.</p>
-									</div>
+		.next {
+			right: -150px;
+		}
 
-									<hr />
+		.dot-0,
+		.dot,
+		.dot-2,
+		.dot-3 {
+			height: 15px;
+			width: 15px;
+			margin: 0 2px;
+			background-color: #bbb;
+			display: inline-block;
+			border-radius: 50%;
+		}
 
-								<!-- Preformatted Code -->
-									<h2>Preformatted</h2>
-									<pre><code>i = 0;
+		.active-dot {
+			background-color: #717171 !important;
+		}
 
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
+		/* ----------------------- Tabs Trial --------------------------- */
 
-print 'It took ' + i + ' iterations to sort the deck.';
-</code></pre>
+		/* ---------------- Tabs Styling ---------------- */
+		.tabs {
+			margin-top: 16px;
+			border: 1px solid #e8e8ee;
+			border-radius: 16px;
+			overflow: hidden;
+		}
 
-							</section>
+		.tabs input[type="radio"] {
+			position: absolute;
+			left: -9999px;
+		}
 
+		.tabs .tab-head {
+			display: flex;
+			background: #f6f7fb;
+			border-bottom: 1px solid #e1e4eb;
+			/* the grey rule */
+			border-top-left-radius: 16px;
+			border-top-right-radius: 16px;
+			overflow: hidden;
+		}
+
+		.tabs .tab-head label {
+			flex: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 54px;
+			font-size: 22px;
+			font-weight: 700;
+			letter-spacing: .02em;
+			color: #2a2a2a;
+			cursor: pointer;
+			transition: background .2s, color .2s, border .2s;
+			border-bottom: 1px solid transparent;
+			/* lets us “swap” the underline */
+		}
+
+		.tabs .tab-head label:last-child {
+			border-right: none;
+		}
+
+		.tabs .tab-head label::before,
+		.tabs .tab-head label::after {
+			content: none !important;
+		}
+
+		/* RA (green) */
+		#ra-tabs #ra-r:checked~.tab-head label[for="ra-r"],
+		#ra-tabs #ra-a:checked~.tab-head label[for="ra-a"],
+		#ra-tabs #ra-s:checked~.tab-head label[for="ra-s"],
+		#ra-tabs #ra-t:checked~.tab-head label[for="ra-t"],
+		#ra-tabs #ra-g:checked~.tab-head label[for="ra-g"] {
+			color: #006633;
+			/* your darker green */
+			border-bottom: 5px solid #006633;
+			margin-bottom: -2px;
+			/* fixes the vertical offset */
+		}
+
+		/* Ford (blue) */
+		#ford-tabs #ford-r:checked~.tab-head label[for="ford-r"],
+		#ford-tabs #ford-a:checked~.tab-head label[for="ford-a"],
+		#ford-tabs #ford-s:checked~.tab-head label[for="ford-s"],
+		#ford-tabs #ford-t:checked~.tab-head label[for="ford-t"],
+		#ford-tabs #ford-g:checked~.tab-head label[for="ford-g"] {
+			color: #002280;
+			border-bottom: 5px solid #002280;
+			margin-bottom: -2px;
+		}
+
+		/* DO (peach/pink) — add do-p */
+		#do-tabs #do-r:checked~.tab-head label[for="do-r"],
+		#do-tabs #do-a:checked~.tab-head label[for="do-a"],
+		#do-tabs #do-s:checked~.tab-head label[for="do-s"],
+		#do-tabs #do-t:checked~.tab-head label[for="do-t"],
+		#do-tabs #do-g:checked~.tab-head label[for="do-g"],
+		#do-tabs #do-p:checked~.tab-head label[for="do-p"] {
+			/* ← NEW */
+			color: #c04d01;
+			border-bottom: 5px solid #c04d01;
+			margin-bottom: -2px;
+		}
+
+		/* RE (magenta) */
+		#re-tabs #re-r:checked~.tab-head label[for="re-r"],
+		#re-tabs #re-a:checked~.tab-head label[for="re-a"],
+		#re-tabs #re-s:checked~.tab-head label[for="re-s"],
+		#re-tabs #re-t:checked~.tab-head label[for="re-t"],
+		#re-tabs #re-g:checked~.tab-head label[for="re-g"] {
+			color: #660066;
+			border-bottom: 5px solid #660066;
+			margin-bottom: -2px;
+		}
+
+		.tabs .tab-content {
+			background: #fff;
+			padding: 18px 20px;
+			text-align: left;
+			font-size: 19px;
+			/* smaller than body text */
+			line-height: 1.55;
+			/* keep readability */
+		}
+
+
+		.tabs .tab-panel {
+			display: none;
+		}
+
+		.tabs #ford-r:checked~.panels .r,
+		.tabs #ford-a:checked~.panels .a,
+		.tabs #ford-s:checked~.panels .s,
+		.tabs #ford-t:checked~.panels .t,
+		.tabs #ford-g:checked~.panels .g {
+			display: block;
+		}
+
+		/* Show panels for Deep Orange tabs — add do-p */
+		.tabs #do-r:checked~.panels .r,
+		.tabs #do-a:checked~.panels .a,
+		.tabs #do-s:checked~.panels .s,
+		.tabs #do-t:checked~.panels .t,
+		.tabs #do-g:checked~.panels .g,
+		.tabs #do-p:checked~.panels .p {
+			/* ← NEW */
+			display: block;
+		}
+
+		/* Show panels for Research Assistant tabs */
+		.tabs #ra-r:checked~.panels .r,
+		.tabs #ra-a:checked~.panels .a,
+		.tabs #ra-s:checked~.panels .s,
+		.tabs #ra-t:checked~.panels .t,
+		.tabs #ra-g:checked~.panels .g {
+			display: block;
+		}
+
+		/* Show panels for Royal Enfield tabs */
+		.tabs #re-r:checked~.panels .r,
+		.tabs #re-a:checked~.panels .a,
+		.tabs #re-s:checked~.panels .s,
+		.tabs #re-t:checked~.panels .t,
+		.tabs #re-g:checked~.panels .g {
+			display: block;
+		}
+
+		/* Bullets left aligned */
+		.tabs .tab-content ul {
+			padding-left: 1.25rem;
+			margin: .25rem 0 0;
+			list-style: disc outside;
+			line-height: 1.65;
+		}
+
+
+		.tabs .tab-content li {
+			margin: .25rem 0;
+		}
+
+
+		.tabs .callout {
+			background: #f7fbff;
+			border: 1px solid #d8e9ff;
+			padding: 10px 12px;
+			border-radius: 10px;
+			margin-bottom: 10px;
+			font-style: italic;
+			font-size: 19px;
+			line-height: 1.5;
+		}
+
+
+		/* ----- GALLERY: make container have natural height;
+		remove absolute positioning for img ----- */
+
+		/* ----- GALLERY: make container have natural height; remove absolute positioning for img ----- */
+		.tabs .tab-panel.g .media-container {
+			position: relative;
+			padding-bottom: 0;
+			/* no aspect hack */
+			height: auto;
+			max-height: 800px;
+			background: transparent;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.tabs .tab-panel.g .media-container img {
+			position: static;
+			/* override the global absolute rule */
+			width: auto;
+			max-width: 70%;
+			height: auto;
+			max-height: 800px;
+			object-fit: contain;
+			display: block;
+			margin: 0 auto;
+		}
+
+		/* ----------------------- Tabs Trial --------------------------- */
+
+		.prev,
+		.next {
+			display: none !important;
+		}
+
+		/* Ford → Light Blue */
+		#ford-tabs {
+			background-color: #cce9fc;
+			/* light blue */
+		}
+
+		/* Deep Orange → Light Pink */
+		#do-tabs {
+			background-color: #ebd9c1;
+			/* light pink */
+		}
+
+		/* Research Assistant → Light Green */
+		#ra-tabs {
+			background-color: #ccfce0;
+			/* light green */
+		}
+
+		/* Royal Enfield → Light Magenta */
+		#re-tabs {
+			background-color: #e6cbfc;
+			/* light magenta */
+		}
+
+		/* Make inner content (panels) white for all */
+		#ford-tabs .tab-content,
+		#do-tabs .tab-content,
+		#ra-tabs .tab-content,
+		#re-tabs .tab-content {
+			background-color: #ffffff;
+		}
+
+		/*------- Timeline Badge -----------------------------*/
+
+		.timeline-badge {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			padding: 10px 20px;
+			/* slightly larger padding */
+			background: #fff;
+			border: 1px solid #e1e4eb;
+			border-radius: 999px;
+			/* pill */
+			font-size: 20px;
+			/* bigger text */
+			font-weight: 800;
+			/* bolder */
+			letter-spacing: .02em;
+			color: #2a2a2a;
+			box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+		}
+
+		/* small icon */
+		.timeline-badge::before {
+			content: "📅";
+			font-size: 18px;
+			line-height: 1;
+		}
+
+		/* Centering container already exists above each tabs box – keep it */
+		.date-wrap {
+			text-align: center;
+			margin-bottom: -10px;
+			/* matches your current spacing */
+		}
+
+		/* Optional: add a thin left accent that matches each section’s theme */
+		#ford-tabs~.accent,
+		#do-tabs~.accent,
+		#ra-tabs~.accent,
+		#re-tabs~.accent {
+			display: none;
+		}
+
+		/* safety */
+
+		.timeline-badge.ford {
+			border-left: 6px solid #002280;
+		}
+
+		.timeline-badge.do {
+			border-left: 6px solid #c04d01;
+		}
+
+		.timeline-badge.ra {
+			border-left: 6px solid #006633;
+		}
+
+		.timeline-badge.re {
+			border-left: 6px solid #660066;
+		}
+
+		/*------- Timeline Badge -----------------------------*/
+
+
+
+		/* Remove the line between project articles */
+		.post.featured {
+			border: none !important;
+			box-shadow: none !important;
+
+		}
+
+		/* Optional: add gentle spacing instead */
+		.post.featured {
+			margin-bottom: 40px;
+			/* adjust spacing between projects */
+		}
+
+		/* Add space below the timeline badge (before the tab box starts) */
+		.date-wrap {
+			text-align: center;
+			margin-bottom: 20px;
+			/* increased from -10px */
+		}
+
+		/* Add space above the very first project’s timeline */
+		#project0 .date-wrap {
+			margin-top: 30px;
+			/* pushes first badge away from header/nav */
+		}
+
+
+		/* Bottom-right floating FA arrow, aligned with the right-side radio dots */
+		.actions--float-br {
+			position: fixed;
+			right: 40px;
+			/* match your #project-nav offset */
+			bottom: 28px;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			border: 0;
+			z-index: 1200;
+			pointer-events: none;
+			/* container ignores clicks */
+		}
+
+		.actions--float-br>li {
+			margin: 0;
+		}
+
+		/* Base button look (Font Awesome circle with arrow) */
+		.actions--float-br .button {
+			pointer-events: auto;
+			/* clickable */
+			display: block;
+			width: 200px;
+			height: 200px;
+			line-height: 200px;
+			/* centers the FA arrow */
+			padding: 0;
+			border-radius: 50%;
+			background-color: #f0f2f5;
+			/* light grey */
+			border-color: #f0f2f5;
+			color: #1f5fff;
+			/* arrow color */
+			font-size: 1.15rem;
+			/* arrow size */
+			box-shadow: 0 4px 10px rgba(0, 0, 0, .18);
+			text-decoration: none;
+			-webkit-tap-highlight-color: transparent;
+
+			/* hidden by default: fade + slide */
+			opacity: 0;
+			transform: translateY(12px) scale(.95);
+			will-change: transform, opacity;
+			transition:
+				transform .22s cubic-bezier(.22, .61, .36, 1),
+				opacity .26s ease-out,
+				background-color .3s,
+				border-color .3s;
+		}
+
+		/* ONLY while hidden, change slide direction when scrolling up */
+		body.scrolling-up .actions--float-br .button:not(.show) {
+			transform: translateY(-12px) scale(.95);
+		}
+
+		/* visible state – lock size/position */
+		.actions--float-br .button.show {
+			opacity: 1;
+			transform: translateY(0) scale(1) !important;
+		}
+
+		/* gentle hover (no size change) */
+		.actions--float-br .button:hover {
+			background-color: #e5e8ee;
+			border-color: #e5e8ee;
+		}
+
+		/* Smaller "Back to top" tooltip */
+		.actions--float-br .button::after {
+			font-size: 12px;
+			/* was 13px */
+			line-height: 1.1;
+			/* a bit tighter */
+			padding: 4px 6px;
+			/* was 6px 8px */
+			border-radius: 4px;
+			/* was 6px */
+			letter-spacing: 0;
+			/* keep compact */
+			max-width: none;
+			/* ensure no extra width is forced */
+			left: auto !important;
+			/* ignore any previous 'left' */
+			right: calc(100% + 8px) !important;
+			/* 8px gap to the left of the button */
+			transform: translateY(-50%) translateX(0) !important;
+			text-align: right;
+		}
+
+		/* Keep the same smooth entrance on hover/focus */
+		.actions--float-br .button:hover::after,
+		.actions--float-br .button:focus-visible::after {
+			opacity: 1;
+			transform: translateY(-50%) translateX(0) !important;
+		}
+
+		/* Optional: even smaller on very small screens */
+		@media (max-width: 480px) {
+			.actions--float-br .button::after {
+				font-size: 11px;
+				padding: 3px 5px;
+				border-radius: 4px;
+			}
+		}
+
+		.actions--float-br .button {
+			overflow: visible !important;
+		}
+
+		.actions--float-br .button::after {
+			content: attr(data-tooltip) !important;
+		}
+
+		/* Force the "Back to top" tooltip to the LEFT of the circle and position it correctly */
+		.actions--float-br .button {
+			position: relative;
+			overflow: visible;
+		}
+
+		/* anchor + allow overflow */
+
+		.actions--float-br .button::after {
+			content: attr(data-tooltip) !important;
+			position: absolute !important;
+			top: 50% !important;
+			left: auto !important;
+			right: calc(100% + 8px) !important;
+			/* place to the LEFT of the circle */
+			transform: translateY(-50%) !important;
+
+			/* visual box (smaller, compact) */
+			/*background: rgba(0, 0, 0, .5);*/
+			color: #fff;
+			font-size: 15px;
+			line-height: 1.1;
+			padding: 4px 6px;
+			border-radius: 4px;
+			white-space: nowrap;
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity .3s, transform .2s;
+			z-index: 1300;
+		}
+
+		/* show on hover/focus */
+		.actions--float-br .button:hover::after,
+		.actions--float-br .button:focus-visible::after {
+			opacity: 1;
+			transform: translateY(-50%) !important;
+			/* smooth in */
+		}
+
+
+		/* New Experience (blue theme example) */
+		#newexp-tabs #newexp-r:checked~.tab-head label[for="newexp-r"],
+		#newexp-tabs #newexp-a:checked~.tab-head label[for="newexp-a"],
+		#newexp-tabs #newexp-s:checked~.tab-head label[for="newexp-s"],
+		#newexp-tabs #newexp-t:checked~.tab-head label[for="newexp-t"],
+		#newexp-tabs #newexp-g:checked~.tab-head label[for="newexp-g"] {
+			color: #d57e04;
+			border-bottom: 5px solid #d57e04;
+			margin-bottom: -2px;
+		}
+
+		.tabs #newexp-r:checked~.panels .r,
+		.tabs #newexp-a:checked~.panels .a,
+		.tabs #newexp-s:checked~.panels .s,
+		.tabs #newexp-t:checked~.panels .t,
+		.tabs #newexp-g:checked~.panels .g {
+			display: block;
+		}
+
+		#newexp-tabs {
+			background-color: #fef3c7;
+		}
+
+		#newexp-tabs .tab-content {
+			background-color: #ffffff;
+		}
+
+		.timeline-badge.newexp {
+			border-left: 6px solid #d57e04;
+		}
+
+		.inline-code {
+			font-family: Consolas, "Courier New", monospace;
+			font-size: 0.9em;
+			background-color: #f4f4f4;
+			padding: 2px 6px;
+			border-radius: 4px;
+			color: #255ec7;
+		}
+	</style>
+
+	<title> Professional Experience </title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<a href="index.html" class="logo"> Ashwin Kumar Rangarajan </a>
+		</header>
+
+		<!-- Nav -->
+		<nav id="nav">
+			<ul class="links">
+				<li><a href="index.html"> Projects </a></li>
+				<li class="active"><a href="elements.html"> Professional Experience </a></li>
+				<li><a href="generic.html"> Skills </a></li>
+			</ul>
+
+			<ul class="icons">
+				<li><a href="https://www.facebook.com/rangarajan.ashwinkumar" target="_blank"
+						class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+				<li><a href="https://github.com/AshwinK77?tab=repositories" target="_blank"
+						class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+				<li><a href="https://www.linkedin.com/in/ashwin-kumar-rangarajan" target="_blank"
+						class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+			</ul>
+		</nav>
+		</nav>
+
+		<!-- Floating Project Navigation Dots --------------------------------------------------------->
+
+		<div id="project-nav" style="
+		position: fixed;
+		top: 35%;
+		right: 30px;
+		display: none;
+		flex-direction: column;
+		gap: 20px;
+		z-index: 999;">
+
+			<a href="javascript:void(0);" class="nav-dot" data-project="project0"
+				data-label="Rivian VW Group Technolgy"></a>
+			<a href="javascript:void(0);" class="nav-dot" data-project="project1" data-label="Ford Motor Company"></a>
+			<a href="javascript:void(0);" class="nav-dot" data-project="project2"
+				data-label="Clemson University- Deep Orange 16"></a>
+			<a href="javascript:void(0);" class="nav-dot" data-project="project3"
+				data-label="Clemson University - RA"></a>
+			<a href="javascript:void(0);" class="nav-dot" data-project="project4" data-label="Royal Enfield"></a>
+		</div>
+
+
+		<!-- Floating Project Navigation Dots Ends ------------------------------------------------------>
+
+
+
+		<!-- Main -->
+
+		<!-- PROJECTS SECTION STARTS----------------------------------------------------------------------------------------------------------------------->
+
+		<div id="main">
+
+			<!-- Project0 starts ----------------------------------------------------------------------------------------->
+
+			<!-- Project 0 starts ----------------------------------------------------------------------------------------->
+
+			<article id="project0" class="post featured" style="margin:0 auto; max-width:90%; padding:20px 10px;">
+
+				<div class="date-wrap">
+					<span class="timeline-badge newexp">Nov 2025 – Present</span>
+				</div>
+
+				<div class="tabs" id="newexp-tabs">
+
+					<div style="padding:16px 20px;">
+						<div style="display:flex; justify-content:space-between; align-items:center;">
+							<h2 style="margin:0; font-size:clamp(18px,3vw,34px);">SYSTEMS TEST & INTEGRATION ENGINEER,
+								RIVIAN
+								VOLKSWAGEN GROUP</h2>
+							<img src="images/Rivian_logo.png" alt="Company Logo" style="width:60px; height:55px;">
+						</div>
+						<div
+							style="display:flex; justify-content:space-between; flex-wrap:wrap; font-size:20px; margin-top:10px;">
+							<strong>Vehicle Dynamics & Controls</strong>
+							<strong>Irvine, California (US)</strong>
+						</div>
 					</div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
+					<input type="radio" name="newexp-tabs" id="newexp-r" checked>
+					<input type="radio" name="newexp-tabs" id="newexp-a">
+					<input type="radio" name="newexp-tabs" id="newexp-s">
+					<input type="radio" name="newexp-tabs" id="newexp-t">
+					<input type="radio" name="newexp-tabs" id="newexp-g">
+
+					<div class="tab-head">
+						<label for="newexp-r">Responsibilities</label>
+						<label for="newexp-a">Achievements</label>
+						<label for="newexp-s">Skills</label>
+						<label for="newexp-t">Tools Used</label>
+						<!-- <label for="newexp-g">Gallery</label> -->
+					</div>
+
+					<div class="panels tab-content">
+
+						<div class="tab-panel r">
+							<div class="callout"><strong>Project Focus:</strong> R1S/T and EDV platform - Vehicle
+								Dynamics Software Controls Integration
+							</div>
+							<ul>
+								<li>Vehicle dynamics controls software regression testing for feature development,
+									customer OTA releases, merge releases (MR), and supplier-related ECU changes
+								</li>
+								<li>DVP&R development, issue creation, and triaging of development and customer
+									issues</li>
+								<li>Ownership of feature-level and regression testing for the R1 and EDV platforms</li>
+							</ul>
+						</div>
+
+						<div class="tab-panel a">
+
+
+							<h3><code class="inline-code">Rivian's Hackathon Mega Event </code></h3>
+							<ul>
+								<li>Built a standalone .exe tool to identify potential failure modes from supplier
+									ECU changes with the help of AI tools.</li>
+								<li>Linked failure modes to existing JAMA test plans to highlight test coverage
+									gaps.</li>
+								<li>Automated JIRA ticket assignment for relevant teams to start testing based on
+									failure analysis
+									results.</li>
+								<li>Pulled VIN, timestamps, software version, and related test data to auto-generate
+									plots in Confluence reports.</li>
+								<li>Tracked all failure tickets associated with each supplier ECU change test plan
+									cycle.
+								</li>
+							</ul>
+
+						</div>
+
+						<div class="tab-panel s">
+							<ul>
+								<li>Controls regression testing & validation</li>
+								<li>Python-based test data post-processing</li>
+								<li>JAMA test planning & JIRA workflows</li>
+								<li>Vector CAN tools & automotive Ethernet analysis</li>
+								<li>CAN signal processing & XCP calibration</li>
+								<li>Vehicle-in-the-loop (ViL) validation</li>
+								<li>GitLab version control & collaboration</li>
+							</ul>
+						</div>
+
+						<div class="tab-panel t">
+							<div style="display:flex; flex-wrap:wrap; gap:25px; align-items:center;">
+								<img src="images/Vector_icon.png" alt="Vector" title="Vector" style="height:50px;">
+								<img src="images/Python.png" alt="Python" title="Python" style="height:50px;">
+								<img src="images/Jama.png" alt="JAMA" title="JAMA" style="height:60px;">
+								<img src="images/Jira.png" alt="Jira" title="Jira" style="height:45px;">
+								<img src="images/Gitlab.jpg" alt="Gitlab" title="Gitlab" style="height:60px;">
+								<img src="images/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB" style="height:70px;">
+								<img src="images/Cursor.png" alt="Cursor" title="Cursor" style="height:60px;">
+								<img src="images/Claude.png" alt="Claude" title="Claude" style="height:30px;">
+							</div>
+						</div>
+
+						<div class="tab-panel g">
+							<div class="slideshow-wrapper"
+								style="overflow:hidden; max-width:800px; margin:auto; position:relative;">
+								<div class="slideshow-container" id="slideshow-track-0"
+									style="display:flex; transition: transform 1s ease;">
+									<div class="slide-0" style="min-width:100%;">
+										<div class="media-container">
+											<img src="images/newexp_image1.png" alt="Gallery image 1">
+										</div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;">
+											<strong>Caption 1</strong>
+										</div>
 									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
+
+									<div class="slide-0" style="min-width:100%;">
+										<div class="media-container">
+											<img src="images/newexp_image2.png" alt="Gallery image 2">
+										</div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;">
+											<strong>Caption 2</strong>
+										</div>
 									</div>
 								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section>
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>1234 Somewhere Road #87257<br />
-								Nashville, TN 00000-0000</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(000) 000-0000</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">info@untitled.tld</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
+							</div>
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+							<div style="text-align:center; margin-top:10px;">
+								<span class="dot-0" onclick="currentSlide0(1)"></span>
+								<span class="dot-0" onclick="currentSlide0(2)"></span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</article>
+
+			<!-- Project 0 ends ----------------------------------------------------------------------------------------->
+
+
+			<article id="project1" class="post featured" style="margin: 0 auto; max-width: 90%; padding: 20px 10px;">
+
+
+				<div class="date-wrap">
+					<span class="timeline-badge ford">May 2025 – July 2025</span>
+				</div>
+
+				<!-- Tabs -->
+				<div class="tabs" id="ford-tabs">
+
+					<!-- Ford title + logo inside tab box -->
+					<div style="padding:16px 20px;">
+						<div style="display:flex; justify-content:space-between; align-items:center;">
+							<h2 style="margin:0; font-size: clamp(18px, 3vw, 34px);">
+								SUMMER INTERN, FORD MOTOR COMPANY
+							</h2>
+							<img src="images/Ford_Logo.jpg" alt="Ford" style="width:100px; height:40px;">
+						</div>
+						<div style="display:flex; justify-content:space-between; font-size:20px; margin-top:10px;">
+							<strong>Chassis Controls Software & Systems Engineer - Research & Advanced Engineering
+								Division</strong>
+							<strong>Dearborn, Michigan (US)</strong>
+						</div>
 					</div>
 
-			</div>
+					<!-- Tabs -->
+					<div class="tabs" id="ford-tabs">
+						<input type="radio" name="ford-tabs" id="ford-r" checked>
+						<input type="radio" name="ford-tabs" id="ford-a">
+						<input type="radio" name="ford-tabs" id="ford-s">
+						<input type="radio" name="ford-tabs" id="ford-t"><!-- Tools -->
+						<input type="radio" name="ford-tabs" id="ford-g"><!-- Gallery -->
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+						<div class="tab-head">
+							<label for="ford-r">Responsibilities</label>
+							<label for="ford-a">Achievements</label>
+							<label for="ford-s">Skills</label>
+							<label for="ford-t">Tools Used</label><!-- now 4th -->
+							<label for="ford-g">Gallery</label><!-- now 5th -->
+						</div>
 
-	</body>
+						<div class="panels tab-content">
+							<!-- Responsibilities -->
+							<div class="tab-panel r">
+								<div class="callout"><strong> Steer-by-Wire (Dual-redundancy concept): </strong> Control
+									Software Development →
+									Systems
+									integration →
+									Real-time validation.</div>
+								<ul>
+									<li>Designed & validated control strategy across <strong>MiL, HiL,
+											in-vehicle</strong>.
+									</li>
+									<li>Integrated algorithm into <strong> Vehicle Motion Control </strong>
+										architecture;
+										versioning on <strong>GitHub</strong>.
+									</li>
+									<li>Engineered hardware setup; prototype debugging; established real-time <strong>
+											CAN</strong> communication
+									</li>
+									<li>Benchmarked <strong> traditional vs. SbW system </strong> using scenario
+										development
+										and driver clinic
+										data</li>
+									<li>Collaborated with suppliers & cross-functional teams for seamless HW/SW
+										integration
+									</li>
+								</ul>
+							</div>
+
+							<!-- Achievements -->
+							<div class="tab-panel a">
+								<ul>
+									<li><strong>First engineer</strong> to test the new SbW concept real-time at Ford’s
+										proving grounds.</li>
+									<li>Migrated calibration interface from <strong>dSPACE ControlDesk→ ATI
+											Vision</strong>
+										to streamline field tuning.</li>
+								</ul>
+							</div>
+
+							<!-- Skills -->
+							<div class="tab-panel s">
+								<ul>
+									<li>Control systems & vehicle dynamics</li>
+									<li>MiL / HiL / in-vehicle validation</li>
+									<li>Real-time CAN communication</li>
+									<li>System benchmarking & calibration</li>
+									<li>Hardware bring-up & debugging</li>
+									<li>Cross-functional collaboration</li>
+								</ul>
+							</div>
+
+							<!-- Tools -->
+							<div class="tab-panel t">
+								<div style="display:flex; flex-wrap:wrap; gap:25px; align-items:center;">
+									<img src="images/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB" style="height:100px;">
+									<img src="images/Simulink.jpg" alt="Simulink" title="Simulink" style="height:80px;">
+									<img src="images/icons/Stateflow.jpg" alt="Stateflow" title="Stateflow"
+										style="height:90px;">
+									<img src="images/icons/dSpace.png" alt="dSPACE" title="dSPACE" style="height:80px;">
+									<img src="images/icons/ATI_Vision.png" alt="ATI Vision" title="ATI Vision"
+										style="height:125px;">
+									<img src="images/GitHub.png" alt="GitHub" title="GitHub" style="height:70px;">
+								</div>
+							</div>
+
+							<!-- Gallery -->
+							<div class="tab-panel g">
+								<div class="slideshow-wrapper"
+									style="overflow:hidden; max-width:800px; margin:auto; position:relative;">
+									<div class="slideshow-container" id="slideshow-track-0"
+										style="display:flex; transition: transform 1s ease;">
+										<div class="slide-0" style="min-width:100%;">
+											<div class="media-container">
+												<img src="images/Ford_Internship.png" alt="Steer-by-Wire Architecture">
+											</div>
+											<div style="text-align:center; font-size:18px; margin-top:10px;">
+												<strong>Steer-by-Wire Architecture</strong>
+											</div>
+										</div>
+										<div class="slide-0" style="min-width:100%;">
+											<div class="media-container">
+												<img src="images/Ford_Testing.png" alt="F-150 Research Vehicle Testing">
+											</div>
+											<div style="text-align:center; font-size:18px; margin-top:10px;">
+												<strong>F-150
+													Research Vehicle Testing</strong>
+											</div>
+										</div>
+										<div class="slide-0" style="min-width:100%;">
+											<div class="media-container">
+												<img src="images/Ford_Calibration.png"
+													alt="Calibration using ATI Vision">
+											</div>
+											<div style="text-align:center; font-size:18px; margin-top:10px;">
+												<strong>Calibration using ATI Vision</strong>
+											</div>
+										</div>
+									</div>
+
+									<!-- arrows -->
+									<a class="prev" onclick="plusSlides0(-1)"
+										style="cursor:pointer; position:absolute; left:2px; top:50%; font-size:30px;">&#10094;</a>
+									<a class="next" onclick="plusSlides0(1)"
+										style="cursor:pointer; position:absolute; right:2px; top:50%; font-size:30px;">&#10095;</a>
+								</div>
+
+								<!-- dots -->
+								<div style="text-align:center; margin-top:10px;">
+									<span class="dot-0" onclick="currentSlide0(1)"></span>
+									<span class="dot-0" onclick="currentSlide0(2)"></span>
+									<span class="dot-0" onclick="currentSlide0(3)"></span>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+			</article>
+
+			<!-- Project 1 ends ----------------------------------------------------------------------------------------->
+
+
+			<!-- Project 2 Starts ----------------------------------------------------------------------------------------->
+
+			<article id="project2" class="post featured" style="margin:0 auto; max-width:90%; padding:20px 10px;">
+
+				<!-- Date (no underline) -->
+				<div class="date-wrap">
+					<span class="timeline-badge do">Jan 2024 – Apr 2025</span>
+				</div>
+
+				<!-- Tabs (Deep Orange) -->
+				<div class="tabs" id="do-tabs">
+
+					<!-- Title + role + logo INSIDE the tabs box -->
+					<div style="padding:16px 20px;">
+						<div style="display:flex; justify-content:space-between; align-items:center;">
+							<h2 style="margin:0; font-size:clamp(18px,3vw,34px);">DEEP ORANGE 16 INTERN, CLEMSON
+								UNIVERSITY</h2>
+							<img src="images/ICAR_Logo2.png" alt="CU-ICAR" style="width:100px; height:40px;">
+						</div>
+						<div
+							style="display:flex; justify-content:space-between; flex-wrap:wrap; font-size:20px; margin-top:10px;">
+							<strong>Vehicle Dynamics & Controls Engineer</strong>
+							<strong>Greenville, South Carolina (US)</strong>
+						</div>
+					</div>
+
+					<!-- Radios -->
+					<input type="radio" name="do-tabs" id="do-r" checked>
+					<input type="radio" name="do-tabs" id="do-a">
+					<input type="radio" name="do-tabs" id="do-s">
+					<input type="radio" name="do-tabs" id="do-t">
+					<input type="radio" name="do-tabs" id="do-g">
+					<input type="radio" name="do-tabs" id="do-p">
+
+					<!-- Tab headers -->
+					<div class="tab-head">
+						<label for="do-r">Responsibilities</label>
+						<label for="do-a">Achievements</label>
+						<label for="do-s">Skills</label>
+						<label for="do-t">Tools Used</label>
+						<label for="do-p">Partners</label> <!-- NEW -->
+						<label for="do-g">Gallery</label>
+					</div>
+
+					<!-- Panels -->
+					<div class="panels tab-content">
+						<!-- Responsibilities -->
+						<div class="tab-panel r">
+							<div class="callout"><strong> Project Focus: </strong>Developing a rapid response vehicle
+								for disaster scenarios,
+								involving
+								prototype
+								development with close industry collaboration </div>
+							<ul>
+								<li>Developed <strong>control algorithm and start-up state machine </strong> for
+									Brembo Sensify
+									brake-by-wire system.</li>
+								<li>Built <strong>HiL test bench setup </strong> for brake-by-wire testing, calibration,
+									and fault detection.
+								</li>
+								<li>Derived <strong> electronic park brake (EPB) </strong> use cases and integrated EPB
+									logic with service brakes and HMI
+									functions.</li>
+								<li>Designed <strong> DYC torque-vectoring algorithm </strong> to emulate differential
+									behavior.</li>
+								<li>Engineered <strong> wiring harness and test bench setup </strong> for Fox Live Valve
+									suspension
+									PWM damping control.</li>
+								<li>Developed custom <strong> MoTeC C1812 HMI </strong> with CAN GUI and steering-wheel
+									button navigation.
+								</li>
+								<li>Applied <strong> V-model </strong> systems engineering for end-to-end integration -
+									from personas,
+									requirements and scenarios to verification and validation as per US Army TOPs &
+									FMVSS standards.
+								</li>
+							</ul>
+						</div>
+
+						<!-- Achievements -->
+						<div class="tab-panel a">
+							<ul>
+								<li>Built a <strong>supervisory brake control framework </strong> that streamlined
+									functionality & debugging.
+								</li>
+								<li>Solo-delivered MoTeC center-console HMI in <strong> 2 months </strong>, including
+									vehicle CAN wiring integration.</li>
+							</ul>
+						</div>
+
+						<!-- Skills -->
+						<div class="tab-panel s">
+							<ul>
+								<li>HiL/MiL validation & bench design</li>
+								<li>State machine development & supervisory control</li>
+								<li>Model/Non-model based control system development</li>
+								<li>Cross-domain integration</li>
+								<li>Real-time CAN communication and diagnostics</li>
+								<li>HMI customization and GUI development</li>
+								<li>V-model systems engineering</li>
+							</ul>
+						</div>
+
+						<!-- Tools Used (moved from footer) -->
+						<div class="tab-panel t">
+							<div style="display:flex; flex-wrap:wrap; gap:25px; align-items:center;">
+								<img src="images/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB" style="height:100px;">
+								<img src="images/Simulink.jpg" alt="Simulink" title="Simulink" style="height:80px;">
+								<img src="images/icons/Stateflow.jpg" alt="Stateflow" title="Stateflow"
+									style="height:90px;">
+								<img src="images/New_Eagle_Icon_1.png" alt="New Eagle" title="New Eagle"
+									style="height:100px;">
+								<img src="images/GitHub.png" alt="GitHub" title="GitHub" style="height:70px;">
+							</div>
+						</div>
+
+						<div class="tab-panel p">
+							<div style="display:flex; flex-wrap:wrap; gap:20px; align-items:center;">
+								<!-- Replace with your real partners/logos; examples below -->
+								<img src="images/US Army.jpg" alt="New Eagle" title="New Eagle" style="height:100px;">
+								<img src="images/Devcom.png" alt="Devcom" title="Devcom" style="height:100px;">
+								<img src="images/North American Rescue.png" alt="NAR" title="NAR" style="height:110px;">
+								<img src="images/Brembo.png" alt="Brembo" title="Brembo" style="height:80px;">
+								<img src="images/Fox.png" alt="Fox" title="Fox" style="height:100px;">
+							</div>
+						</div>
+
+						<!-- Gallery (reusing your existing slider) -->
+						<div class="tab-panel g">
+							<div class="slideshow-wrapper"
+								style="overflow:hidden; max-width:800px; margin:auto; position:relative;">
+								<div class="slideshow-container" id="slideshow-track"
+									style="display:flex; transition: transform 1s ease;">
+									<!-- slides kept exactly as before -->
+									<div class="slide" style="min-width:100%;">
+										<div class="media-container"><img src="images/Brake_Supervisor_Architecture.png"
+												alt="Overall Supervisory Control"></div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;">
+											<strong>Supervisory State Machine Architecture</strong>
+										</div>
+									</div>
+									<div class="slide" style="min-width:100%;">
+										<div class="media-container"><img src="images/Actuator_Control_Architecture.png"
+												alt="Individual Actuator Control"></div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;">
+											<strong>Individual Actuator State Machine Architecture</strong>
+										</div>
+									</div>
+									<div class="slide" style="min-width:100%;">
+										<div class="media-container"><img src="images/Brake_Supervisor.png"
+												alt="Actuator Control Block"></div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;"><strong>Brake
+												System & Individual Actuator Supervisors</strong></div>
+									</div>
+									<div class="slide" style="min-width:100%;">
+										<div class="media-container"><img src="images/Control_System_Architecture.png"
+												alt="Control System Architecture"></div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;"><strong>Control
+												System Architecture</strong></div>
+									</div>
+									<div class="slide" style="min-width:100%;">
+										<div class="media-container"><img src="images/Individual_Control_Block.png"
+												alt="Individual Control Block"></div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;">
+											<strong>Individual Control Block Definition</strong>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div style="text-align:center; margin-top:10px;">
+								<span class="dot" onclick="currentSlide(1)"></span>
+								<span class="dot" onclick="currentSlide(2)"></span>
+								<span class="dot" onclick="currentSlide(3)"></span>
+								<span class="dot" onclick="currentSlide(4)"></span>
+								<span class="dot" onclick="currentSlide(5)"></span>
+							</div>
+						</div>
+					</div><!-- /.panels -->
+
+				</div><!-- /.tabs -->
+			</article>
+
+			<!-- Project 2 Ends ------------------------------------------------------------------------------------------>
+
+
+
+			<!-- Project 3 Starts ----------------------------------------------------------------------------------------->
+			<article id="project3" class="post featured" style="margin:0 auto; max-width:90%; padding:20px 10px;">
+
+				<div class="date-wrap">
+					<span class="timeline-badge ra">May 2024 – Dec 2024</span>
+				</div>
+
+
+				<div class="tabs" id="ra-tabs">
+
+					<div style="padding:16px 20px;">
+						<div style="display:flex; justify-content:space-between; align-items:center;">
+							<h2 style="margin:0; font-size:clamp(18px,3vw,34px);">GRADUATE RESEARCH ASSISTANT</h2>
+							<img src="images/ICAR_Logo2.png" alt="CU-ICAR" style="width:100px; height:40px;">
+						</div>
+						<div style="display:flex; justify-content:space-between; font-size:20px; margin-top:10px;">
+							<strong>Professor Dr. Matthias J. Schmid</strong>
+							<strong>Greenville, South Carolina (US)</strong>
+						</div>
+					</div>
+
+					<input type="radio" name="ra-tabs" id="ra-r" checked>
+					<input type="radio" name="ra-tabs" id="ra-a">
+					<input type="radio" name="ra-tabs" id="ra-s">
+					<input type="radio" name="ra-tabs" id="ra-t">
+					<input type="radio" name="ra-tabs" id="ra-g">
+
+					<div class="tab-head">
+						<label for="ra-r">Responsibilities</label>
+						<label for="ra-a">Achievements</label>
+						<label for="ra-s">Skills</label>
+						<label for="ra-t">Tools Used</label>
+						<label for="ra-g">Gallery</label>
+					</div>
+
+					<div class="panels tab-content">
+
+						<div class="tab-panel r">
+							<div class="callout"><strong> Vehicle dynamics controls & test engineer:</strong> Deep
+								Orange 14
+								(U.S.Army Prototype) and BMW 535xi research vehicle</div>
+							<ul>
+								<li>Led vehicle instrumentation and data acquisition, integrating IMU, accelerometers,
+									steering angle, ride height, and slip angle sensors with CAN data for dynamic
+									analysis.</li>
+								<li>Planned and executed vehicle dynamics tests at ITIC proving grounds, including
+									double lane change, steering pad, acceleration, and braking maneuvers.</li>
+								<li>Managed data collection and dissemination for student analysis and coursework
+									deliverables.</li>
+								<li>Supported virtual vehicle model development using sensor and CAN data for dynamic
+									validation.</li>
+							</ul>
+						</div>
+
+						<div class="tab-panel a">
+							<ul>
+								<li>Enabled first-ever big-stage testing for the program.</li>
+								<li>Test data leveraged to build virtual vehicle model and run simulations.</li>
+							</ul>
+						</div>
+
+						<div class="tab-panel s">
+							<ul>
+								<li>Vehicle instrumentation & Data acquisition system setup and synchronization</li>
+								<li>Test planning and execution</li>
+								<li>Cross-functional collaboration (students, faculty, and lab engineers)</li>
+								<li>Post-processing and visualization - DAQ systems & MATLAB scripts</li>
+							</ul>
+						</div>
+
+						<div class="tab-panel t">
+							<div style="display:flex; flex-wrap:wrap; gap:15px; align-items:center;">
+								<img src="images/icons/HBM.png" alt="HBM" title="HBM" style="height:90px;">
+								<img src="images/icons/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB"
+									style="height:90px;">
+								<img src="images/icons/Simcenter_Testlab.png" alt="Testlab" title="Testlab"
+									style="height:90px;">
+							</div>
+						</div>
+
+						<div class="tab-panel g">
+							<div class="slideshow-wrapper"
+								style="overflow:hidden; max-width:800px; margin:auto; position:relative;">
+								<div class="slideshow-container" id="slideshow-track-2"
+									style="display:flex; transition: transform 1s ease;">
+									<div class="slide-2" style="min-width:100%;">
+										<div class="media-container"><img
+												src="images/BMW Testing/Steering Pad Testing Pic.jpg"
+												alt="Steering Pad"></div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;">
+											<strong>Steering Pad Testing – ITIC</strong>
+										</div>
+									</div>
+									<div class="slide-2" style="min-width:100%;">
+										<div class="video-container">
+											<iframe
+												src="https://drive.google.com/file/d/1nq7AjNkjsL-B7QaLf7N5y7MRsHBw24SJ/preview"
+												width="100%" height="100%" allow="autoplay" allowfullscreen></iframe>
+										</div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;">
+											<strong>Steering Pad Testing – ITIC (Video)</strong>
+										</div>
+									</div>
+									<div class="slide-2" style="min-width:100%;">
+										<div class="media-container"><img src="images/BMW Testing/Ash_&_Dr._Schmid.jpg"
+												alt="Professor"></div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;"><strong>With
+												Prof. Schmid</strong></div>
+									</div>
+									<div class="slide-2" style="min-width:100%;">
+										<div class="media-container"><img src="images/BMW Testing/Ash_Testing_Pic.jpg"
+												alt="Testing"></div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;"><strong>Casual
+												Testing</strong></div>
+									</div>
+								</div>
+							</div>
+							<div style="text-align:center; margin-top:10px;">
+								<span class="dot-2" onclick="currentSlide2(1)"></span>
+								<span class="dot-2" onclick="currentSlide2(2)"></span>
+								<span class="dot-2" onclick="currentSlide2(3)"></span>
+								<span class="dot-2" onclick="currentSlide2(4)"></span>
+							</div>
+						</div>
+					</div><!-- /.panels -->
+
+				</div><!-- /.tabs -->
+			</article>
+
+			<!-- Project 3 Ends ------------------------------------------------------------------------------------------>
+
+
+			<!-- Project 4 Starts ----------------------------------------------------------------------------------------->
+
+			<article id="project4" class="post featured" style="margin:0 auto; max-width:90%; padding:20px 10px;">
+
+				<div class="date-wrap">
+					<span class="timeline-badge re">Aug 2018 – Jun 2023</span>
+				</div>
+
+				<div class="tabs" id="re-tabs">
+
+					<div style="padding:16px 20px;">
+						<div style="display:flex; justify-content:space-between; align-items:center;">
+							<h2 style="margin:0; font-size:clamp(18px,3vw,34px);">ROYAL ENFIELD (GLOBAL HEADQUARTERS)
+							</h2>
+							<img src="images/RE_Logo.png" alt="Royal Enfield" style="width:175px; height:40%;">
+						</div>
+						<div style="display:flex; justify-content:space-between; font-size:20px; margin-top:10px;">
+							<strong>Assistant Manager – NPD (Chassis Testing & Validation)</strong>
+							<strong>Chennai, Tamil Nadu (India)</strong>
+						</div>
+					</div>
+
+					<input type="radio" name="re-tabs" id="re-r" checked>
+					<input type="radio" name="re-tabs" id="re-a">
+					<input type="radio" name="re-tabs" id="re-s">
+					<input type="radio" name="re-tabs" id="re-t">
+					<input type="radio" name="re-tabs" id="re-g">
+
+					<div class="tab-head">
+						<label for="re-r">Responsibilities</label>
+						<label for="re-a">Achievements</label>
+						<label for="re-s">Skills</label>
+						<label for="re-t">Tools Used</label>
+						<label for="re-g">Gallery</label>
+					</div>
+
+					<div class="panels tab-content">
+						<div class="tab-panel r">
+							<ul>
+								<li><strong>Project manager </strong> for chassis systems integration; led
+									cross-functional team discussions, problem-solving, trials,
+									RCAs & design changes.</li>
+								<li><strong>ABS development/test engineer: </strong> Signed off ABS calibration programs
+									for homologation and performance validation.</li>
+								<li><strong> Vehicle performance test engineer:</strong> verification plans, validation
+									reporting for brakes, ride/handling, ergonomics.</li>
+								<li> Led a team of seven engineers in prototype build, validation, and production
+									readiness activities across five motorcycle platforms.</li>
+								<li>Established internal testing procedures aligned with <strong> ECE, FMVSS & Indian
+									</strong> ECE, FMVSS & Indian regulations.</li>
+								<li>Led prototype build across five platforms, supporting
+									development from concept to SOP.</li>
+							</ul>
+						</div>
+
+						<div class="tab-panel a">
+							<ul>
+								<li>Won the Trailblazer Award (twice) for ABS development & overall project
+									maturity.
+								</li>
+								<li>Represented Testing & Validation at the global launch of Hunter 350 (Bangkok).
+								</li>
+								=======
+								<li>Won the <strong> Trailblazer Award (twice)</strong> for ABS development &
+									overall
+									project maturity.
+								</li>
+								<li>Represented India's testing & validation team at the <strong> global launch
+										event</strong> of Hunter 350 (Bangkok).</li>
+								>>>>>>> 2484de73fb09da056a9706b364f04387acdf99ef
+							</ul>
+						</div>
+
+						<div class="tab-panel s">
+							<ul>
+								<li>Vehicle testing & validation (brake systems, ride & handling)</li>
+								<li>ABS calibration & homologation</li>
+								<li>Program management & XFN leadership</li>
+								<li>Regulatory compliance (ECE, FMVSS, Indian regs)</li>
+								<li>Prototype build & DV/PV planning</li>
+
+								<li>Vehicle integration, testing & validation</li>
+								<li>Design Verification Plan & Report generation (DVP&R)</li>
+								<li>Project management & cross-functional leadership</li>
+								<li>Performance testing (Brakes, Ride & Handling, NVH & Ergonomics)</li>
+								<li>Team leadership & Stakeholder coordination</li>
+								<li>Prototype build & development</li>
+
+							</ul>
+						</div>
+
+						<div class="tab-panel t">
+							<div style="display:flex; flex-wrap:wrap; gap:16px; align-items:center;">
+								<img src="images/icons/2D_Racelogic.png" alt="2D Racelogic" title="2D Racelogic"
+									style="height:60px;">
+								<img src="images/icons/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB"
+									style="height:60px;">
+								<img src="images/icons/Simulink.jpg" alt="Simulink" title="Simulink"
+									style="height:60px;">
+								<img src="images/icons/VBox.jpg" alt="VBox Automotive" title="VBox Automotive"
+									style="height:60px;">
+								<img src="images/icons/Vector.png" alt="Vector" title="Vector" style="height:60px;">
+								<img src="images/icons/Creo.png" alt="Creo" title="Creo" style="height:60px;">
+								<img src="images/icons/G_Suite.png" alt="G-Suite" title="G-Suite" style="height:60px;">
+								<img src="images/icons/MS_Excel_Icon.jpg" alt="Excel" title="Excel"
+									style="height:60px;">
+								<img src="images/icons/MS_Word_Icon.jpg" alt="Word" title="Word" style="height:60px;">
+								<img src="images/icons/Power_BI.png" alt="Power BI" title="Power BI"
+									style="height:60px;">
+								<img src="images/icons/Tool_Handling.png" alt="Tool Handling" title="Tool Handling"
+									style="height:60px;">
+							</div>
+						</div>
+
+						<div class="tab-panel g">
+							<div class="slideshow-wrapper"
+								style="overflow:hidden; max-width:800px; margin:auto; position:relative;">
+								<div class="slideshow-container" id="slideshow-track-3"
+									style="display:flex; transition: transform 1s ease;">
+									<div class="slide-3" style="min-width:100%;">
+										<div class="media-container"><img src="images/RE Docs/Thailand_Pic.jpg"
+												alt="Thailand Ride"></div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;"><strong>Hunter
+												350 Launch Recce – Bangkok, Thailand</strong></div>
+									</div>
+									<div class="slide-3" style="min-width:100%;">
+										<div class="media-container"><img src="images/RE Docs/Off Road Training.JPG"
+												alt="Off-Road Training"></div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;">
+											<strong>Off-Road Training - Kolar, India</strong>
+
+											<strong>Off-Road Training</strong>
+
+										</div>
+									</div>
+									<div class="slide-3" style="min-width:100%;">
+										<div class="video-container">
+											<iframe
+												src="https://drive.google.com/file/d/1KH5jCWXI9UCcOSYLKZ80K6K-gum_OelA/preview"
+												width="100%" height="100%" allow="autoplay" allowfullscreen></iframe>
+										</div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;"><strong>Dry
+												Braking – ABS Validation</strong></div>
+									</div>
+									<div class="slide-3" style="min-width:100%;">
+										<div class="video-container">
+											<iframe
+												src="https://drive.google.com/file/d/13sj6bf8rY9Q-UJQXVfG63Gp3vKMa-3Wc/preview"
+												width="100%" height="100%" allow="autoplay" allowfullscreen></iframe>
+										</div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;"><strong>Wet
+												Braking – ABS Validation</strong></div>
+									</div>
+									<div class="slide-3" style="min-width:100%;">
+										<div class="video-container">
+											<iframe
+												src="https://drive.google.com/file/d/1uiMbfIjwyHAXRCh6ggZw-dypd2aiVJg4/preview"
+												width="100%" height="100%" allow="autoplay" allowfullscreen></iframe>
+										</div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;"><strong>
+												Traction Control Validation</strong></div>
+									</div>
+									<div class="slide-3" style="min-width:100%;">
+										<div class="media-container"><img src="images/RE Docs/Hunter_Launch.jpg"
+												alt="Hunter Launch"></div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;"><strong>Hunter
+												350 Launch – Bangkok</strong></div>
+									</div>
+									<div class="slide-3" style="min-width:100%;">
+										<div class="media-container"><img src="images/RE Docs/Track_Pic.jpg"
+												alt="Proving Grounds"></div>
+										<div style="text-align:center; font-size:18px; margin-top:10px;"><strong>ABS
+												Validation – Proving Grounds</strong></div>
+									</div>
+								</div>
+							</div>
+							<div style="text-align:center; margin-top:10px;">
+								<span class="dot-3" onclick="currentSlide3(1)"></span>
+								<span class="dot-3" onclick="currentSlide3(2)"></span>
+								<span class="dot-3" onclick="currentSlide3(3)"></span>
+								<span class="dot-3" onclick="currentSlide3(4)"></span>
+								<span class="dot-3" onclick="currentSlide3(5)"></span>
+								<span class="dot-3" onclick="currentSlide3(6)"></span>
+								<span class="dot-3" onclick="currentSlide3(7)"></span>
+							</div>
+						</div>
+					</div><!-- /.panels -->
+
+				</div><!-- /.tabs -->
+			</article>
+
+			<!-- Project 4 Ends ------------------------------------------------------------------------------------------>
+
+
+		</div>
+
+		<!-- FOOTER SECTION STARTS  -------------------------------------------------------------------------------------------------------------------->
+
+		<footer id="footer">
+
+			<section class="split contact" style="font-family: 'Arial Nova', Arial, sans-serif; padding-bottom: 0;">
+
+				<!-- CONTACT SECTION STARTS ----------------------------------------------------------------------------------------->
+
+				<div class="three-column-layout"
+					style="display: flex; width: 100%;  justify-content: center; gap: 40px;">
+
+					<!-- ADDRESS -->
+					<section class="column" style="flex: 1; padding: 20px; text-align: center; padding-bottom: 5px;">
+						<h3 style=" font-size: 25px; text-align: center;">📍 Address</h3>
+						<p style="font-size: 15px; text-align: center;">
+							<a href="https://maps.google.com/maps?cid=3707318036026301668" target="_blank"
+								style="font-family: 'Arial Nova', Arial, sans-serif; color: inherit;">
+								<strong>5, Research Drive, Greenville, <br />
+									South Carolina 29607,<br />
+									United States of America</strong>
+							</a>
+						</p>
+					</section>
+
+					<!-- CONTACT NUMBER -->
+					<section class="column" style="flex: 1; padding: 20px; text-align: center; padding-bottom: 5px;">
+						<h3 style="font-size: 25px; text-align: center;">📞 Phone</h3>
+						<p style="font-size: 15px; text-align: center;"> <strong>+1-(864)-449-9085</strong></p>
+					</section>
+
+					<!-- EMAIL IDS -->
+					<section class="column" style="flex: 1; padding: 20px; text-align: center; padding-bottom: 5px;">
+						<h3 style="font-size: 25px; text-align: center;">📧 Email</h3>
+						<p style="font-size: 15px; text-align: center;"><strong>
+								<a href="mailto:rangar2@g.clemson.edu" target="_blank"
+									style="font-family: 'Arial Nova', Arial, sans-serif; color: inherit;">rangar2@g.clemson.edu</a>
+								<br />
+								<a href="mailto:ashwintwister@gmail.com" target="_blank"
+									style="font-family: 'Arial Nova', Arial, sans-serif; color: inherit;">ashwintwister@gmail.com
+							</strong> </a>
+						</p>
+					</section>
+
+				</div>
+
+				<!-- CONTACT SECTION ENDS ------------------------------------------------------------------------------------------>
+
+
+				<!-- SOCIAL MEDIA CONTACT STARTS ----------------------------------------------------------------------------------->
+
+				<section
+					style="font-family: 'Arial Nova', Arial, sans-serif; width: 100%; text-align: center; margin-top: 0px; padding-top: 10px; padding-bottom: 30px;">
+
+					<ul class="icons alt" style="justify-content: center;">
+						<h3 style=" font-size: 25px;">Social Media</h3>
+						<li><a href="https://www.facebook.com/rangarajan.ashwinkumar"
+								class="icon brands alt fa-facebook-f" target="_blank"><span
+									class="label">Facebook</span></a></li>
+						<li><a href="https://github.com/AshwinK77?tab=repositories" class="icon brands alt fa-github"
+								target="_blank"><span class="label">GitHub</span></a></li>
+						<li> <a href="https://www.linkedin.com/in/ashwin-kumar-rangarajan"
+								class="icon brands alt fa-linkedin" target="_blank">
+								<span class="label">LinkedIn</span></a>
+						</li>
+					</ul>
+				</section>
+
+				<!-- SOCIAL MEDIA CONTACT ENDS ---------------------------------------------------------------------------------------->
+
+			</section>
+
+		</footer>
+
+
+		<!-- FOOTER SECTION ENDS  -------------------------------------------------------------------------------------------------------------------->
+
+
+
+		<!-- COPYRIGHT SECTION STARTS  ----------------------------------------------------------------------------------------------------------------->
+
+		<div id="copyright" style="font-family: 'Arial Nova', Arial, sans-serif; margin-top: 15px;">
+			<ul>
+				<li>&copy; 2025 Ashwin Kumar Rangarajan. <br /> All rights reserved.</li>
+			</ul>
+		</div>
+
+		<!-- COPYRIGHT SECTION ENDS ------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+		<!-- SCRIPT FOR RADIO BUTTONS STARTS ----------------------------------------------------------------------------------->
+
+		<script>
+			// Sections to track
+			const sections = ['project0', 'project1', 'project2', 'project3', 'project4'];
+			const options = { threshold: 0.5 };
+
+			// Intersection Observer to handle active highlight
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						document.querySelectorAll('.nav-dot').forEach(dot => {
+							dot.classList.remove('active');
+						});
+						document.querySelector(`a[data-project="${entry.target.id}"]`).classList.add('active');
+					}
+				});
+			}, options);
+
+			// Attach observer to each section
+			sections.forEach(id => {
+				const section = document.getElementById(id);
+				if (section) observer.observe(section);
+			});
+
+			// Smooth nav visibility control based on scroll position
+			window.addEventListener('scroll', () => {
+				const navDots = document.getElementById('project-nav');
+				const triggerPoint = 150;  // Adjust this if needed
+
+				if (window.scrollY > triggerPoint) {
+					navDots.style.display = 'flex';
+				} else {
+					navDots.style.display = 'none';
+				}
+			});
+		</script>
+
+		<!-- SCRIPT FOR RADIO BUTTONS ENDS ----------------------------------------------------------------------------------->
+
+		<script>
+			// place new code here:
+			document.querySelectorAll('.nav-dot').forEach(dot => {
+				dot.addEventListener('click', function (e) {
+					e.preventDefault();
+					const targetId = this.getAttribute('href').substring(1);
+					const targetSection = document.getElementById(targetId);
+					targetSection.scrollIntoView({ behavior: 'smooth' });
+				});
+			});
+		</script>
+
+
+		<script>
+			function smoothScrollTo(targetY, duration = 1500) {
+				const startY = window.scrollY;
+				const distance = targetY - startY;
+				let startTime = null;
+
+				function step(currentTime) {
+					if (!startTime) startTime = currentTime;
+					const progress = currentTime - startTime;
+					const percent = Math.min(progress / duration, 1);
+					const ease = easeInOutQuad(percent);
+					window.scrollTo(0, startY + distance * ease);
+					if (progress < duration) {
+						window.requestAnimationFrame(step);
+					}
+				}
+
+				function easeInOutQuad(t) {
+					return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+				}
+
+				window.requestAnimationFrame(step);
+			}
+
+			document.querySelectorAll('.nav-dot').forEach(dot => {
+				dot.addEventListener('click', function () {
+					const targetId = this.getAttribute('data-project');
+					const targetSection = document.getElementById(targetId);
+					if (targetSection) {
+						const sectionRect = targetSection.getBoundingClientRect();
+						const absoluteTop = window.scrollY + sectionRect.top;
+						smoothScrollTo(absoluteTop - 20, 1500); // offset of 20px for spacing
+					}
+				});
+			});
+		</script>
+
+		<!-- JAVA SCRIPT SECTION ENDS ---------------------------------------------------------------------------------------------------------------->
+
+
+		<script>
+			// ========= Project 0 =========
+			let slideIndex0 = 0;
+			const slideshowTrack0 = document.getElementById("slideshow-track-0");
+			const slides0 = document.querySelectorAll(".slide-0");
+			const dots0 = document.querySelectorAll(".dot-0");
+
+			function updateSlide0() {
+				slideshowTrack0.style.transform = `translateX(-${slideIndex0 * 100}%)`;
+				dots0.forEach((dot, idx) => {
+					dot.style.backgroundColor = idx === slideIndex0 ? '#717171' : '#bbb';
+				});
+			}
+
+			function plusSlides0(n) {
+				slideIndex0 = (slideIndex0 + n + slides0.length) % slides0.length;
+				updateSlide0();
+			}
+
+			function currentSlide0(n) {
+				slideIndex0 = n - 1;
+				updateSlide0();
+			}
+
+			updateSlide0();
+			// ========= Project 1 =========
+			let slideIndex = 0;
+			const slideshowTrack = document.getElementById("slideshow-track");
+			const slides = document.querySelectorAll(".slide");
+			const dots = document.querySelectorAll(".dot");
+
+			function updateSlide() {
+				slideshowTrack.style.transform = `translateX(-${slideIndex * 100}%)`;
+				dots.forEach((dot, idx) => {
+					dot.style.backgroundColor = idx === slideIndex ? '#717171' : '#bbb';
+				});
+			}
+
+			function plusSlides(n) {
+				slideIndex = (slideIndex + n + slides.length) % slides.length;
+				updateSlide();
+			}
+
+			function currentSlide(n) {
+				slideIndex = n - 1;
+				updateSlide();
+			}
+
+			updateSlide();
+
+			// ========= Project 2 =========
+			let slideIndex2 = 0;
+			const slideshowTrack2 = document.getElementById("slideshow-track-2");
+			const slides2 = document.querySelectorAll(".slide-2");
+			const dots2 = document.querySelectorAll(".dot-2");
+
+			function updateSlide2() {
+				slideshowTrack2.style.transform = `translateX(-${slideIndex2 * 100}%)`;
+				dots2.forEach((dot, idx) => {
+					dot.style.backgroundColor = idx === slideIndex2 ? '#717171' : '#bbb';
+				});
+			}
+
+			function plusSlides2(n) {
+				slideIndex2 = (slideIndex2 + n + slides2.length) % slides2.length;
+				updateSlide2();
+			}
+
+			function currentSlide2(n) {
+				slideIndex2 = n - 1;
+				updateSlide2();
+			}
+
+			updateSlide2();
+
+			// ========= Project 3 =========
+			let slideIndex3 = 0;
+			const slideshowTrack3 = document.getElementById("slideshow-track-3");
+			const slides3 = document.querySelectorAll(".slide-3");
+			const dots3 = document.querySelectorAll(".dot-3");
+
+			function updateSlide3() {
+				slideshowTrack3.style.transform = `translateX(-${slideIndex3 * 100}%)`;
+				dots3.forEach((dot, idx) => {
+					dot.style.backgroundColor = idx === slideIndex3 ? '#717171' : '#bbb';
+				});
+			}
+
+			function plusSlides3(n) {
+				slideIndex3 = (slideIndex3 + n + slides3.length) % slides3.length;
+				updateSlide3();
+			}
+
+			function currentSlide3(n) {
+				slideIndex3 = n - 1;
+				updateSlide3();
+			}
+
+			updateSlide3();
+		</script>
+
+		<ul class="actions--float-br">
+			<li>
+				<a id="backToTop" href="#header" class="button icon solid solo fa-arrow-up scrolly"
+					data-tooltip="Back to top" aria-label="Back to top"></a>
+			</li>
+		</ul>
+
+		<script>
+			(() => {
+				const btn = document.getElementById('backToTop')
+					|| document.querySelector('.actions--float-br .button');
+				if (!btn) return;
+
+				// thresholds: appear after SHOW_Y; hide only when above HIDE_Y
+				const SHOW_Y = 420;
+				const HIDE_Y = 260;
+
+				let ticking = false;
+				let lastY = window.scrollY || document.documentElement.scrollTop || 0;
+
+				function onScroll() {
+					if (ticking) return;
+					requestAnimationFrame(() => {
+						const y = window.scrollY || document.documentElement.scrollTop || 0;
+
+						// direction class on <body> (used by CSS to change slide direction)
+						if (y < lastY) {
+							document.body.classList.add('scrolling-up');
+							document.body.classList.remove('scrolling-down');
+						} else if (y > lastY) {
+							document.body.classList.add('scrolling-down');
+							document.body.classList.remove('scrolling-up');
+						}
+						lastY = y;
+
+						// hysteresis so it doesn't pop at the edge
+						const shown = btn.classList.contains('show');
+						if (!shown && y > SHOW_Y) btn.classList.add('show');
+						else if (shown && y < HIDE_Y) btn.classList.remove('show');
+
+						ticking = false;
+					});
+					ticking = true;
+				}
+
+				window.addEventListener('scroll', onScroll, { passive: true });
+				document.addEventListener('DOMContentLoaded', onScroll);
+
+				// Smooth scroll to top
+				btn.addEventListener('click', (e) => {
+					e.preventDefault();
+					if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+						window.scrollTo(0, 0);
+						return;
+					}
+					const startY = window.scrollY || document.documentElement.scrollTop || 0;
+					const start = performance.now();
+					const dur = 800; // ms
+
+					const easeInOutQuad = t => (t < 0.5) ? 2 * t * t : -1 + (4 - 2 * t) * t;
+
+					function step(now) {
+						const t = Math.min((now - start) / dur, 1);
+						const eased = easeInOutQuad(t);
+						window.scrollTo(0, Math.round(startY * (1 - eased)));
+						if (t < 1) requestAnimationFrame(step);
+					}
+					requestAnimationFrame(step);
+				});
+			})();
+		</script>
+</body>
+
 </html>

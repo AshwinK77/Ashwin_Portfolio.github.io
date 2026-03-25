@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
 <!-- ASHWIN KUMAR RANGARAJAN'S PORTFOLIO HTML CODE -->>
-<!-- Git checkout -->
+<!-- Git checkout Part - 2 -->
 
-<html>
+<html lang="en">
 
 <head>
 
@@ -12,23 +12,208 @@
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
 	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript>
-		<link rel="stylesheet" href="assets/css/noscript.css" />
-	</noscript>
+
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap">
 
 	<!-- PAGE STYLING STARTS---------------------------------------------------------------------------------------------->
 
 	<style>
 		/* Global Text Font Selection ------------------------------------------*/
-
-		body {
-			font-family: 'Arial Nova', Arial, sans-serif;
+		@font-face {
+			font-family: 'Arial Nova';
+			src: local('Arial Nova');
 		}
 
-		/* ---------------------------------------------------------------------*/
-		/* Image Formatting ----------------------------------------------------*/
+		body {
+			font-family: "Carlito", sans-serif;
 
+		}
+
+		html,
+		body {
+			max-width: 100%;
+			overflow-x: hidden;
+		}
+
+		/* Video & Image Formatting --------------------------------------------*/
+		img,
+		video,
+		iframe {
+			max-width: 100%;
+			height: auto;
+		}
+
+
+		/* Radio button Navigation Formatting ----------------------------------------------------------*/
+
+		/* --- Existing Nav Dot Styling --- */
+		.nav-dot {
+			width: 16px;
+			height: 16px;
+			border: 2px solid #999;
+			border-radius: 50%;
+			display: inline-block;
+			transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
+			background-color: transparent;
+			position: relative;
+			/* <-- added so tooltips position correctly */
+		}
+
+		/* Hover effect */
+		.nav-dot:hover {
+			background-color: #ccc;
+			/* light grey */
+			transform: scale(1.2);
+			cursor: pointer;
+		}
+
+		/* Active section */
+		.nav-dot.active {
+			background-color: #007BFF;
+			/* blue */
+			border-color: #007BFF;
+		}
+
+		/* --- Tooltip Additions --- */
+		.nav-dot::after {
+			content: attr(data-label);
+			/* text comes from HTML attribute */
+			position: absolute;
+			top: 50%;
+			left: -12px;
+			transform: translate(-100%, -50%);
+			background: #333;
+			color: #fff;
+			font-size: 13px;
+			font-weight: 600;
+			padding: 4px 8px;
+			border-radius: 6px;
+			white-space: nowrap;
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity 0.25s ease-in-out;
+			z-index: 1000;
+		}
+
+		/* Show tooltip on hover */
+		.nav-dot:hover::after {
+			opacity: 1;
+		}
+
+
+		/* Radio button Navigation Declaration Ends ----------------------------------------------------*/
+
+		.media-container,
+		.video-container {
+			position: relative;
+			width: 100%;
+			aspect-ratio: 16 / 9;
+			/* keeps uniform height for all media */
+			height: auto;
+			overflow: hidden;
+			background-color: #000;
+			/* adds consistent background */
+			border-radius: 8px;
+		}
+
+		.media-container img,
+		.video-container iframe,
+		.video-container video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			/* ensures full fill without stretching */
+		}
+
+		/* Slideshow (generic) -----------------------------------------------------*/
+		.slideshow-container {
+			position: relative;
+			overflow: visible;
+			/* allows arrows to be visible outside image bounds */
+			max-width: 800px;
+			margin: auto;
+		}
+
+		.slideshow-track-0,
+		.slideshow-track,
+		.slideshow-track-2,
+		.slideshow-track-3 {
+			display: none;
+		}
+
+		.slideshow-wrapper {
+			position: relative;
+			overflow: visible;
+			/* allows arrows to be visible outside image bounds */
+			max-width: 1000px;
+			margin: auto;
+		}
+
+		.slide-0,
+		.slide,
+		.slide-2,
+		.slide-3 {
+			min-width: 100%;
+			box-sizing: border-box;
+		}
+
+		.mySlides {
+			display: none;
+		}
+
+		.prev,
+		.next {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			font-size: 24px;
+			font-weight: bold;
+			color: black;
+			background-color: rgba(255, 255, 255, 0.7);
+			border-radius: 50%;
+			width: 40px;
+			height: 40px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			z-index: 2;
+			cursor: pointer;
+			user-select: none;
+			text-decoration: none;
+			border: none;
+		}
+
+		.prev {
+			left: -150px;
+		}
+
+		.next {
+			right: -150px;
+		}
+
+		.dot {
+			height: 15px;
+			width: 15px;
+			margin: 0 2px;
+			background-color: #bbb;
+			display: inline-block;
+			border-radius: 50%;
+		}
+
+		.active-dot {
+			background-color: #717171 !important;
+		}
+
+		/* Slideshow (generic) -----------------------------------------------------*/
+
+
+		/* Photo Formatting ----------------------------------------------------*/
 		.top-photo {
 			text-align: center;
 			background-color: #f4f4f4;
@@ -52,70 +237,37 @@
 			border: 5px solid #969292;
 		}
 
-		/* Image Formatting Ends -------------------------------------------------*/
 		/* Introduction Formatting -----------------------------------------------*/
 		#intro {
 			text-align: center;
 			margin-top: -150px;
-
 		}
 
 		.intro h1 {
 			padding: 0;
 			font-size: 23px;
 			text-align: center justified;
-			font-family: 'Arial Nova', Arial, sans-serif;
+			font-family: 'Carlito';
 		}
 
 		#intro h2 {
 			margin: 10px;
-			font-size: 20px;
+			font-size: 19px;
 			font-weight: normal;
 			text-align: center;
+			font-family: 'Carlito';
 		}
 
 		#intro p {
-			font-size: 20px;
+			font-size: 23px;
 			margin: 10px;
 			text-align: center;
+			font-family: 'Carlito';
 		}
 
-		html,
-		body {
-			max-width: 100%;
-			overflow-x: hidden;
-		}
 
-		/* Introduction Formatting Ends -----------------------------------------------*/
-		/* Video & Image Formatting ---------------------------------------------------*/
 
-		img,
-		video,
-		iframe {
-			max-width: 100%;
-			height: auto;
-		}
-
-		.video-container {
-			position: relative;
-			width: 100%;
-			padding-bottom: 56.25%;
-			/* 16:9 aspect ratio */
-			height: 0;
-			overflow: hidden;
-		}
-
-		.video-container iframe {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-		}
-
-		/* Video & Image Formatting Ends --------------------------------------------*/
-		/* Name Formatting  ---------------------------------------------------------*/
-
+		/* Name Formatting ---------------------------------------------------------*/
 		.hero-name {
 			font-size: 3.5rem;
 			font-weight: bold;
@@ -126,9 +278,7 @@
 			margin-bottom: 10px;
 		}
 
-		/* Name Formatting Ends ---------------------------------------------------------*/
-		/* Post Featured Formatting -----------------------------------------------------*/
-
+		/* Post Featured Divider ---------------------------------------------------*/
 		.post.featured:after {
 			content: "";
 			display: block;
@@ -137,37 +287,768 @@
 			border-bottom: 1px solid #e0e0e0;
 		}
 
-		/* Post Featured Formatting Ends ------------------------------------------------*/
-		/* Radio button Navigation Formatting ----------------------------------------------------------*/
-
-		.nav-dot {
-			width: 16px;
-			height: 16px;
-			border: 2px solid #999;
-			border-radius: 50%;
-			display: inline-block;
-			transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
-			background-color: transparent;
+		/* Remove the automatic divider under each project */
+		.post.featured:after,
+		.posts article:after {
+			content: none !important;
+			display: none !important;
+			border: 0 !important;
+			margin: 0 !important;
 		}
 
-		/* Hover effect */
-		.nav-dot:hover {
-			background-color: #ccc;
-			/* light grey */
-			transform: scale(1.2);
+		.post.featured:after {
+			content: none !important;
+			border: 0 !important;
+			margin: 2rem 0 !important;
+		}
+
+
+
+
+
+		/* Switch body font to Carlito for content areas resembling elements.html */
+		body {
+			font-family: "Carlito", sans-serif !important;
+		}
+
+		/* Tabs container + header -------------------------------------------------*/
+		.tabs {
+			margin-top: 16px;
+			border: 1px solid #e8e8ee;
+			border-radius: 16px;
+			overflow: hidden;
+		}
+
+		.tabs input[type="radio"] {
+			position: absolute;
+			left: -9999px;
+		}
+
+		.tabs .tab-head {
+			display: flex;
+			background: #f6f7fb;
+			border-bottom: 1px solid #e1e4eb;
+			border-top-left-radius: 16px;
+			border-top-right-radius: 16px;
+			overflow: hidden;
+		}
+
+		.tabs .tab-head label {
+			flex: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 54px;
+			font-size: 22px;
+			font-weight: 700;
+			letter-spacing: .02em;
+			color: #2a2a2a;
 			cursor: pointer;
+			transition: background .2s, color .2s, border .2s;
+			border-bottom: 1px solid transparent;
 		}
 
-		/* Active section */
-		.nav-dot.active {
-			background-color: #007BFF;
-			/* blue */
-			border-color: #007BFF;
+		.tabs .tab-head label:last-child {
+			border-right: none;
+		}
+
+		.tabs .tab-head label::before,
+		.tabs .tab-head label::after {
+			content: none !important;
+		}
+
+		/*---------------------------  Tabs Background Color Fotmatting Starts -------------------------*/
+
+		#proj1-tabs #p1-overview:checked~.tab-head label[for="p1-overview"],
+		#proj1-tabs #p1-details:checked~.tab-head label[for="p1-details"],
+		#proj1-tabs #p1-tools:checked~.tab-head label[for="p1-tools"],
+		#proj1-tabs #p1-gallery:checked~.tab-head label[for="p1-gallery"] {
+			color: #d35400;
+			border-bottom: 5px solid #d35400;
+			margin-bottom: -2px;
+		}
+
+		#proj2-tabs #p2-overview:checked~.tab-head label[for="p2-overview"],
+		#proj2-tabs #p2-details:checked~.tab-head label[for="p2-details"],
+		#proj2-tabs #p2-tools:checked~.tab-head label[for="p2-tools"],
+		#proj2-tabs #p2-gallery:checked~.tab-head label[for="p2-gallery"] {
+			color: #117a65;
+			border-bottom: 5px solid #117a65;
+			margin-bottom: -2px;
+		}
+
+		#proj3-tabs #p3-overview:checked~.tab-head label[for="p3-overview"],
+		#proj3-tabs #p3-details:checked~.tab-head label[for="p3-details"],
+		#proj3-tabs #p3-tools:checked~.tab-head label[for="p3-tools"],
+		#proj3-tabs #p3-gallery:checked~.tab-head label[for="p3-gallery"] {
+			color: #1f618d;
+			border-bottom: 5px solid #0055a6;
+			margin-bottom: -2px;
+		}
+
+		#proj4-tabs #p4-overview:checked~.tab-head label[for="p4-overview"],
+		#proj4-tabs #p4-details:checked~.tab-head label[for="p4-details"],
+		#proj4-tabs #p4-tools:checked~.tab-head label[for="p4-tools"],
+		#proj4-tabs #p4-gallery:checked~.tab-head label[for="p4-gallery"] {
+			color: #7d3c98;
+			border-bottom: 5px solid #7d3c98;
+			margin-bottom: -2px;
+		}
+
+		#proj5-tabs #p5-overview:checked~.tab-head label[for="p5-overview"],
+		#proj5-tabs #p5-details:checked~.tab-head label[for="p5-details"],
+		#proj5-tabs #p5-tools:checked~.tab-head label[for="p5-tools"],
+		#proj5-tabs #p5-gallery:checked~.tab-head label[for="p5-gallery"] {
+			color: #c0392b;
+			border-bottom: 5px solid #c0392b;
+			margin-bottom: -2px;
+		}
+
+		#proj6-tabs #p6-overview:checked~.tab-head label[for="p6-overview"],
+		#proj6-tabs #p6-details:checked~.tab-head label[for="p6-details"],
+		#proj6-tabs #p6-tools:checked~.tab-head label[for="p6-tools"],
+		#proj6-tabs #p6-gallery:checked~.tab-head label[for="p6-gallery"] {
+			color: #0e6655;
+			border-bottom: 5px solid #0e6655;
+			margin-bottom: -2px;
 		}
 
 
-		/* Radio button Navigation Declaration Ends ----------------------------------------------------*/
+		#proj7-tabs #p7-overview:checked~.tab-head label[for="p7-overview"],
+		#proj7-tabs #p7-details:checked~.tab-head label[for="p7-details"],
+		#proj7-tabs #p7-tools:checked~.tab-head label[for="p7-tools"],
+		#proj7-tabs #p7-gallery:checked~.tab-head label[for="p7-gallery"] {
+			color: #cf8026;
+			border-bottom: 5px solid #cf8026;
+			margin-bottom: -2px;
+		}
+
+		#proj8-tabs #p8-overview:checked~.tab-head label[for="p8-overview"],
+		#proj8-tabs #p8-details:checked~.tab-head label[for="p8-details"],
+		#proj8-tabs #p8-tools:checked~.tab-head label[for="p8-tools"],
+		#proj8-tabs #p8-gallery:checked~.tab-head label[for="p8-gallery"] {
+			color: #2b6cb0;
+			border-bottom: 5px solid #2b6cb0;
+			margin-bottom: -2px;
+		}
+
+		/*---------------------------  Tabs Background Color Fotmatting Ends -------------------------*/
+
+		/* Tab content body */
+		.tabs .tab-content {
+			background: #fff;
+			padding: 18px 20px;
+			text-align: left;
+			font-size: 19px;
+			/* smaller than body text */
+			line-height: 1.55;
+			/* keep readability */
+		}
+
+		.tabs .tab-panel {
+			display: none;
+		}
+
+		/* Bullets */
+		.tabs .tab-content ul {
+			padding-left: 1.25rem;
+			margin: .25rem 0 0;
+			list-style: disc outside;
+			line-height: 1.65;
+		}
+
+		.tabs .tab-content li {
+			margin: .25rem 0;
+		}
+
+		/* Callout box (italic subtitle bar above bullets) */
+		.tabs .callout {
+			background: #f7fbff;
+			border: 1px solid #d8e9ff;
+			padding: 10px 12px;
+			border-radius: 10px;
+			margin-bottom: 10px;
+			font-style: italic;
+			font-size: 23px;
+			line-height: 1.5;
+		}
+
+		/*----------------------------- Show Panels For Each Section Starts---------------------------------------*/
+
+		#proj1-tabs #p1-overview:checked~.panels .r,
+		#proj1-tabs #p1-details:checked~.panels .a,
+		#proj1-tabs #p1-tools:checked~.panels .t,
+		#proj1-tabs #p1-gallery:checked~.panels .g {
+			display: block;
+		}
+
+		#proj2-tabs #p2-overview:checked~.panels .r,
+		#proj2-tabs #p2-details:checked~.panels .a,
+		#proj2-tabs #p2-tools:checked~.panels .t,
+		#proj2-tabs #p2-gallery:checked~.panels .g {
+			display: block;
+		}
+
+		#proj3-tabs #p3-overview:checked~.panels .r,
+		#proj3-tabs #p3-details:checked~.panels .a,
+		#proj3-tabs #p3-tools:checked~.panels .t,
+		#proj3-tabs #p3-gallery:checked~.panels .g {
+			display: block;
+		}
+
+		#proj4-tabs #p4-overview:checked~.panels .r,
+		#proj4-tabs #p4-details:checked~.panels .a,
+		#proj4-tabs #p4-tools:checked~.panels .t,
+		#proj4-tabs #p4-gallery:checked~.panels .g {
+			display: block;
+		}
+
+		#proj5-tabs #p5-overview:checked~.panels .r,
+		#proj5-tabs #p5-details:checked~.panels .a,
+		#proj5-tabs #p5-tools:checked~.panels .t,
+		#proj5-tabs #p5-gallery:checked~.panels .g {
+			display: block;
+		}
+
+		#proj6-tabs #p6-overview:checked~.panels .r,
+		#proj6-tabs #p6-details:checked~.panels .a,
+		#proj6-tabs #p6-tools:checked~.panels .t,
+		#proj6-tabs #p6-gallery:checked~.panels .g {
+			display: block;
+		}
+
+		#proj7-tabs #p7-overview:checked~.panels .r,
+		#proj7-tabs #p7-details:checked~.panels .a,
+		#proj7-tabs #p7-tools:checked~.panels .t,
+		#proj7-tabs #p7-gallery:checked~.panels .g {
+			display: block;
+		}
+
+		#proj8-tabs #p8-overview:checked~.panels .r,
+		#proj8-tabs #p8-details:checked~.panels .a,
+		#proj8-tabs #p8-tools:checked~.panels .t,
+		#proj8-tabs #p8-gallery:checked~.panels .g {
+			display: block;
+		}
+
+		/*----------------------------- Show Panels For Each Section Starts---------------------------------------*/
+
+		/*----------------------------- Tab Content Formatting Starts -------------------------------------------*/
+
+		/* ----- GALLERY: make container have natural height;
+		remove absolute positioning for img ----- */
+
+		.tabs .tab-panel.g .media-container {
+			position: relative;
+			padding-bottom: 0;
+			/* no aspect hack */
+			height: auto;
+			max-height: 800px;
+			background: transparent;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.tabs .tab-panel.g .media-container img {
+			position: static;
+			/* override the global absolute rule */
+			width: auto;
+			max-width: 70%;
+			height: auto;
+			max-height: 800px;
+			object-fit: contain;
+			display: block;
+			margin: 0 auto;
+		}
+
+		/*----------------------------- Tab Content Formatting Ends -------------------------------------------*/
+
+
+		/*----------------------------- Tab  Formatting Starts -------------------------------------------*/
+
+		.prev,
+		.next {
+			display: none !important;
+		}
+
+		#proj1-tabs {
+			background-color: #f4f5d1;
+		}
+
+		#proj2-tabs {
+			background-color: #d1f5e1;
+		}
+
+		#proj3-tabs {
+			background-color: #cce9fc;
+		}
+
+		#proj4-tabs {
+			background-color: #f3e8fd;
+		}
+
+		#proj5-tabs {
+			background-color: #fce1de;
+		}
+
+		#proj6-tabs {
+			background-color: #d4faf2;
+		}
+
+		#proj7-tabs {
+			background-color: #f8dfcb;
+		}
+
+		#proj8-tabs {
+			background-color: #bbdafa;
+		}
+
+		/*----------------------------- Tab  Formatting Ends ----------------------------------------------*/
+
+		/*------------------- Tab Content Background Color Formatting Starts-------------------------------*/
+		#proj1-tabs .tab-content,
+		#proj2-tabs .tab-content,
+		#proj3-tabs .tab-content,
+		#proj4-tabs .tab-content,
+		#proj5-tabs .tab-content,
+		#proj6-tabs .tab-content,
+		#proj7-tabs .tab-content,
+		#proj8-tabs .tab-content {
+			background-color: #ffffff;
+			font-family: 'Carlito', sans-serif;
+		}
+
+		/*------------------- Tab Content Background Color Formatting Ends-------------------------------*/
+
+
+		/*------- Timeline Badge Starts ----------------------------------------------------------------------------*/
+
+		.timeline-badge {
+			font-family: "Carlito", sans-serif !important;
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			padding: 10px 20px;
+			background: #fff;
+			border: 1px solid #e1e4eb;
+			border-radius: 999px;
+			font-size: 23px;
+			font-weight: 800;
+			letter-spacing: .02em;
+			color: #2a2a2a;
+			box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+		}
+
+
+
+		.timeline-badge::before {
+			content: "📅";
+			font-size: 19px;
+			line-height: 1;
+		}
+
+		.date-wrap {
+			text-align: center;
+			margin-bottom: -10px;
+		}
+
+		/* Optional: add a thin left accent that matches each section’s theme ------------------ */
+		#proj1-tabs~.accent,
+		#proj2-tabs~.accent,
+		#proj3-tabs~.accent,
+		#proj4-tabs~.accent,
+		#proj5-tabs~.accent,
+		#proj6-tabs~.accent,
+		#proj7-tabs~.accent,
+		#proj8-tabs~.accent {
+			display: none;
+		}
+
+		/*------- Timeline Badge Formatting Ends ----------------------------------------------------------------------------*/
+		.timeline-badge.p1 {
+			border-left: 6px solid #d35400;
+		}
+
+		/* Project 1 accent (peach) */
+		.timeline-badge.p2 {
+			border-left: 6px solid #117a65;
+		}
+
+		/* Project 2 accent (green)  */
+		.timeline-badge.p3 {
+			border-left: 6px solid #1f618d;
+		}
+
+		/* Project 3 accent (blue)   */
+		.timeline-badge.p4 {
+			border-left: 6px solid #7d3c98;
+		}
+
+		/* Project 4 accent (purple) */
+		.timeline-badge.p5 {
+			border-left: 6px solid #c0392b;
+		}
+
+		/* Project 5 accent (coral)  */
+		.timeline-badge.p6 {
+			border-left: 6px solid #0e6655;
+		}
+
+		/* Project 6 accent (teal)   */
+		.timeline-badge.p7 {
+			border-left: 6px solid #a93258;
+		}
+
+		/* Project 7 accent (rose)   */
+		.timeline-badge.p8 {
+			border-left: 6px solid #2b6cb0;
+		}
+
+		/* Project 8 accent (slate)  */
+
+		/*------- Timeline Badge Formatting Ends ----------------------------------------------------------------------------*/
+
+		/* Remove the line between project articles */
+		.post.featured {
+			border: none !important;
+			box-shadow: none !important;
+			margin-bottom: 40px;
+			/* adjust spacing between projects */
+		}
+
+		/* Add space below the timeline badge (before the tab box starts) */
+		.date-wrap {
+			text-align: center;
+			margin-bottom: 30px;
+			/* increased from -10px */
+		}
+
+		/* Add space above the very first project’s timeline */
+		#project1 .date-wrap {
+			margin-top: 30px;
+			/* pushes first badge away from header/nav */
+		}
+
+
+
+		/* Gallery media fit -------------------------------------------------------*/
+
+		.tabs .tab-panel.g .gallery {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 16px;
+			justify-content: center;
+		}
+
+		.tabs .tab-panel.g .gallery img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			border-radius: 10px;
+			border: 1px solid #eee;
+		}
+
+		/* Remove extra divider line some themes add below featured posts ----------*/
+		.post.featured:after {
+			display: none !important;
+		}
+
+
+
+		.section-title {
+			text-align: center;
+			font-size: 35px;
+			font-weight: 700;
+			font-style: bold;
+			margin: 14px 0 18px;
+		}
+
+		/* === Remove all between-project lines (put at the VERY end) === */
+
+		/* 1) Kill any <hr> dividers around the main content */
+		#main hr,
+		.inner hr,
+		hr.major {
+			display: none !important;
+			border: 0 !important;
+			height: 0 !important;
+			margin: 0 !important;
+		}
+
+		/* 2) Ensure posts/articles themselves don’t draw a rule */
+		.posts,
+		.posts article,
+		.post,
+		.post.featured {
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		/* 3) Some themes draw lines with pseudo-elements — disable them all */
+		.posts:before,
+		.posts:after,
+		.posts article:before,
+		.posts article:after,
+		.post:before,
+		.post:after,
+		.post.featured:before,
+		.post.featured:after {
+			content: none !important;
+			display: none !important;
+			border: 0 !important;
+			margin: 0 !important;
+		}
+
+		/* === Collapse the big top gap above "ACADEMIC PROJECTS" === */
+
+		/* 1) Kill the wrapper padding the theme adds */
+		#main.wrapper {
+			padding-top: 0 !important;
+			padding-bottom: 0 !important;
+			/* keep things consistent */
+		}
+
+		/* 2) Remove the spacer pseudo-element some HTML5UP wrappers insert */
+		#main.wrapper::before {
+			content: none !important;
+			display: none !important;
+		}
+
+		/* 3) Tighten the default sibling gap inside #main */
+		#main.wrapper>*+* {
+			margin-top: 1rem !important;
+			padding-top: 0 !important;
+			border-top: 0 !important;
+		}
+
+		/* 4) Hard pull the inner container up a bit (wins even if padding remains) */
+		#main.wrapper>.inner {
+			padding-top: 0 !important;
+			margin-top: -50px !important;
+			/* adjust: -24 ~ -48px */
+		}
+
+		/* Optional: ease the pull on smaller screens */
+		@media (max-width: 980px) {
+			#main.wrapper>.inner {
+				margin-top: -24px !important;
+			}
+		}
+
+		/* Tighten the space right under the top tabs */
+		#main.wrapper {
+			padding-top: 0 !important;
+		}
+
+		#main.wrapper::before {
+			content: none !important;
+			display: none !important;
+		}
+
+		/* This is the culprit: sibling spacing inside .inner */
+		#main.wrapper>.inner>*+* {
+			margin-top: 0.75rem !important;
+			/* reduce from large theme value */
+			padding-top: 0 !important;
+			border-top: 0 !important;
+		}
+
+		/* Make sure the title itself has no top margin */
+		#main.wrapper>.inner>.section-title {
+			margin-top: 0 !important;
+			padding-top: 0 !important;
+		}
+
+		/* ——— Tighten space above "ACADEMIC PROJECTS" (targets actual markup) ——— */
+		#nav {
+			margin-bottom: 0 !important;
+		}
+
+		/* no space from the nav */
+		#nav+#main {
+			margin-top: 0 !important;
+		}
+
+		/* sit flush under nav */
+
+		#main {
+			padding-top: 0 !important;
+			/* remove theme padding */
+			margin-top: 0 !important;
+		}
+
+		#main::before {
+			/* some themes add a spacer */
+			content: none !important;
+			display: none !important;
+		}
+
+		/* first child in #main is your h3.section-title */
+		#main>*:first-child {
+			margin-top: 4px !important;
+			/* tiny breathing room */
+		}
+
+		/* Hard-pull the "ACADEMIC PROJECTS" heading up */
+		#main .section-title {
+			margin-top: 0 !important;
+			margin-bottom: 8px !important;
+			position: relative;
+			top: -36px;
+			/* pull up; tweak -28px ~ -48px to taste */
+			line-height: 1.1;
+		}
+
+		/* Keep the first project from drifting down again */
+		#main .section-title+article,
+		#main .section-title+.posts,
+		#main .section-title+.post,
+		#main .section-title+.post.featured {
+			margin-top: 8px !important;
+			/* small gap under the title */
+			padding-top: 0 !important;
+			border-top: 0 !important;
+		}
+
+		/* Make sure header/nav isn't adding space */
+		#header,
+		#nav {
+			margin-bottom: 0 !important;
+		}
+
+		/* Slightly ease the pull on small screens */
+		@media (max-width: 980px) {
+			#main .section-title {
+				top: -22px;
+			}
+		}
+
+		/* === Make Academic Projects match Professional Experience typography === */
+
+		/* "ACADEMIC PROJECTS" heading */
+
+
+
+
+		/* Space between project cards, like Professional Experience */
+		#main .post.featured {
+			margin-bottom: 40px;
+		}
+
+		/
+		/* anchor + allow overflow */
+
+		.actions--float-br .button::after {
+			content: attr(data-tooltip) !important;
+			position: absolute !important;
+			top: 50% !important;
+			left: auto !important;
+			right: calc(100% + 8px) !important;
+			/* place to the LEFT of the circle */
+			transform: translateY(-50%) !important;
+
+			/* visual box (smaller, compact) */
+			/*background: rgba(0, 0, 0, .5);*/
+			color: #fff;
+			font-size: 15px;
+			line-height: 1.1;
+			padding: 4px 6px;
+			border-radius: 4px;
+			white-space: nowrap;
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity .3s, transform .2s;
+			z-index: 1300;
+		}
+
+		/* show on hover/focus */
+		.actions--float-br .button:hover::after,
+		.actions--float-br .button:focus-visible::after {
+			opacity: 1;
+			transform: translateY(-50%) !important;
+			/* smooth in */
+		}
+
+		/* === FINAL UNIFORM TAB CONTENT TYPOGRAPHY === */
+		.tabs .tab-content,
+		.tabs .tab-content p,
+		.tabs .tab-content li {
+			font-family: "Carlito", sans-serif !important;
+			font-size: 22px !important;
+			line-height: 1.55 !important;
+			letter-spacing: 0 !important;
+			font-weight: 400 !important;
+		}
+
+		.tabs .callout {
+			font-family: "Carlito", sans-serif !important;
+			font-size: 25px !important;
+			line-height: 1.55 !important;
+			letter-spacing: 0 !important;
+			font-weight: 400 !important;
+		}
+
+		.tabs .tab-content ul {
+			padding-left: 1.25rem !important;
+			margin-top: 0 !important;
+			line-height: 1.65 !important;
+		}
+
+		/* Tabs: make Projects match Professional Experience exactly */
+
+		/* body font (same as elements.html) */
+		body {
+			font-family: "Carlito", sans-serif;
+		}
+
+		/* Tab container + header (already same as elements, but keep here for clarity) */
+		.tabs {
+			margin-top: 16px;
+			border: 1px solid #e8e8ee;
+			border-radius: 16px;
+			overflow: hidden;
+		}
+
+		.tabs input[type="radio"] {
+			position: absolute;
+			left: -9999px;
+		}
+
+		.tabs .tab-head {
+			display: flex;
+			background: #f6f7fb;
+			border-bottom: 1px solid #e1e4eb;
+			border-top-left-radius: 16px;
+			border-top-right-radius: 16px;
+			overflow: hidden;
+		}
+
+		.tabs .tab-head label {
+			flex: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 54px;
+			font-size: 22px;
+			font-weight: 700;
+			letter-spacing: .02em;
+			color: #2a2a2a;
+			cursor: pointer;
+			transition: background .2s, color .2s, border .2s;
+			border-bottom: 1px solid transparent;
+		}
+
+		.tabs .tab-head label:last-child {
+			border-right: none;
+		}
+
+		.tabs .tab-head label::before,
+		.tabs .tab-head label::after {
+			content: none !important;
+		}
 	</style>
+
 
 	<!-- PAGE STYLING ENDS---------------------------------------------------------------------------------------------->
 
@@ -179,9 +1060,11 @@
 <body class="is-preload">
 
 	<!-- Profile Image Section ---------------------------------------------------->
+
 	<div class="top-photo">
 		<img src="images/Ashwin_USCIS_Photo.jpg" alt="Ashwin Kumar Rangarajan">
 	</div>
+
 	<!-- Profile Image Section Ends ----------------------------------------------->
 
 	<!-- Wrapper -->
@@ -190,10 +1073,16 @@
 	<!-- Intro -->
 	<div id="intro">
 
-		<h1 class="hero-name"> Ashwin Kumar Rangarajan </h1>
+		<h1 class="hero-name">
+			<a href="https://www.linkedin.com/in/ashwin-kumar-rangarajan" target="_blank"> Ashwin Kumar Rangarajan </a>
+		</h1>
 
-		<h2> <a href="https://www.linkedin.com/company/ford-motor-company/posts/?feedView=all" target="_blank"> Chassis
-				Controls Engineer Intern @ Ford Motor Company </a> |
+		<h2>
+			<a href="https://www.linkedin.com/company/rivian-and-vw-group-technologies/" target="_blank">
+				Systems Integration Engineer @ Rivian Volkswagen Group Tech
+			</a> </br>
+			<a href="https://www.linkedin.com/company/ford-motor-company/posts/?feedView=all" target="_blank">
+				Ex-Chassis Controls Engineer Intern @ Ford Motor Company </a> |
 			<a href="https://www.linkedin.com/school/cuicar/posts/?feedView=all" target="_blank"> Ex-Deep Orange Orange
 				16 Intern | </a> <br />
 			<a href="https://www.linkedin.com/company/royal-enfield/posts/?feedView=all" target="_blank"> Ex-Royal
@@ -201,9 +1090,9 @@
 			Automobile Enthusiast
 		</h2>
 
-
+		<!-- Resume Link to download---------------------------------------------------------------------------------------------------------->
 		<a id="resume-link"
-			href="https://raw.githubusercontent.com/AshwinK77/Ashwin_Portfolio.github.io/main/Resume%20Ashwin%20Kumar%20Rangarajan.pdf"
+			href="https://raw.githubusercontent.com/AshwinK77/Ashwin_Portfolio.github.io/working-branch/Resume_Ashwin_Kumar_Rangarajan.pdf"
 			download="Ashwin_Kumar_Resume.pdf" style="
 				display: inline-block;
 				padding: 5px 12px;
@@ -211,55 +1100,53 @@
 				color: white !important;
 				border-radius: 4px;
 				text-decoration: none;
-				font-family: 'Arial Nova', Arial, sans-serif;
-				font-size: 13.5px;
+				font-family: 'Carlito', sans-serif;
+				font-size: 15px;
 				transition: background-color 0.5s ease, color 0.5s ease;">
 
 			📄 Download Resume
 
 		</a>
 
-		<!-- <script>
-							const link = document.currentScript.previousElementSibling;
-							link.addEventListener("mouseover", () => link.style.backgroundColor = "#a9abaf");
-							link.addEventListener("mouseout", () => link.style.backgroundColor = "#525355");
-							</script> -->
-
 		<script>
 			const link = document.getElementById("resume-link");
 			link.addEventListener("mouseover", () => {
 				link.style.backgroundColor = "#e0e0e0"; // light background
 				link.style.color = "black";
-				link.style.textDecoration = "none";            // black text
+				link.style.textDecoration = "none";     // black text
 			});
 			link.addEventListener("mouseout", () => {
 				link.style.backgroundColor = "#525355"; // original blue
 				link.style.color = "white";
-				link.style.textDecoration = "none";           // original white text
+				link.style.textDecoration = "none";     // original white text
 			});
 		</script>
 
+		<!-- Resume Link to download ends ------------------------------------------------------------------------------------------------------>
+
 		<p>An enthusiastic engineer passionate about automobiles, driven to contribute
-			to society through innovation and technology.
+			to the society through innovation and technology.
+		</p>
 
 		<ul class="actions">
 			<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
 		</ul>
 	</div>
 
-	<!-- Header -->
+	<!-- Header Starts ------------------------------------------------------------------------------------>
+
 	<header id="header">
 		<a href="index.html" class="logo">Ashwin Kumar Rangarajan</a>
 	</header>
 
-	<!-- Nav -->
+	<!-- Section Navigation---------------------------------------------------------------------------------->
 
 	<nav id="nav">
 
 		<ul class="links">
 			<li class="active"><a href="index.html"> Projects </a></li>
-			<li><a href="generic.html"> Skills</a></li>
-			<!-- <li><a href="elements.html">Elements Reference</a></li> -->
+			<li><a href="elements.html"> Professional Experience </a></li>
+			<li><a href="generic.html"> Skills </a></li>
 		</ul>
 
 		<ul class="icons">
@@ -273,317 +1160,1016 @@
 		</ul>
 
 	</nav>
+	<!-- Section Navigation Ends------------------------------------------------------------------------------>
 
 
-	<!-- Floating Project Navigation Dots -->
+	<!-- Floating Project Navigation Dots --------------------------------------------------------->
+
 	<div id="project-nav" style="
-    position: fixed;
-    top: 35%;
-    right: 30px;
-    display: none;
-    flex-direction: column;
-    gap: 20px;
-    z-index: 999;">
-
-		<a href="javascript:void(0);" class="nav-dot" data-project="project1"></a>
-		<a href="javascript:void(0);" class="nav-dot" data-project="project2"></a>
-		<a href="javascript:void(0);" class="nav-dot" data-project="project3"></a>
-		<a href="javascript:void(0);" class="nav-dot" data-project="project4"></a>
-		<a href="javascript:void(0);" class="nav-dot" data-project="project5"></a>
-
+  position: fixed;
+  top: 35%;
+  right: 30px;
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 999;">
+		<a href="javascript:void(0);" class="nav-dot" data-project="project6" data-label="HMI Design"></a>
+		<a href="javascript:void(0);" class="nav-dot" data-project="project4" data-label="Lithium Battery Charging"></a>
+		<a href="javascript:void(0);" class="nav-dot" data-project="project5" data-label="Thermal Management"></a>
+		<a href="javascript:void(0);" class="nav-dot" data-project="project1" data-label="Torque Vectoring"></a>
+		<a href="javascript:void(0);" class="nav-dot" data-project="project2"
+			data-label="Tractor-Trailer Simulation"></a>
+		<a href="javascript:void(0);" class="nav-dot" data-project="project3"
+			data-label="Cruise Control & Lane Keep Assist"></a>
+		<a href="javascript:void(0);" class="nav-dot" data-project="project7" data-label="Music Reactive LED"></a>
 	</div>
 
-	<!-- 🔧 Existing MASSIVELY structure: DO NOT TOUCH -->
+	<!-- Floating Project Navigation Dots Ends ------------------------------------------------------>
+
+
+
+	<!-- PROJECTS SECTION STARTS----------------------------------------------------------------------------------------------------------------------->
+
 	<div id="main">
+		<h3 class="section-title">Academic Projects</h3>
 
-		<!-- 🔧 Insert Professional Projects heading -->
-		<h2 style="margin-top: -25px; margin-bottom: 0;"> Professional Projects </h2>
+		<!-- Project 6 Starts ------------------------------------------------------------------------------------------>
 
-		<!-- 🔧 BEGIN PROJECT BLOCK -->
-		<article id="project1" class="post featured" style="margin: 0 auto; max-width: 90%; padding: 20px 10px;">
 
-			<!-- 🔧 DATE + LINE UNDERNEATH -->
-			<div style="text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 20px;">
-				<span class="date" style="font-size: 20px;">
-					<strong> January to May 2024</strong>
-				</span>
+
+		<article id="project6" class="post featured" style="margin: 0 auto; max-width: 90%; padding: 20px 10px;">
+
+			<div class="date-wrap">
+				<span class="timeline-badge p6">May 2025 – July 2025</span>
 			</div>
 
-			<!-- 🔧 TITLE + LOGO -->
-			<div style="display: flex; justify-content: space-between; align-items: center;">
-				<h2 style="margin: 0; font-size: clamp(18px, 3vw, 34px); flex: 1; margin-right: 10px;">
-					<a href="#"> VEHICLE STABILITY CONTROL USING OPTIMAL TORQUE ALLOCATION IN FOUR-WHEEL INDEPENDENT HUB
-						MOTOR VEHICLE</a>
-				</h2>
-				<img src="images/CU_ICAR.jpeg" alt="CU-ICAR" style="width: 100px; height: 40px;">
-			</div>
+			<!-- Tabs -->
+			<!-- Tabs -->
+			<div class="tabs" id="proj6-tabs">
 
-			<!-- 🔧 PROJECT DESCRIPTION -->
-			<p style="margin-top: 10px; font-size: 20px; text-align: justify;">
-				➤ Designed a hierarchical model-based control system using Direct Yaw Moment Control (DYC) to enhance
-				yaw stability.<br />
-				➤ Implemented individual wheel torque vectoring and braking algorithms for active vehicle dynamics
-				control.<br />
-				➤ Simulated and validated controller performance in double lane change, J-turn, and sine-with-dwell
-				maneuvers.<br />
-				➤ Tested under normal and split-μ surfaces, with/without vehicle stability control.<br />
-				➤ Demonstrated significant improvements in vehicle stability and handling performance.
-			</p>
+				<!-- Title + logo -->
+				<div style="padding:16px 20px;">
+					<div style="display:flex; justify-content:space-between; align-items:center;">
+						<h2 style="margin:0; font-size:clamp(18px, 3vw, 29px);">
+							HMI DISPLAY DESIGN USING MOTEC C1812 DISPLAY DEVICE
+						</h2>
+						<img src="images/Deep_Orange_Logo.png" alt="Deep Orange" style="width:100px; height:40px;">
+					</div>
+					<div style="display:flex; justify-content:space-between; font-size:20px; margin-top:10px;">
+						<strong>Vehicle Dynamics Controls &amp; HMI Design Team</strong>
+						<strong>Greenville, SC (USA)</strong>
+					</div>
+				</div>
 
-			<!-- 🔧 TOOLS USED -->
-			<footer style="margin-top: 15px; text-align: left;">
-				<span style="font-size: 20px;"><strong>Tools used:</strong></span>
-				<img src="images/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB" style="height: 40px; margin-left: 10px;">
-				<img src="images/Simulink.jpg" alt="Simulink" title="Simulink" style="height: 40px; margin-left: 10px;">
-			</footer>
+				<!-- Radio buttons -->
+				<input type="radio" name="proj6-tabs" id="p6-overview" checked>
+				<input type="radio" name="proj6-tabs" id="p6-details">
+				<input type="radio" name="proj6-tabs" id="p6-tools">
+				<input type="radio" name="proj6-tabs" id="p6-gallery">
 
-		</article>
-		<!-- 🔧 END PROJECT BLOCK -->
+				<!-- Tab headings (no inline font styles) -->
+				<div class="tab-head">
+					<label for="p6-overview">OVERVIEW</label>
+					<label for="p6-details">DETAILS</label>
+					<label for="p6-tools">TOOLS USED</label>
+					<label for="p6-gallery">GALLERY</label>
+				</div>
 
-		<!-- ✅ Your other projects (project2, project3...) follow normally below -->
+				<!-- Tab content (no inline font styles) -->
+				<div class="panels tab-content">
+					<!-- Overview -->
+					<div class="tab-panel r">
+						<div class="callout">
+							<strong>Human Machine Interface (HMI) Design</strong>
+						</div>
+						<p style="font-size:20px; text-align:justify; margin:0;">
+							Delivered <strong>driver-focused HMI solution</strong> on
+							<strong>MoTeC C1812</strong> display by integrating CAN-based
+							real-time vehicle diagnostics data visualization &amp; alerts and
+							enabling seamless steering-wheel button navigation.
+						</p>
 
+					</div>
 
-		<article id="project2" class="post"
-			style="margin-top: -50px;  padding-top: 0; margin-bottom: 20px; padding-bottom: 0;">
+					<!-- Details -->
+					<div class="tab-panel a">
+						<ul>
+							<li>
+								Integrated real-time vehicle data via a robust
+								<strong>CAN communication architecture</strong>.
+							</li>
+							<li>
+								Designed an intuitive <strong>GUI</strong> to visualize performance
+								and diagnostic parameters.
+							</li>
+							<li>
+								Enabled seamless multi-page navigation through
+								<strong>steering wheel-mounted buttons</strong>.
+							</li>
+							<li>
+								Enhanced driver interaction and situational awareness during
+								regression testing.
+							</li>
+						</ul>
+					</div>
 
-			<header class="major" style="margin-top: 0; padding-top: 0; margin-bottom: 0;">
-				<span class="date" style="font-size: 20px;"> <strong> August to December 2023 </strong></span>
-				<h2 style="margin-top: -50px; font-size: 30px;"><a href="#"> Numerical modeling and simulation of
-						tractor-trailer system </a></h2>
-				<p style="margin-bottom: 5px; font-size: 20px; text-align: justify; "> ➤ Applied first-principles
-					modeling to derive equations of motion for a tractor-trailer system.
+					<!-- Tools Used -->
+					<div class="tab-panel t">
+						<div style="display:flex; flex-wrap:wrap; gap:25px; align-items:center;">
+							<img src="images/New_Eagle_Icon_1.png" alt="New Eagle" title="New Eagle"
+								style="height:70px;">
+							<img src="images/Vector_icon.png" alt="Vector" title="Vector" style="height:50px;">
+							<img src="images/MoTeC_Icon.png" alt="MoTeC" title="MoTeC" style="height:70px;">
+						</div>
+					</div>
 
-					<br /> ➤ Developed a state-space representation using linear systems theory and the transport
-					theorem.
-
-					<br /> ➤ Implemented the full model in MATLAB for simulation and analysis.
-
-					<br /> ➤ Performed stability analysis under varying hitch angles, CG positions, and load transfer
-					conditions.
-
-					<br /> ➤ Evaluated dynamic response using step input and fishhook maneuvers.
-				</p>
-			</header>
-
-			<footer style="margin-top: 5px;  text-align: left">
-				<span style="font-size: 20px;"><strong>Tools used:</strong></span>
-				<img src="images/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB" style="height: 40px; margin-left: 10px;">
-				<img src="images/Simulink.jpg" alt="Simulink" title="Simulink" style="height: 40px; margin-left: 10px;">
-			</footer>
-
-		</article>
-
-
-		<article id="project3" class="post" style="margin-top: -50px;   margin-bottom: 20px; padding-bottom: 0;">
-
-			<header class="major">
-				<span class="date" style="font-size: 20px;"> <strong> August to December 2023 </strong></span>
-				<h2 style="margin-top: -50px; font-size: 30px;"><a href="#"> Adaptive Cruise Control and Autonomous Lane
-						Keeping of a RC car </a></h2>
-				<p style="font-size: 20px; text-align: justify; margin-bottom: 5px;">➤ Designed and implemented an
-					autonomous lane-keeping and adaptive cruise control system using Arduino.
-
-					<br /> ➤ Employed ultrasonic sensors and PID control to maintain lane position and regulate vehicle
-					speed.
-
-					<br /> ➤ Developed a Kalman filter-based sensor fusion technique to improve sensor accuracy.
-
-					<br /> ➤ Conducted extensive PID tuning for smooth and responsive control behavior.
-
-					<br /> ➤ Validated the system across diverse track conditions using a data-driven development
-					approach.
-				</p>
-			</header>
-
-			<footer style="margin-top: 5px;  text-align: left">
-				<span style="font-size: 20px;"><strong>Tools used:</strong></span>
-				<img src="images/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB" style="height: 40px; margin-left: 10px;">
-				<img src="images/Simulink.jpg" alt="Simulink" title="Simulink" style="height: 40px; margin-left: 10px;">
-				<img src="images/imagesarduino_Icon.png" alt="Arduino" title="Arduino"
-					style="height: 40px; margin-left: 10px;">
-			</footer>
-
-			<h2 style="margin-top: 30px;font-size: 30px;">Autonomous Control Algorithm Demonstration</h2>
-
-			<!-- <video width="960" height="540" controls>
-   								     <source src="videos/IMG_0749.MOV" type="video/mp4">
-  									 </video> -->
-
-			<div class="video-container">
-				<iframe width="1080" height="720" src="https://www.youtube.com/embed/ui93FdPq0fI" frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					allowfullscreen>
-				</iframe>
-			</div>
-
-		</article>
-
-
-		<article id="project4" class="post featured" style="margin-top: 10px; margin-bottom: 20px; padding-bottom: 0;">
-
-			<header class="major">
-				<span class="date" style="font-size: 20px;"> <strong> January to April 2025 </strong></span>
-				<h2 style="font-size: 30px;"><a href="#"> HMI screen design using MoTeC C1812 display device</a></h2>
-				<p style="font-size: 20px; text-align: justify;  margin-bottom: 5px;">➤ Developed a customized
-					Human-Machine Interface (HMI) using the MoTeC C1812 display.
-
-					<br /> ➤ Integrated real-time vehicle data via a robust CAN communication architecture.
-
-					<br /> ➤ Designed an intuitive GUI to visualize performance and diagnostic parameters.
-
-					<br /> ➤ Enabled seamless multi-page navigation through steering wheel-mounted buttons.
-
-					<br /> ➤ Enhanced driver interaction and situational awareness during dynamic testing.
-				</p>
-			</header>
-
-			<footer style="margin-top: 5px;  text-align: left">
-				<span style="font-size: 20px;"><strong>Tools used:</strong></span>
-				<img src="images/New_Eagle_Icon_1.png" alt="New Eagle" title="New Eagle"
-					style="height: 40px; margin-left: 10px;">
-				<img src="images/Vector_icon.png" alt="Vector" title="Vector" style="height: 40px; margin-left: 10px;">
-				<img src="images/MoTeC_Icon.png" alt="MoTeC" title="MoTeC" style="height: 40px; margin-left: 10px;">
-			</footer>
-
-			<h2 style="margin-top: 30px; font-size: 30px;">HMI Screen HiL Testing</h2>
-
-			<div class="video-container">
-				<iframe width="1080" height="720" src="https://www.youtube.com/embed/QzV6TwpLAik" frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					allowfullscreen>
-				</iframe>
-			</div>
-
-		</article>
-
-
-		<h2 style="margin-bottom: 0;"> DIY Projects </h2>
-
-		<article id="project5" class="post featured" style="margin-top: 0;  padding-top: 0; margin-bottom: 20px;">
-
-			<header class="major" style="margin-top: 0; padding-top: 0; margin-bottom: 0;">
-				<span class="date" style="font-size: 20px;"> <strong> May 2025 </strong></span>
-				<h2 style="margin-top: 0; padding-top: 0; margin-bottom: 15px; font-size: 30px;"><a href="#">
-						Music-Reactive LED Visualizer Using Arduino </a></h2>
-				<p style="margin-top: 5px; font-size: 20px; text-align: justify;">➤ Designed and built a DIY
-					sound-reactive LED system using an Arduino Uno board.
-
-					<br /> ➤ Integrated a sound sensor module to detect audio signals in real time.
-
-					<br /> ➤ Programmed the microcontroller to generate dynamic LED patterns synchronized to music based
-					on amplitude.
-
-					<br /> ➤ Fine-tuned the sensor sensitivity and implemented basic filtering to improve signal
-					accuracy.
-
-					<br /> ➤ This project created an engaging visual experience, ideal for ambient lighting and musical
-					displays.
-				</p>
-			</header>
-
-			<h2 style="margin-top: 30px;font-size: 30px;"> Music reactive LED</h2>
-
-			<!-- <video width="960" height="540" controls>
-   								     <source src="https://youtube.com/shorts/0feYiHCP59g?feature=share" type="video/mp4">
-  									 </video> -->
-
-			<div class="video-container">
-				<iframe width="1080" height="720" src="https://www.youtube.com/embed/IkWAoybO4-A" frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					allowfullscreen>
-				</iframe>
-			</div>
-
-		</article>
-
-
-
-		<!-- Posts -->
-		<!--	
-						<section class="posts">
-								<article>
-									<header>
-										<span class="date">April 24, 2017</span>
-										<h2><a href="#">Sed magna<br />
-										ipsum faucibus</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</article>
-					-->
-
-
-
-
-		<!-- Footer -->
-		<!-- <footer>
-								<div class="pagination">
-									<a href="#" class="previous">Prev</a>
-									<a href="#" class="page active">1</a>
-									<a href="#" class="page">2</a>
-									<a href="#" class="page">3</a>
-									<span class="extra">&hellip;</span>
-									<a href="#" class="page">8</a>
-									<a href="#" class="page">9</a>
-									<a href="#" class="page">10</a>
-									<a href="#" class="next">Next</a>
+					<!-- Gallery -->
+					<div class="tab-panel g">
+						<div class="slideshow-wrapper"
+							style="overflow:hidden; max-width:800px; margin:auto; position:relative;">
+							<div class="slideshow-container" id="slideshow-track-0"
+								style="display:flex; transition: transform 1s ease;">
+								<div class="video-container">
+									<iframe width="1080" height="720" src="https://www.youtube.com/embed/2rcx8ovRnnM"
+										frameborder="0"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+										allowfullscreen>
+									</iframe>
 								</div>
-							</footer> 
-						-->
+							</div>
+							<div style="text-align:center; margin-top:10px;">
+								<span class="dot-0" onclick="currentSlide0(1)"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
+		</article>
+
+
+		<!-- Project 4 Starts ------------------------------------------------------------------------------------------>
+
+		<article id="project4" class="post featured" style="margin:0 auto; max-width:90%; padding:20px 10px;">
+
+			<!-- Date chip -->
+			<div class="date-wrap">
+				<span class="timeline-badge p4">Aug 2024 - Dec 2024</span>
+			</div>
+
+			<!-- Tabs container -->
+			<div class="tabs" id="proj4-tabs">
+				<!-- Title + logo inside the box header -->
+				<div style="padding:16px 20px;">
+					<div
+						style="display:flex; gap:16px; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+						<h2 style="margin:0; font-size:clamp(18px,3vw,29px); text-align:left;">
+							ROBUST PREDICTIVE CHARGING CONTROL FOR LI-ION BATTERIES
+						</h2>
+						<img src="images/ICAR_Logo2.png" alt="CU-ICAR" style="width:110px; height:auto;">
+					</div>
+
+					<div style="display:flex; justify-content:space-between; font-size:20px; margin-top:10px;">
+						<strong>Masters Coursework </strong>
+						<strong>Greenville, SC (USA)</strong>
+					</div>
+				</div>
+
+				<!-- Radios (Project 2 specific) -->
+				<input type="radio" name="proj4-tabs" id="p4-overview" checked>
+				<input type="radio" name="proj4-tabs" id="p4-details">
+				<input type="radio" name="proj4-tabs" id="p4-tools">
+				<input type="radio" name="proj4-tabs" id="p4-gallery">
+
+				<!-- Tab headers -->
+				<div class="tab-head">
+					<label for="p4-overview">OVERVIEW</label>
+					<label for="p4-details">DETAILS</label>
+					<label for="p4-tools">TOOLS USED</label>
+					<!-- <label for="p4-gallery">GALLERY</label> -->
+				</div>
+
+				<!-- Panels -->
+				<div class="panels tab-content">
+					<!-- OVERVIEW -->
+					<div class="tab-panel r">
+
+						<p style="font-size:20px; text-align:justify; margin:0;">
+							Developed a <strong> robust MPC charging strategy</strong> to balance charging speed and
+							thermal runaway
+							prevention, ensuring safe Li-ion battery operation.
+						</p>
+
+					</div>
+
+					<!-- DETAILS -->
+					<div class="tab-panel a">
+						<ul>
+							<li>Formulated a <strong>nonlinear electro-thermal model</strong> incorporating
+								<strong>SOC</strong> and <strong>cell temperature</strong> as key states.
+							</li>
+							<li>Utilized <strong>fmincon optimization</strong> to minimize charging time while
+								constraining temperature rise and voltage limits.</li>
+							<li>Implemented the control framework in <strong>MATLAB/Simulink</strong> for
+								real-time
+								simulation and validation.</li>
+							<li>Demonstrated improved <strong>charging efficiency</strong> and <strong>thermal
+									runaway prevention</strong> under varying ambient and load conditions.</li>
+						</ul>
+						</ul>
+					</div>
+
+					<!-- TOOLS USED -->
+					<div class="tab-panel t">
+						<div style="display:flex; flex-wrap:wrap; gap:25px; align-items:center;">
+							<img src="images/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB" style="height:90px;">
+							<img src="images/Simulink.jpg" alt="Simulink" title="Simulink" style="height:80px;">
+						</div>
+					</div>
+
+					<!-- GALLERY (slideshow like elements.html, Project 2 IDs) -->
+					<div class="tab-panel g">
+						<div class="slideshow-wrapper"
+							style="overflow:hidden; max-width:800px; margin:auto; position:relative;">
+							<div class="slideshow-container" id="slideshow-track-p2"
+								style="display:flex; transition: transform 1s ease;">
+								<!-- Slide 1 -->
+								<div class="slide-p2" style="min-width:100%;">
+									<div class="media-container">
+										<img src="images/Project_2/Slide1.png" alt="Model Diagram">
+									</div>
+									<div style="text-align:center; font-size:18px; margin-top:10px;">
+										<strong>Model Diagram</strong>
+									</div>
+								</div>
+								<!-- Slide 2 -->
+								<div class="slide-p4" style="min-width:100%;">
+									<div class="media-container">
+										<img src="images/Project_2/Slide2.png" alt="State-Space Formulation">
+									</div>
+									<div style="text-align:center; font-size:18px; margin-top:10px;">
+										<strong>State-Space
+											Formulation</strong>
+									</div>
+								</div>
+								<!-- Slide 3 -->
+								<div class="slide-p4" style="min-width:100%;">
+									<div class="media-container">
+										<img src="images/Project_2/Slide3.png" alt="Step Steer Response">
+									</div>
+									<div style="text-align:center; font-size:18px; margin-top:10px;"><strong>Step
+											Steer
+											Response</strong></div>
+								</div>
+								<!-- Slide 4 -->
+								<div class="slide-p4" style="min-width:100%;">
+									<div class="media-container">
+										<img src="images/Project_2/Slide4.png" alt="Fishhook Maneuver">
+									</div>
+									<div style="text-align:center; font-size:18px; margin-top:10px;">
+										<strong>Fishhook
+											Maneuver</strong>
+									</div>
+								</div>
+								<!-- Slide 5 -->
+								<div class="slide-p4" style="min-width:100%;">
+									<div class="media-container">
+										<img src="images/Project_2/Slide5.png" alt="Double Lane Change">
+									</div>
+									<div style="text-align:center; font-size:18px; margin-top:10px;"><strong>Double
+											Lane
+											Change</strong></div>
+								</div>
+							</div>
+
+							<!-- arrows -->
+							<a class="prev" onclick="plusSlidesP4(-1)"
+								style="cursor:pointer; position:absolute; left:2px; top:50%; font-size:30px;">&#10094;</a>
+							<a class="next" onclick="plusSlidesP4(1)"
+								style="cursor:pointer; position:absolute; right:2px; top:50%; font-size:30px;">&#10095;</a>
+						</div>
+
+						<!-- dots -->
+						<div style="text-align:center; margin-top:10px;">
+							<span class="dot" onclick="currentSlideP4(1)"></span>
+							<span class="dot" onclick="currentSlideP4(2)"></span>
+							<span class="dot" onclick="currentSlideP4(3)"></span>
+							<span class="dot" onclick="currentSlideP4(4)"></span>
+							<span class="dot" onclick="currentSlideP4(5)"></span>
+						</div>
+					</div>
+				</div><!-- /.panels -->
+			</div><!-- /.tabs -->
+		</article>
+
+		<!-- Project 5 Starts ------------------------------------------------------------------------------------------>
+
+		<article id="project5" class="post featured" style="margin:0 auto; max-width:90%; padding:20px 10px;">
+
+			<!-- Date chip -->
+			<div class="date-wrap">
+				<span class="timeline-badge p5">Aug 2024 - Dec 2024</span>
+			</div>
+
+			<!-- Tabs container -->
+			<div class="tabs" id="proj5-tabs">
+				<!-- Title + logo inside the box header -->
+				<div style="padding:16px 20px;">
+					<div style="display:flex; justify-content:space-between; align-items:center;">
+						<h2 style="margin:0; font-size:clamp(18px,3vw,27px); text-align:left;">
+							DUAL-LOOP PREDICTIVE THERMAL MANAGEMENT FOR EV BATTERY AND CABIN SYSTEMS </h2>
+						<img src="images/ICAR_Logo2.png" alt="CU-ICAR" style="width:110px; height:auto;">
+					</div>
+
+					<div style="display:flex; justify-content:space-between; font-size:20px; margin-top:10px;">
+						<strong>Masters Coursework </strong>
+						<strong>Greenville, SC (USA)</strong>
+					</div>
+				</div>
+
+				<!-- Radios (Project 2 specific) -->
+				<input type="radio" name="proj5-tabs" id="p5-overview" checked>
+				<input type="radio" name="proj5-tabs" id="p5-details">
+				<input type="radio" name="proj5-tabs" id="p5-tools">
+				<input type="radio" name="proj5-tabs" id="p5-gallery">
+
+				<!-- Tab headers -->
+				<div class="tab-head">
+					<label for="p5-overview">OVERVIEW</label>
+					<label for="p5-details">DETAILS</label>
+					<label for="p5-tools">TOOLS USED</label>
+					<!-- <label for="p5-gallery">GALLERY</label> -->
+				</div>
+
+				<!-- Panels -->
+				<div class="panels tab-content">
+					<!-- OVERVIEW -->
+					<div class="tab-panel r">
+						<p style="font-size:20px; text-align:justify; margin:0;">
+							<strong> Developed a dual-loop predictive thermal management system </strong> using MPC
+							to
+							optimize compressor, pump, and blower operation, meeting battery and HVAC demands to
+							improve
+							energy efficiency, battery life, and passenger comfort.
+						</p>
+					</div>
+
+					<!-- DETAILS -->
+					<div class="tab-panel a">
+						<ul>
+							<li>Developed a <strong>dual-loop system</strong>
+								integrating battery and cabin thermal demands.</li>
+							<li>Implemented <strong>Model Predictive Control (MPC)</strong> to optimize
+								compressor,
+								pump, and blower operation in real time.</li>
+							<li>Modeled battery <strong>2nd order RC electro-thermal dynamics</strong> and
+								<strong>HVAC load interactions</strong> under varying ambient conditions.
+							</li>
+							<li>Used <code>fmincon()</code> based optimization to minimize energy consumption
+								while maintaining temperature limits.</li>
+							<li>Demonstrated improvements in <strong>energy efficiency</strong>, <strong>battery
+									life</strong>, and <strong>passenger comfort</strong> through simulation
+								results and reference tracking of temeperature demands.</li>
+						</ul>
+						</ul>
+					</div>
+
+					<!-- TOOLS USED -->
+					<div class="tab-panel t">
+						<div style="display:flex; flex-wrap:wrap; gap:25px; align-items:center;">
+							<img src="images/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB" style="height:90px;">
+							<img src="images/Simulink.jpg" alt="Simulink" title="Simulink" style="height:80px;">
+						</div>
+					</div>
+
+					<!-- GALLERY (slideshow like elements.html, Project 2 IDs) -->
+					<div class="tab-panel g">
+						<div class="slideshow-wrapper"
+							style="overflow:hidden; max-width:800px; margin:auto; position:relative;">
+							<div class="slideshow-container" id="slideshow-track-p2"
+								style="display:flex; transition: transform 1s ease;">
+								<!-- Slide 1 -->
+								<div class="slide-p5" style="min-width:100%;">
+									<div class="media-container">
+										<img src="images/Project_2/Slide1.png" alt="Model Diagram">
+									</div>
+									<div style="text-align:center; font-size:18px; margin-top:10px;">
+										<strong>Model Diagram</strong>
+									</div>
+								</div>
+							</div>
+
+							<!-- arrows -->
+							<a class="prev" onclick="plusSlidesP5(-1)"
+								style="cursor:pointer; position:absolute; left:2px; top:50%; font-size:30px;">&#10094;</a>
+							<a class="next" onclick="plusSlidesP5(1)"
+								style="cursor:pointer; position:absolute; right:2px; top:50%; font-size:30px;">&#10095;</a>
+						</div>
+
+						<!-- dots -->
+						<div style="text-align:center; margin-top:10px;">
+							<span class="dot" onclick="currentSlideP5(1)"></span>
+							<span class="dot" onclick="currentSlideP5(2)"></span>
+							<span class="dot" onclick="currentSlideP5(3)"></span>
+							<span class="dot" onclick="currentSlideP5(4)"></span>
+							<span class="dot" onclick="currentSlideP5(5)"></span>
+						</div>
+					</div>
+				</div><!-- /.panels -->
+			</div><!-- /.tabs -->
+		</article>
+
+		<!-- Project 1 Starts ----------------------------------------------------------------------------------------->
+
+		<article id="project1" class="post featured" style="margin:0 auto; max-width:90%; padding:20px 10px;">
+
+			<!-- Date chip -->
+			<div class="date-wrap">
+				<span class="timeline-badge p1">Jan 2024 – May 2024</span>
+			</div>
+
+			<!-- Tabs container -->
+			<div class="tabs" id="proj1-tabs">
+				<!-- Title + logo inside the box header -->
+				<div style="padding:16px 20px;">
+					<div
+						style="display:flex; gap:16px; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+						<h2 style="margin:0; font-size:clamp(18px,3vw,29px); text-align:left;">
+							<a href="https://docs.google.com/presentation/d/1MjtDIrMDHcZM7OthvQ0mwP87KM2leXJIMbNRAdkcE4E/edit?usp=sharing"
+								target="_blank">
+								VEHICLE STABILITY CONTROL USING TORQUE VECTORING ALGORITHM
+							</a>
+						</h2>
+						<img src="images/ICAR_Logo2.png" alt="CU-ICAR" style="width:110px; height:auto;">
+					</div>
+
+					<div style="display:flex; justify-content:space-between; font-size:20px; margin-top:10px;">
+						<strong>Masters Coursework </strong>
+						<strong>Greenville, SC (USA)</strong>
+					</div>
+				</div>
+
+				<!-- Radios -->
+				<input type="radio" name="proj1-tabs" id="p1-overview" checked>
+				<input type="radio" name="proj1-tabs" id="p1-details">
+				<input type="radio" name="proj1-tabs" id="p1-tools">
+				<input type="radio" name="proj1-tabs" id="p1-gallery">
+
+				<!-- Tab headers -->
+				<div class="tab-head">
+					<label for="p1-overview">OVERVIEW</label>
+					<label for="p1-details">DETAILS</label>
+					<label for="p1-tools">TOOLS USED</label>
+					<label for="p1-gallery">GALLERY</label>
+				</div>
+
+				<!-- Panels -->
+				<div class="panels tab-content">
+					<!-- OVERVIEW -->
+					<div class="tab-panel r">
+						<p style="font-size:20px; text-align:justify; margin:0;">
+							Developed a hierarchical <strong>Direct Yaw Moment Control (DYC)</strong> system for a
+							4-wheel independent hub-motor vehicle using an <strong>LQR-based torque vectoring
+								controller</strong>, enhancing yaw stability and handling across aggressive
+							maneuvers and under varied surface conditions.
+						</p>
+
+						<div style="display:flex; justify-content:space-between; font-size:20px; margin-top:10px;">
+							<strong>Masters Coursework </strong>
+							<strong>Greenville, SC (USA)</strong>
+						</div>
+
+					</div>
+
+					<!-- DETAILS -->
+					<div class="tab-panel a">
+
+						<ul>
+							<li>Modeled dynamics using a <strong>2-DOF bicycle model</strong> for yaw and lateral
+								motion
+								estimation.</li>
+							<li>Used <strong>PID control</strong> for longitudinal speed tracking and
+								<strong>LQR</strong> for yaw-moment and force allocation.
+							</li>
+							<li>Utilized <code>quadprog()</code> optimizer for optimal wheel-torque allocation.</li>
+							<li>Simulated <strong>double lane change</strong>, <strong>J-turn</strong>, and
+								<strong>sine-with-dwell</strong> maneuvers to assess stability.
+							</li>
+							<li>Validated <strong>understeer</strong> and <strong>oversteer</strong> behavior with
+								and
+								without stability control.</li>
+						</ul>
+
+					</div>
+					<!-- TOOLS USED -->
+					<div class="tab-panel t">
+						<div style="display:flex; flex-wrap:wrap; gap:25px; align-items:center;">
+							<img src="images/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB" style="height:90px;">
+							<img src="images/Simulink.jpg" alt="Simulink" title="Simulink" style="height:80px;">
+						</div>
+					</div>
+
+					<!-- GALLERY (simple, JS-free) -->
+					<!-- GALLERY (slideshow like elements.html) -->
+					<div class="tab-panel g">
+						<div class="slideshow-wrapper"
+							style="overflow:hidden; max-width:1000px; margin:auto; position:relative;">
+							<div class="slideshow-container" id="slideshow-track-p1"
+								style="display:flex; transition: transform 1s ease;">
+								<!-- Slide 1 -->
+								<div class="slide-p1" style="min-width:100%;">
+									<div class="media-container">
+										<img src="images/Project_1/Slide1.png" alt="Model & Controller">
+									</div>
+									<div style="text-align:center; font-size:20px; margin-top:10px;">
+										<strong>Model & Controller</strong>
+									</div>
+								</div>
+								<!-- Slide 2 -->
+								<div class="slide-p1" style="min-width:100%;">
+									<div class="media-container">
+										<img src="images/Project_1/Slide2.png" alt="Sine with Dwell – Oversteer">
+									</div>
+									<div style="text-align:center; font-size:20px; margin-top:10px;">
+										<strong>Sine with Dwell – Oversteer</strong>
+									</div>
+								</div>
+								<!-- Slide 3 -->
+								<div class="slide-p1" style="min-width:100%;">
+									<div class="media-container">
+										<img src="images/Project_1/Slide3.png" alt="Sine with Dwell – Understeer">
+									</div>
+									<div style="text-align:center; font-size:20px; margin-top:10px;">
+										<strong>Sine with Dwell – Understeer</strong>
+									</div>
+								</div>
+								<!-- Slide 4 -->
+								<div class="slide-p1" style="min-width:100%;">
+									<div class="media-container">
+										<img src="images/Project_1/Slide4.png" alt="Fishhook – Oversteer">
+									</div>
+									<div style="text-align:center; font-size:20px; margin-top:10px;">
+										<strong>Fishhook – Oversteer</strong>
+									</div>
+								</div>
+								<!-- Slide 5 -->
+								<div class="slide-p1" style="min-width:100%;">
+									<div class="media-container">
+										<img src="images/Project_1/Slide5.png" alt="Fishhook – Understeer">
+									</div>
+									<div style="text-align:center; font-size:20px; margin-top:10px;">
+										<strong>Fishhook – Understeer</strong>
+									</div>
+								</div>
+								<!-- Slide 6 -->
+								<div class="slide-p1" style="min-width:100%;">
+									<div class="media-container">
+										<img src="images/Project_1/Slide8.png" alt="DLC – Oversteer">
+									</div>
+									<div style="text-align:center; font-size:20px; margin-top:10px;">
+										<strong>DLC – Oversteer</strong>
+									</div>
+								</div>
+								<!-- Slide 7 -->
+								<div class="slide-p1" style="min-width:100%;">
+									<div class="media-container">
+										<img src="images/Project_1/Slide9.png" alt="DLC – Understeer">
+									</div>
+									<div style="text-align:center; font-size:20px; margin-top:10px;">
+										<strong>DLC – Understeer</strong>
+									</div>
+								</div>
+							</div>
+
+							<!-- arrows -->
+							<a class="prev" onclick="plusSlidesP1(-1)"
+								style="cursor:pointer; position:absolute; left:2px; top:50%; font-size:30px;">&#10094;</a>
+							<a class="next" onclick="plusSlidesP1(1)"
+								style="cursor:pointer; position:absolute; right:2px; top:50%; font-size:30px;">&#10095;</a>
+						</div>
+
+						<!-- dots -->
+						<div style="text-align:center; margin-top:10px;">
+							<span class="dot" onclick="currentSlideP1(1)"></span>
+							<span class="dot" onclick="currentSlideP1(2)"></span>
+							<span class="dot" onclick="currentSlideP1(3)"></span>
+							<span class="dot" onclick="currentSlideP1(4)"></span>
+							<span class="dot" onclick="currentSlideP1(5)"></span>
+							<span class="dot" onclick="currentSlideP1(6)"></span>
+							<span class="dot" onclick="currentSlideP1(7)"></span>
+						</div>
+					</div>
+
+				</div><!-- /.panels -->
+			</div><!-- /.tabs -->
+		</article>
+
+		<!-- Project 1 Ends ------------------------------------------------------------------------------------------>
+
+		<!-- Project 2 Starts ------------------------------------------------------------------------------------------>
+
+		<article id="project2" class="post featured" style="margin:0 auto; max-width:90%; padding:20px 10px;">
+
+			<!-- Date chip -->
+			<div class="date-wrap">
+				<span class="timeline-badge p2">Aug 2023 – Dec 2023</span>
+			</div>
+
+			<!-- Tabs container -->
+			<div class="tabs" id="proj2-tabs">
+				<!-- Title + logo inside the box header -->
+				<div style="padding:16px 20px;">
+					<div
+						style="display:flex; gap:16px; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+						<h2 style="margin:0; font-size:clamp(18px,3vw,29px); text-align:left;">
+							NUMERICAL MODELING AND SIMULATION OF TRACTOR-TRAILER SYSTEM
+						</h2>
+						<img src="images/ICAR_Logo2.png" alt="CU-ICAR" style="width:110px; height:auto;">
+					</div>
+
+					<div style="display:flex; justify-content:space-between; font-size:20px; margin-top:10px;">
+						<strong>Masters Coursework </strong>
+						<strong>Greenville, SC (USA)</strong>
+					</div>
+
+				</div>
+
+				<!-- Radios (Project 2 specific) -->
+				<input type="radio" name="proj2-tabs" id="p2-overview" checked>
+				<input type="radio" name="proj2-tabs" id="p2-details">
+				<input type="radio" name="proj2-tabs" id="p2-tools">
+				<input type="radio" name="proj2-tabs" id="p2-gallery">
+
+				<!-- Tab headers -->
+				<div class="tab-head">
+					<label for="p2-overview">OVERVIEW</label>
+					<label for="p2-details">DETAILS</label>
+					<label for="p2-tools">TOOLS USED</label>
+					<!-- <label for="p2-gallery">GALLERY</label> -->
+				</div>
+
+				<!-- Panels -->
+				<div class="panels tab-content">
+					<!-- OVERVIEW -->
+					<div class="tab-panel r">
+						<p style="font-size:20px; text-align:justify; margin:0;">
+							Developed a <strong>numerical simulation model</strong> of a tractor-trailer to
+							analyze stability under <strong>load transfer </strong> and across varying <strong> CG
+								positions</strong> during maneuvers like <strong>step, sine with dwell, lane
+								change</strong> and <strong>fishhook</strong> maneuvers.
+						</p>
+					</div>
+
+					<!-- DETAILS -->
+					<div class="tab-panel a">
+
+						<ul>
+							<li>Derived equations of motion for a tractor-trailer using <strong>first-principles
+									rigid-body dynamics</strong>.</li>
+							<li>Formulated a <strong>linear state-space model</strong> via transport theorem and
+								small-angle assumptions.</li>
+							<li>Modeled <strong>longitudinal and lateral load transfer</strong> effects for
+								stability and handling analysis.</li>
+							<li>Implemented a <strong>MATLAB simulation framework</strong> with provisions to
+								analyze <strong>three distinct CG positions</strong>.</li>
+							<li>Evaluated dynamic response under <strong>step input</strong>,
+								<strong>fishhook</strong>, and <strong>double lane change</strong> maneuvers.
+							</li>
+						</ul>
+						</ul>
+					</div>
+
+					<!-- TOOLS USED -->
+					<div class="tab-panel t">
+						<div style="display:flex; flex-wrap:wrap; gap:25px; align-items:center;">
+							<img src="images/Matlab_Icon.jpg" alt="MATLAB" title="MATLAB" style="height:90px;">
+							<img src="images/Simulink.jpg" alt="Simulink" title="Simulink" style="height:80px;">
+						</div>
+					</div>
+
+					<!-- GALLERY (slideshow like elements.html, Project 2 IDs) -->
+					<div class="tab-panel g">
+						<div class="slideshow-wrapper"
+							style="overflow:hidden; max-width:800px; margin:auto; position:relative;">
+							<div class="slideshow-container" id="slideshow-track-p2"
+								style="display:flex; transition: transform 1s ease;">
+								<!-- Slide 1 -->
+								<div class="slide-p2" style="min-width:100%;">
+									<div class="media-container">
+										<img src="images/Project_2/Slide1.png" alt="Model Diagram">
+									</div>
+									<div style="text-align:center; font-size:18px; margin-top:10px;"><strong>Model
+											Diagram</strong></div>
+								</div>
+								<!-- Slide 2 -->
+								<div class="slide-p2" style="min-width:100%;">
+									<div class="media-container">
+										<img src="images/Project_2/Slide2.png" alt="State-Space Formulation">
+									</div>
+									<div style="text-align:center; font-size:18px; margin-top:10px;">
+										<strong>State-Space
+											Formulation</strong>
+									</div>
+								</div>
+								<!-- Slide 3 -->
+								<div class="slide-p2" style="min-width:100%;">
+									<div class="media-container">
+										<img src="images/Project_2/Slide3.png" alt="Step Steer Response">
+									</div>
+									<div style="text-align:center; font-size:18px; margin-top:10px;"><strong>Step
+											Steer
+											Response</strong></div>
+								</div>
+								<!-- Slide 4 -->
+								<div class="slide-p2" style="min-width:100%;">
+									<div class="media-container">
+										<img src="images/Project_2/Slide4.png" alt="Fishhook Maneuver">
+									</div>
+									<div style="text-align:center; font-size:18px; margin-top:10px;">
+										<strong>Fishhook
+											Maneuver</strong>
+									</div>
+								</div>
+								<!-- Slide 5 -->
+								<div class="slide-p2" style="min-width:100%;">
+									<div class="media-container">
+										<img src="images/Project_2/Slide5.png" alt="Double Lane Change">
+									</div>
+									<div style="text-align:center; font-size:18px; margin-top:10px;"><strong>Double
+											Lane
+											Change</strong></div>
+								</div>
+							</div>
+
+							<!-- arrows -->
+							<a class="prev" onclick="plusSlidesP2(-1)"
+								style="cursor:pointer; position:absolute; left:2px; top:50%; font-size:30px;">&#10094;</a>
+							<a class="next" onclick="plusSlidesP2(1)"
+								style="cursor:pointer; position:absolute; right:2px; top:50%; font-size:30px;">&#10095;</a>
+						</div>
+
+						<!-- dots -->
+						<div style="text-align:center; margin-top:10px;">
+							<span class="dot" onclick="currentSlideP2(1)"></span>
+							<span class="dot" onclick="currentSlideP2(2)"></span>
+							<span class="dot" onclick="currentSlideP2(3)"></span>
+							<span class="dot" onclick="currentSlideP2(4)"></span>
+							<span class="dot" onclick="currentSlideP2(5)"></span>
+						</div>
+					</div>
+				</div><!-- /.panels -->
+			</div><!-- /.tabs -->
+		</article>
+
+
+		<!-- Project 3 Starts ------------------------------------------------------------------------------------------>
+
+		<article id="project3" class="post featured" style="margin:0 auto; max-width:90%; padding:20px 10px;">
+
+			<!-- Date chip -->
+			<div class="date-wrap">
+				<span class="timeline-badge p3">Aug 2023 – Dec 2023</span>
+			</div>
+
+			<!-- Tabs container -->
+			<div class="tabs" id="proj3-tabs">
+				<!-- Title + logo inside the box header -->
+				<div style="padding:16px 20px;">
+					<div
+						style="display:flex; gap:16px; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+						<h2 style="margin:0; font-size:clamp(18px,3vw,29px); text-align:left;">
+							ADAPTIVE CRUISE CONTROL AND AUTONOMOUS LANE KEEPING OF A RC CAR
+						</h2>
+						<img src="images/ICAR_Logo2.png" alt="CU-ICAR" style="width:110px; height:auto;">
+					</div>
+
+					<div style="display:flex; justify-content:space-between; font-size:20px; margin-top:10px;">
+						<strong>Masters Coursework </strong>
+						<strong>Greenville, SC (USA)</strong>
+					</div>
+
+				</div>
+
+				<!-- Radios (Project 2 specific) -->
+				<input type="radio" name="proj3-tabs" id="p3-overview" checked>
+				<input type="radio" name="proj3-tabs" id="p3-details">
+				<input type="radio" name="proj3-tabs" id="p3-tools">
+				<input type="radio" name="proj3-tabs" id="p3-gallery">
+
+				<!-- Tab headers -->
+				<div class="tab-head">
+					<label for="p3-overview">OVERVIEW</label>
+					<label for="p3-details">DETAILS</label>
+					<label for="p3-tools">TOOLS USED</label>
+					<label for="p3-gallery">GALLERY</label>
+				</div>
+
+				<!-- Panels -->
+				<div class="panels tab-content">
+					<!-- OVERVIEW -->
+					<div class="tab-panel r">
+						<p style="font-size:20px; text-align:justify; margin:0;">
+							<strong>Developed and implemented Adaptive Cruise Control and Lane Keeping on a RC car
+								using
+								Arduino; </strong> integrated ultrasonic sensors with Kalman filter sensor fusion,
+							PID
+							tuning, and conducted data-driven calibration and testing on random tracks.
+						</p>
+					</div>
+
+					<!-- DETAILS -->
+					<div class="tab-panel a">
+						<ul>
+							<li>Designed and implemented an <strong>autonomous lane-keeping </strong> and
+								<strong>adaptive cruise control</strong> system using <strong>Arduino</strong>.
+							</li>
+							<li>Employed <strong>ultrasonic sensors</strong> and <strong>PID control</strong> to
+								maintain lane position and regulate vehicle speed.</li>
+							<li>Developed a <strong>Kalman filter–based sensor fusion</strong> algorithm to
+								enhance
+								measurement accuracy.</li>
+							<li>Performed extensive <strong>PID tuning</strong> for smooth and responsive
+								control
+								performance.</li>
+							<li>Validated system performance under diverse track conditions using a
+								data-driven testing approach.</li>
+						</ul>
+					</div>
+
+					<!-- TOOLS USED -->
+					<div class="tab-panel t">
+						<div style="display:flex; flex-wrap:wrap; gap:25px; align-items:center;">
+							<img src="images/Arduino.png" alt="Arduino" title="Arduino" style="height:90px;">
+							<img src="images/MS_Excel_Icon.jpg" alt="Simulink" title="Simulink" style="height:80px;">
+						</div>
+					</div>
+
+					<!-- GALLERY (slideshow like elements.html, Project 2 IDs) -->
+					<div class="tab-panel g">
+						<div class="slideshow-wrapper"
+							style="overflow:hidden; max-width:800px; margin:auto; position:relative;">
+							<div class="slideshow-container" id="slideshow-track-p2"
+								style="display:flex; transition: transform 1s ease;">
+								<div class="video-container">
+									<iframe width="1080" height="720" src="https://www.youtube.com/embed/ui93FdPq0fI"
+										frameborder="0"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+										allowfullscreen>
+									</iframe>
+								</div>
+							</div>
+
+						</div>
+
+						<!-- dots -->
+						<div style="text-align:center; margin-top:10px;">
+							<span class="dot" onclick="currentSlideP2(1)"></span>
+						</div>
+					</div>
+				</div><!-- /.panels -->
+			</div><!-- /.tabs -->
+		</article>
 	</div>
 
 
 
+	<div id="main">
+		<h3 class="section-title">DIY Projects</h3>
 
+		<!-- Project 7 Starts ------------------------------------------------------------------------------------------>
 
-	<!-- Footer -->
-	<footer id="footer">
-		<!--
-						<section>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
+		<article id="project7" class="post featured" style="margin:0 auto; max-width:90%; padding:20px 10px;">
+
+			<!-- Date chip -->
+			<div class="date-wrap">
+				<span class="timeline-badge p7">May 2025 – Jun 2025</span>
+			</div>
+
+			<!-- Tabs container -->
+			<div class="tabs" id="proj7-tabs">
+				<!-- Title + logo inside the box header -->
+				<div style="padding:16px 20px;">
+					<div
+						style="display:flex; gap:16px; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+						<h2 style="margin:0; font-size:clamp(18px,3vw,29px); text-align:left;">
+							MUSIC-REACTIVE LED VISUALIZER USING ARDUINO
+						</h2>
+						<img src="images/Home.jpg" alt="CU-ICAR" style="width:70px; height:50px;">
+					</div>
+
+					<div style="display:flex; justify-content:space-between; font-size:20px; margin-top:10px;">
+						<strong>Home Project </strong>
+						<strong>Dearborn, MI (USA)</strong>
+					</div>
+				</div>
+
+				<!-- Radios (Project 2 specific) -->
+				<input type="radio" name="proj7-tabs" id="p7-overview" checked>
+				<input type="radio" name="proj7-tabs" id="p7-details">
+				<input type="radio" name="proj7-tabs" id="p7-tools">
+				<input type="radio" name="proj7-tabs" id="p7-gallery">
+
+				<!-- Tab headers -->
+				<div class="tab-head">
+					<label for="p7-overview">OVERVIEW</label>
+					<label for="p7-details">DETAILS</label>
+					<label for="p7-tools">TOOLS USED</label>
+					<label for="p7-gallery">GALLERY</label>
+				</div>
+
+				<!-- Panels -->
+				<div class="panels tab-content">
+					<!-- OVERVIEW -->
+					<div class="tab-panel r">
+						<p style="font-size:20px; text-align:justify; margin:0;">
+							Built a <strong>music-reactive LED visualizer</strong> using an <strong>Arduino
+								Uno</strong>
+							and sound sensor to generate <strong>real-time, amplitude-based LED effects</strong>
+							synchronized with music.
+						</p>
+					</div>
+
+					<!-- DETAILS -->
+					<div class="tab-panel a">
+
+						<ul>
+							<li>Integrated a <strong>sound sensor module</strong> to detect audio signals in
+								real
+								time.</li>
+							<li>Programmed the microcontroller to generate <strong>dynamic LED patterns</strong>
+								synchronized to music based on amplitude.</li>
+							<li>Fine-tuned the <strong>sensor sensitivity</strong> and implemented basic
+								filtering
+								to improve signal accuracy.</li>
+							<li>Created an <strong>engaging visual experience</strong> suitable for ambient
+								lighting
+								and musical displays.</li>
+						</ul>
+
+					</div>
+
+					<!-- TOOLS USED -->
+					<div class="tab-panel t">
+						<div style="display:flex; flex-wrap:wrap; gap:25px; align-items:center;">
+							<img src="images/Arduino.png" alt="New Eagle" title="New Eagle" style="height:70px;">
+						</div>
+					</div>
+
+					<!-- GALLERY (slideshow like elements.html, Project 7 IDs) -->
+					<div class="tab-panel g">
+						<div class="slideshow-wrapper"
+							style="overflow:hidden; max-width:800px; margin:auto; position:relative;">
+							<div class="slideshow-container" id="slideshow-track-p7"
+								style="display:flex; transition: transform 1s ease;">
+								<!-- Slide 1 -->
+								<div class="video-container">
+									<iframe width="1080" height="720" src="https://www.youtube.com/embed/NJeZ0NRiVMA"
+										frameborder="0"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+										allowfullscreen>
+									</iframe>
 								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section>
-					-->
+							</div>
+						</div>
+
+						<!-- dots -->
+						<div style="text-align:center; margin-top:10px;">
+							<span class="dot" onclick="currentSlideP7(1)"></span>
+						</div>
+					</div>
+				</div><!-- /.panels -->
+			</div><!-- /.tabs -->
+		</article>
+	</div>
+	<!-- FOOTER SECTION STARTS  -------------------------------------------------------------------------------------------------------------------->
+
+	<footer id="footer">
+
 		<section class="split contact" style="font-family: 'Arial Nova', Arial, sans-serif; padding-bottom: 0;">
+
+			<!-- CONTACT SECTION STARTS ----------------------------------------------------------------------------------------->
+
 			<div class="three-column-layout" style="display: flex; width: 100%;  justify-content: center; gap: 40px;">
 
+				<!-- ADDRESS -->
 				<section class="column" style="flex: 1; padding: 20px; text-align: center; padding-bottom: 5px;">
 					<h3 style=" font-size: 25px; text-align: center;">📍 Address</h3>
 					<p style="font-size: 15px; text-align: center;">
 						<a href="https://maps.google.com/maps?cid=3707318036026301668" target="_blank"
-							style="font-family: 'Arial Nova', Arial, sans-serif; color: inherit;">
-							<strong>5, Research Drive, Greenville, <br />
-								South Carolina 29607,<br />
-								United States of America </strong>
+							style="font-family: 'Arial Nova', Arial, sans-serif; color: inherit;"> </a>
+						<strong>5, Research Drive, Greenville, <br />
+							South Carolina 29607,<br />
+							United States of America </strong>
 					</p>
 				</section>
 
+				<!-- CONTACT NUMBER -->
 				<section class="column" style="flex: 1; padding: 20px; text-align: center; padding-bottom: 5px;">
 					<h3 style="font-size: 25px; text-align: center;">📞 Phone</h3>
 					<p style="font-size: 15px; text-align: center;"> <strong>+1-(864)-449-9085</strong></p>
 				</section>
 
+				<!-- EMAIL IDS -->
 				<section class="column" style="flex: 1; padding: 20px; text-align: center; padding-bottom: 5px;">
 					<h3 style="font-size: 25px; text-align: center;">📧 Email</h3>
 					<p style="font-size: 15px; text-align: center;"><strong><a
@@ -591,36 +2177,55 @@
 							<a href="mailto:ashwintwister@gmail.com">ashwintwister@gmail.com </strong> </a>
 					</p>
 				</section>
+
 			</div>
 
-			<!-- Social icons below the grid -->
+			<!-- CONTACT SECTION ENDS ------------------------------------------------------------------------------------------>
+
+
+			<!-- SOCIAL MEDIA CONTACT STARTS ----------------------------------------------------------------------------------->
+
 			<section
 				style="font-family: 'Arial Nova', Arial, sans-serif; width: 100%; text-align: center; margin-top: 0px; padding-top: 10px; padding-bottom: 30px;">
 
 				<ul class="icons alt" style="justify-content: center;">
 					<h3 style=" font-size: 25px;">Social Media</h3>
-					<li><a href="https://www.facebook.com/rangarajan.ashwinkumar"
-							class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-					<li><a href="https://github.com/AshwinK77?tab=repositories" class="icon brands alt fa-github"><span
-								class="label">GitHub</span></a></li>
+					<li><a href="https://www.facebook.com/rangarajan.ashwinkumar" class="icon brands alt fa-facebook-f"
+							target="_blank"><span class="label">Facebook</span></a></li>
+					<li><a href="https://github.com/AshwinK77?tab=repositories" class="icon brands alt fa-github"
+							target="_blank"><span class="label">GitHub</span></a></li>
 					<li> <a href="https://www.linkedin.com/in/ashwin-kumar-rangarajan"
-							class="icon brands alt fa-linkedin">
+							class="icon brands alt fa-linkedin" target="_blank">
 							<span class="label">LinkedIn</span></a>
 					</li>
 				</ul>
 			</section>
+
+			<!-- SOCIAL MEDIA CONTACT ENDS ---------------------------------------------------------------------------------------->
+
 		</section>
+
 	</footer>
 
-	<!-- Copyright -->
+	<!-- FOOTER SECTION ENDS  -------------------------------------------------------------------------------------------------------------------->
+
+
+
+	<!-- COPYRIGHT SECTION STARTS  ----------------------------------------------------------------------------------------------------------------->
+
 	<div id="copyright" style="font-family: 'Arial Nova', Arial, sans-serif; margin-top: 15px;">
 		<ul>
 			<li>&copy; 2025 Ashwin Kumar Rangarajan. <br /> All rights reserved.</li>
 		</ul>
 	</div>
 
+	<!-- COPYRIGHT SECTION ENDS ------------------------------------------------------------------------------------------------------------------->
 
-	<!-- Scripts -->
+
+
+
+	<!-- JAVA SCRIPT SECTION STARTS --------------------------------------------------------------------------------------------------------------->
+
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.scrollex.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -636,6 +2241,7 @@
 		});
 	</script>
 
+	<!-- SCRIPT FOR RADIO BUTTONS STARTS ----------------------------------------------------------------------------------->
 
 	<script>
 		// Sections to track
@@ -672,6 +2278,9 @@
 			}
 		});
 	</script>
+
+	<!-- SCRIPT FOR RADIO BUTTONS ENDS ----------------------------------------------------------------------------------->
+
 
 	<script>
 		// place new code here:
@@ -721,6 +2330,99 @@
 				}
 			});
 		});
+	</script>
+
+	<!-- JAVA SCRIPT SECTION ENDS ---------------------------------------------------------------------------------------------------------------->
+
+	<script>
+		let slideIndex = 0;
+		const slides = document.querySelectorAll('.slide');
+		const totalSlides = slides.length;
+		const slideshowTrack = document.getElementById('slideshow-track');
+		const dots = document.querySelectorAll('.dot');
+
+		function updateSlide() {
+			slideshowTrack.style.transform = `translateX(-${slideIndex * 100}%)`;
+			dots.forEach((dot, idx) => {
+				dot.style.backgroundColor = (idx === slideIndex) ? '#717171' : '#bbb';
+			});
+		}
+
+		function plusSlides(n) {
+			slideIndex = (slideIndex + n + totalSlides) % totalSlides;
+			updateSlide();
+		}
+
+		function currentSlide(n) {
+			slideIndex = n - 1;
+			updateSlide();
+		}
+
+		// Initialize
+		updateSlide();
+	</script>
+
+
+	<script>
+		// Project 1 slideshow (isolated names so it doesn't clash with others)
+		(function () {
+			const track = document.getElementById('slideshow-track-p1');
+			const slides = Array.from(track.querySelectorAll('.slide-p1'));
+			const dots = Array.from(document.querySelectorAll('.dot[onclick^="currentSlideP1"]'));
+			let index = 0;
+
+			function render() {
+				const width = track.clientWidth;          // full-width slides
+				track.style.transform = `translateX(${-index * width}px)`;
+				dots.forEach((d, i) => d.classList.toggle('active-dot', i === index));
+			}
+
+			function clamp(i) { return (i + slides.length) % slides.length; }
+
+			window.plusSlidesP1 = function (step) {
+				index = clamp(index + step);
+				render();
+			};
+
+			window.currentSlideP1 = function (n) {
+				index = clamp(n - 1);
+				render();
+			};
+
+			// handle resize to keep slide aligned
+			window.addEventListener('resize', render, { passive: true });
+
+			// initial state
+			render();
+		})();
+	</script>
+
+	<script>
+		// Project 2 slideshow (isolated names so it doesn't clash with others)
+		(function () {
+			const track = document.getElementById('slideshow-track-p2');
+			if (!track) return;
+			const slides = Array.from(track.querySelectorAll('.slide-p2'));
+			const dots = Array.from(document.querySelectorAll('.dot[onclick^="currentSlideP2"]'));
+			let index = 0;
+
+			function render() {
+				const width = track.clientWidth;
+				track.style.transform = `translateX(${-index * width}px)`;
+				dots.forEach((d, i) => d.classList.toggle('active-dot', i === index));
+			}
+			function clamp(i) { return (i + slides.length) % slides.length; }
+
+			window.plusSlidesP2 = function (step) {
+				index = clamp(index + step); render();
+			};
+			window.currentSlideP2 = function (n) {
+				index = clamp(n - 1); render();
+			};
+
+			window.addEventListener('resize', render, { passive: true });
+			render();
+		})();
 	</script>
 
 </body>
